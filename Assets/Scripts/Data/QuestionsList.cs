@@ -16,12 +16,6 @@ public class QuestionsList : ScriptableObject
         {
             person.Score = 0;
         }
-
-        foreach (QuestionItem questionItem in QuestionItems)
-        {
-            questionItem.IsCompleted = false;
-        }
-        
     }
 }
 
@@ -38,7 +32,6 @@ public class Person
 public class QuestionItem
 {
     public int Id;
-    public bool IsCompleted;
     public string QuestionText;
     
     public string VariantFirst;

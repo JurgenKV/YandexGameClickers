@@ -10,10 +10,18 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private QuestionsList _questionsList;
     [SerializeField] private QuestionUI _questionUis;
+    [SerializeField] private GameObject _gamePlayground;
     [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
     private void Start()
     {
-        _questionItems.CopyTo(_questionsList.QuestionItems.ToArray());
+        _questionsList.NewGame();
+        _questionItems.Clear();
+        
+        foreach (var questionItem in _questionsList.QuestionItems)
+        {
+            _questionItems.Add(questionItem);
+        }
+        
         Shuffle(_questionItems);
         CreateNewUI();
     }
@@ -28,6 +36,13 @@ public class GameController : MonoBehaviour
     {
         _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
         _questionItems.Remove(questionItem);
+        
+        if (_questionItems.Count == 0)
+        {
+            GameOver();
+            return;
+        }
+        
         CreateNewUI();
     }
     
@@ -35,9 +50,26 @@ public class GameController : MonoBehaviour
     {
         _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdSecond)).Score++;
         _questionItems.Remove(questionItem);
+        
+        if (_questionItems.Count == 0)
+        {
+            GameOver();
+            return;
+        }
+        
         CreateNewUI();
     }
 
+    private void GameOver()
+    {
+        Debug.Log("GameCompleted" + GetIdWinGirl());
+        _gamePlayground.SetActive(false);
+    }
+
+    private int GetIdWinGirl()
+    {
+        return _questionsList.Persons.Max(i => i.Score);
+    }
 
     private static void Shuffle<T>(IList<T> list)
     {
