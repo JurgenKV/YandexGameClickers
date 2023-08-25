@@ -2,42 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private QuestionsList _questionsList;
-    [SerializeField] private GameObject prafabQuestionUI;
-    [SerializeField] private Transform rootParent;
-
     [SerializeField] private QuestionUI _questionUis;
-    [SerializeField] private QuestionsList _questionsListCopy;
+    [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
     private void Start()
     {
-        _questionsListCopy = new QuestionsList();
-        _questionsListCopy.Persons.CopyTo(_questionsList.Persons.ToArray());
-        _questionsListCopy.QuestionItems.CopyTo(_questionsList.QuestionItems.ToArray());
-        Shuffle(_questionsListCopy.QuestionItems);
+        _questionItems.CopyTo(_questionsList.QuestionItems.ToArray());
+        Shuffle(_questionItems);
         CreateNewUI();
     }
 
     private void CreateNewUI()
     {
-        _questionUis.CreateUI(_questionsListCopy.QuestionItems.First());
+        _questionUis.CreateUI(_questionItems.First());
 
     }
 
     public void HandleButtonVariantFirst(QuestionItem questionItem)
     {
-        _questionsListCopy.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
-        _questionsListCopy.QuestionItems.Remove(questionItem);
+        _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
+        _questionItems.Remove(questionItem);
         CreateNewUI();
     }
     
     public void HandleButtonVariantSecond(QuestionItem questionItem)
     {
-        _questionsListCopy.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
-        _questionsListCopy.QuestionItems.Remove(questionItem);
+        _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdSecond)).Score++;
+        _questionItems.Remove(questionItem);
         CreateNewUI();
     }
 
@@ -55,10 +52,5 @@ public class GameController : MonoBehaviour
             n--;
             (list[k], list[n]) = (list[n], list[k]);
         }
-    }
-
-    private void OnDestroy()
-    {
-        Destroy(_questionsListCopy);
     }
 }
