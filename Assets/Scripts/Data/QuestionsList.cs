@@ -9,7 +9,8 @@ public class QuestionsList : ScriptableObject
 {
     [SerializeField] public List<Person> Persons;
     [SerializeField] public List<QuestionItem> QuestionItems;
-
+    [SerializeField] public List<QuestionItem> ENQuestionItems;
+    [SerializeField] public List<QuestionItem> TRQuestionItems;
     public void NewGame()
     {
         foreach (Person person in Persons)
