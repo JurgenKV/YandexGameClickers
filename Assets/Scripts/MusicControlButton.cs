@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,6 @@ public class MusicControlButton : MonoBehaviour
     [SerializeField] private AudioSource _backMusic;
     [SerializeField] Toggle _toggle;
     [SerializeField] private Image _image;
-
     [SerializeField] private Sprite _onImage;
     [SerializeField] private Sprite _offImage;
 
@@ -15,7 +15,7 @@ public class MusicControlButton : MonoBehaviour
     
     private bool _isFadeInActive = false;
     private bool _isFadeOutActive = false;
-    private bool _tempMusicSettings;
+    private bool _tempMusicSettings = true;
     void Start()
     {
         _startVolume = _backMusic.volume;
@@ -81,6 +81,7 @@ public class MusicControlButton : MonoBehaviour
         StopAllCoroutines();
         _isFadeInActive = false;
         _isFadeOutActive = false;
+        
         if(!_tempMusicSettings)
             return;
         else
@@ -92,6 +93,7 @@ public class MusicControlButton : MonoBehaviour
         StopAllCoroutines();
         _isFadeInActive = false;
         _isFadeOutActive = false;
+        
         if(!_tempMusicSettings)
             return;
         else

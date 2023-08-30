@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ namespace YG
     {
         public Text textUIComponent;
         public TextMesh textMeshComponent;
+        public TMP_Text textMashProComponent;
         public InfoYG infoYG;
         [Space(10)]
         public string text;
@@ -34,6 +36,8 @@ namespace YG
                 baseFontSize = textUIComponent.fontSize;
             else if (textMeshComponent)
                 baseFontSize = textMeshComponent.fontSize;
+            else if (textMashProComponent)
+                 baseFontSize = (int)textMashProComponent.fontSize;
         }
 
         [ContextMenu("Reserialize")]
@@ -41,7 +45,7 @@ namespace YG
         {
             textUIComponent = GetComponent<Text>();
             textMeshComponent = GetComponent<TextMesh>();
-
+            textMashProComponent = GetComponent<TMP_Text>();
             infoYG = GetInfoYG();
         }
 
@@ -92,6 +96,8 @@ namespace YG
                 textUIComponent.text = translation;
             else if (textMeshComponent)
                 textMeshComponent.text = translation;
+            else if(textMashProComponent)
+                textMashProComponent.text = translation;
         }
 
         public void ChangeFont(Font[] fontArray)
@@ -135,13 +141,17 @@ namespace YG
                 textUIComponent.fontSize = baseFontSize;
             else if (textMeshComponent)
                 textMeshComponent.fontSize = baseFontSize;
-
+            else if (textMashProComponent)
+                textMashProComponent.fontSize = baseFontSize;
+            
             if (fontSizeArray.Length != 0 && fontSizeArray.Length >= fontNumber - 1)
             {
                 if (textUIComponent)
                     textUIComponent.fontSize += fontSizeArray[fontNumber];
                 else if (textMeshComponent)
                     textMeshComponent.fontSize += fontSizeArray[fontNumber];
+                else if (textMashProComponent)
+                    textMashProComponent.fontSize += fontSizeArray[fontNumber];
             }
         }
 
@@ -241,6 +251,9 @@ namespace YG
                 text = textUIComponent.text;
             else if (textMeshComponent)
                 text = textMeshComponent.text;
+            else if (textMashProComponent)
+                text = textMashProComponent.text;
+            
             else
             {
                 Debug.LogError("(ruСообщение)Текст для перевода не найден!\n(enMessage)The text for translation was not found!");
