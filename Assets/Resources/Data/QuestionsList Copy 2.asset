@@ -1,0 +1,439 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1171556da16a464d99914dbfa56c7212, type: 3}
+  m_Name: QuestionsList Copy 2
+  m_EditorClassIdentifier: 
+  Persons:
+  - Id: 0
+    Type: "\u0421\u043C\u0435\u043B\u0430\u044F \u0438 \u044D\u043D\u0435\u0440\u0433\u0438\u0447\u043D\u0430\u044F"
+    Description: 
+    Score: 0
+  - Id: 1
+    Type: "\u0421\u043A\u0440\u044B\u0442\u043D\u0430\u044F \u0438 \u043C\u0435\u0447\u0442\u0430\u0442\u0435\u043B\u044C\u043D\u0430\u044F"
+    Description: 
+    Score: 0
+  - Id: 2
+    Type: "\u041E\u0431\u0449\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F \u0438
+      \u0437\u0430\u0431\u043E\u0442\u043B\u0438\u0432\u0430\u044F"
+    Description: 
+    Score: 0
+  - Id: 3
+    Type: "\u042D\u043A\u0441\u0446\u0435\u043D\u0442\u0440\u0438\u0447\u043D\u0430\u044F
+      \u0438 \u0442\u0432\u043E\u0440\u0447\u0435\u0441\u043A\u0430\u044F"
+    Description: 
+    Score: 0
+  - Id: 4
+    Type: "\u0421\u0435\u0440\u044C\u0435\u0437\u043D\u0430\u044F \u0438 \u0446\u0435\u043B\u0435\u0443\u0441\u0442\u0440\u0435\u043C\u043B\u0435\u043D\u043D\u0430\u044F"
+    Description: 
+    Score: 0
+  QuestionItems:
+  - Id: 0
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u043F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u0435\u0442\u0435
+      \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u044C \u0432\u044B\u0445\u043E\u0434\u043D\u044B\u0435?"
+    VariantFirst: "\u0423\u0447\u0430\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
+      \u0432 \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445 \u0441\u043F\u043E\u0440\u0442\u0438\u0432\u043D\u044B\u0445
+      \u043C\u0435\u0440\u043E\u043F\u0440\u0438\u044F\u0442\u0438\u044F\u0445"
+    PersonIdFirst: 0
+    VariantSecond: "\u041F\u0440\u043E\u0432\u0435\u0441\u0442\u0438 \u0432\u0440\u0435\u043C\u044F
+      \u0441 \u043A\u043D\u0438\u0433\u043E\u0439 \u0438\u043B\u0438 \u0437\u0430\u043D\u044F\u0442\u044C\u0441\u044F
+      \u0447\u0435\u043C-\u0442\u043E \u0442\u0432\u043E\u0440\u0447\u0435\u0441\u043A\u0438\u043C"
+    PersonIdSecond: 3
+  - Id: 1
+    QuestionText: "\u041A\u0430\u043A\u043E\u0439 \u0441\u0442\u0438\u043B\u044C
+      \u043E\u0431\u0449\u0435\u043D\u0438\u044F \u0431\u043B\u0438\u0436\u0435 \u043A
+      \u0432\u0430\u043C?"
+    VariantFirst: "\u041B\u0435\u0433\u043A\u043E \u043D\u0430\u0447\u0438\u043D\u0430\u044E
+      \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440 \u0438 \u0441\u0442\u0430\u0440\u0430\u044E\u0441\u044C
+      \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u0431\u0435\u0441\u0435\u0434\u0443"
+    PersonIdFirst: 2
+    VariantSecond: "\u041F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E
+      \u0433\u043B\u0443\u0431\u043E\u043A\u0438\u0435 \u0440\u0430\u0437\u0433\u043E\u0432\u043E\u0440\u044B
+      \u0441 \u0434\u0440\u0443\u0437\u044C\u044F\u043C\u0438"
+    PersonIdSecond: 1
+  - Id: 2
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u0440\u0435\u0430\u0433\u0438\u0440\u0443\u0435\u0442\u0435
+      \u043D\u0430 \u043D\u0435\u043F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0443\u0435\u043C\u044B\u0435
+      \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438?"
+    VariantFirst: "\u0411\u044B\u0441\u0442\u0440\u043E \u0430\u0434\u0430\u043F\u0442\u0438\u0440\u0443\u044E\u0441\u044C
+      \u0438 \u0441\u0442\u0430\u0440\u0430\u044E\u0441\u044C \u043D\u0430\u0439\u0442\u0438
+      \u043F\u043E\u0437\u0438\u0442\u0438\u0432\u043D\u044B\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
+    PersonIdFirst: 0
+    VariantSecond: "\u041F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E
+      \u0434\u0435\u0439\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C \u043E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u043E
+      \u0438 \u0432\u0441\u0435 \u0430\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
+    PersonIdSecond: 4
+  - Id: 3
+    QuestionText: "\u0412\u0430\u0448 \u043F\u043E\u0434\u0445\u043E\u0434 \u043A
+      \u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u0443"
+    VariantFirst: "\u042F \u0433\u043E\u0442\u043E\u0432 \u044D\u043A\u0441\u043F\u0435\u0440\u0438\u043C\u0435\u043D\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+      \u0438 \u0438\u0441\u043A\u0430\u0442\u044C \u043D\u0435\u043E\u0431\u044B\u0447\u043D\u044B\u0435
+      \u0438\u0434\u0435\u0438"
+    PersonIdFirst: 3
+    VariantSecond: "\u042F \u0441\u0442\u0430\u0440\u0430\u044E\u0441\u044C \u043F\u0440\u0438\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0442\u044C\u0441\u044F
+      \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u0439"
+    PersonIdSecond: 1
+  - Id: 4
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u043E\u0442\u043D\u043E\u0441\u0438\u0442\u0435\u0441\u044C
+      \u043A \u043F\u0440\u043E\u044F\u0432\u043B\u0435\u043D\u0438\u044E \u044D\u043C\u043E\u0446\u0438\u0439
+      \u0432 \u043E\u0431\u0449\u0435\u0441\u0442\u0432\u0435"
+    VariantFirst: "\u042F \u0432\u044B\u0440\u0430\u0436\u0430\u044E \u0441\u0432\u043E\u0438
+      \u044D\u043C\u043E\u0446\u0438\u0438 \u043E\u0442\u043A\u0440\u044B\u0442\u043E
+      \u0438 \u043D\u0435 \u0441\u0442\u0435\u0441\u043D\u044F\u044E\u0441\u044C"
+    PersonIdFirst: 0
+    VariantSecond: "\u041F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E
+      \u0434\u0435\u0440\u0436\u0430\u0442\u044C \u0441\u0432\u043E\u0438 \u044D\u043C\u043E\u0446\u0438\u0438
+      \u043F\u043E\u0434 \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u0435\u043C"
+    PersonIdSecond: 4
+  - Id: 5
+    QuestionText: "\u0412\u0430\u0448\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
+      \u043A \u043D\u043E\u0432\u044B\u043C \u0438\u0434\u0435\u044F\u043C \u0438\u043B\u0438
+      \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F\u043C?"
+    VariantFirst: "\u041E\u0447\u0435\u043D\u044C \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u043E
+      \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C \u0432\u0441\u0435
+      \u043D\u043E\u0432\u043E\u0435, \u0441\u0440\u0430\u0437\u0443 \u0436\u0435
+      \u043F\u0440\u0438\u0441\u0442\u0443\u043F\u0430\u044E"
+    PersonIdFirst: 3
+    VariantSecond: "\u0422\u0449\u0430\u0442\u0435\u043B\u044C\u043D\u043E \u0430\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u044E,
+      \u043F\u0440\u0435\u0436\u0434\u0435 \u0447\u0435\u043C \u043F\u0440\u0438\u043D\u044F\u0442\u044C
+      \u0440\u0435\u0448\u0435\u043D\u0438\u0435"
+    PersonIdSecond: 4
+  - Id: 6
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u0440\u0435\u0430\u0433\u0438\u0440\u0443\u0435\u0442\u0435
+      \u043D\u0430 \u0441\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u0438?"
+    VariantFirst: "\u041F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0432\u0430\u044E
+      \u0438\u0445 \u0441 \u043E\u043F\u0442\u0438\u043C\u0438\u0437\u043C\u043E\u043C
+      \u0438 \u044D\u043D\u0435\u0440\u0433\u0438\u0435\u0439"
+    PersonIdFirst: 0
+    VariantSecond: "\u0420\u0430\u0437\u043C\u044B\u0448\u043B\u044F\u044E, \u043A\u0430\u043A
+      \u043D\u0430\u0439\u0442\u0438 \u043D\u0430\u0438\u043B\u0443\u0447\u0448\u0438\u0439
+      \u0432\u044B\u0445\u043E\u0434 \u0438\u0437 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438"
+    PersonIdSecond: 4
+  - Id: 7
+    QuestionText: "\u041A\u0430\u043A\u043E\u0439 \u0442\u0438\u043F \u0440\u0430\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u0439
+      \u0432\u0430\u043C \u0431\u043B\u0438\u0436\u0435?"
+    VariantFirst: "\u042D\u043A\u0441\u0442\u0440\u0435\u043C\u0430\u043B\u044C\u043D\u044B\u0435
+      \u0432\u0438\u0434\u044B \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438,
+      \u0430\u0442\u0442\u0440\u0430\u043A\u0446\u0438\u043E\u043D\u044B \u0438\u043B\u0438
+      \u0441\u043F\u043E\u0440\u0442"
+    PersonIdFirst: 0
+    VariantSecond: "\u041F\u043E\u0441\u0435\u0449\u0435\u043D\u0438\u0435 \u0432\u044B\u0441\u0442\u0430\u0432\u043E\u043A
+      \u0438 \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u043D\u044B\u0445 \u0441\u043E\u0431\u044B\u0442\u0438\u0439"
+    PersonIdSecond: 2
+  - Id: 8
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u0440\u0435\u0430\u0433\u0438\u0440\u0443\u0435\u0442\u0435
+      \u043D\u0430 \u0442\u0440\u0443\u0434\u043D\u043E\u0441\u0442\u0438?"
+    VariantFirst: "\u041F\u0440\u0435\u043E\u0434\u043E\u043B\u0435\u0432\u0430\u044E
+      \u0438\u0445 \u0441 \u043E\u043F\u0442\u0438\u043C\u0438\u0437\u043C\u043E\u043C
+      \u0438 \u0441\u0442\u0430\u0440\u0430\u044E\u0441\u044C \u043D\u0430\u0439\u0442\u0438
+      \u0440\u0435\u0448\u0435\u043D\u0438\u0435"
+    PersonIdFirst: 0
+    VariantSecond: "\u0410\u043D\u0430\u043B\u0438\u0437\u0438\u0440\u0443\u044E
+      \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044E \u0438 \u043F\u043E\u0434\u0431\u0438\u0440\u0430\u044E
+      \u043D\u0430\u0438\u043B\u0443\u0447\u0448\u0438\u0439 \u0441\u043F\u043E\u0441\u043E\u0431
+      \u0440\u0435\u0448\u0435\u043D\u0438\u044F"
+    PersonIdSecond: 4
+  - Id: 9
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u043F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u0435
+      \u0432\u0440\u0435\u043C\u044F \u0432 \u043E\u0434\u0438\u043D\u043E\u0447\u0435\u0441\u0442\u0432\u0435?"
+    VariantFirst: "\u0417\u0430\u043D\u0438\u043C\u0430\u044E\u0441\u044C \u0442\u0432\u043E\u0440\u0447\u0435\u0441\u0442\u0432\u043E\u043C
+      \u0438\u043B\u0438 \u0440\u0430\u0437\u043C\u044B\u0448\u043B\u0435\u043D\u0438\u044F\u043C\u0438"
+    PersonIdFirst: 3
+    VariantSecond: "\u041F\u0440\u043E\u0432\u043E\u0436\u0443 \u0432\u0440\u0435\u043C\u044F
+      \u0441 \u043A\u043D\u0438\u0433\u043E\u0439 \u0438\u043B\u0438 \u043D\u0430\u0443\u0447\u043D\u044B\u043C\u0438
+      \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F\u043C\u0438"
+    PersonIdSecond: 4
+  - Id: 10
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u043E\u0442\u043D\u043E\u0441\u0438\u0442\u0435\u0441\u044C
+      \u043A \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044E
+      \u0431\u0443\u0434\u0443\u0449\u0435\u0433\u043E?"
+    VariantFirst: "\u042F \u0447\u0430\u0441\u0442\u043E \u043F\u043B\u0430\u043D\u0438\u0440\u0443\u044E
+      \u0431\u0443\u0434\u0443\u0449\u0435\u0435 \u0438 \u0441\u0442\u0430\u0432\u043B\u044E
+      \u043F\u0435\u0440\u0435\u0434 \u0441\u043E\u0431\u043E\u0439 \u0446\u0435\u043B\u0438"
+    PersonIdFirst: 4
+    VariantSecond: "\u041F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E
+      \u0436\u0438\u0442\u044C \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u043C
+      \u043C\u043E\u043C\u0435\u043D\u0442\u043E\u043C"
+    PersonIdSecond: 0
+  - Id: 11
+    QuestionText: "\u0412\u0430\u0448 \u043F\u043E\u0434\u0445\u043E\u0434 \u043A
+      \u043F\u043E\u043C\u043E\u0449\u0438 \u0434\u0440\u0443\u0437\u044C\u044F\u043C
+      \u0432 \u0442\u0440\u0443\u0434\u043D\u044B\u0435 \u043C\u043E\u043C\u0435\u043D\u0442\u044B?"
+    VariantFirst: "\u0421\u0442\u0440\u0435\u043C\u043B\u044E\u0441\u044C \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C
+      \u0438\u0445 \u044D\u043C\u043E\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E
+      \u0438 \u043E\u043A\u0430\u0437\u0430\u0442\u044C \u043F\u043E\u043C\u043E\u0449\u044C"
+    PersonIdFirst: 2
+    VariantSecond: "\u0410\u043A\u0442\u0438\u0432\u043D\u043E \u043F\u043E\u043C\u043E\u0433\u0430\u044E
+      \u0432 \u0440\u0435\u0448\u0435\u043D\u0438\u0438 \u0438\u0445 \u043F\u0440\u043E\u0431\u043B\u0435\u043C"
+    PersonIdSecond: 3
+  - Id: 12
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u0441\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u0442\u0435\u0441\u044C
+      \u0441 \u043E\u0436\u0438\u0434\u0430\u043D\u0438\u0435\u043C \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u043E\u0432?"
+    VariantFirst: "\u0422\u0435\u0440\u043F\u0435\u043B\u0438\u0432\u043E \u0436\u0434\u0443
+      \u0438 \u0432\u0435\u0440\u044E \u0432 \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
+      \u0438\u0441\u0445\u043E\u0434"
+    PersonIdFirst: 0
+    VariantSecond: "\u041D\u0435\u0440\u0432\u043D\u0438\u0447\u0430\u044E \u0438
+      \u043F\u044B\u0442\u0430\u044E\u0441\u044C \u0440\u0430\u0437\u043C\u044B\u0448\u043B\u044F\u0442\u044C
+      \u043E \u0434\u0440\u0443\u0433\u0438\u0445 \u0432\u0435\u0449\u0430\u0445"
+    PersonIdSecond: 4
+  - Id: 13
+    QuestionText: "\u0412\u0430\u0448\u0435 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u0435
+      \u043A \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u044F\u043C \u0438 \u0438\u043D\u043D\u043E\u0432\u0430\u0446\u0438\u044F\u043C?"
+    VariantFirst: "\u042F \u0433\u043E\u0442\u043E\u0432\u0430 \u0432\u043D\u043E\u0441\u0438\u0442\u044C
+      \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F \u0438 \u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
+      \u043D\u043E\u0432\u044B\u0435 \u043F\u043E\u0434\u0445\u043E\u0434\u044B"
+    PersonIdFirst: 3
+    VariantSecond: "\u041F\u0440\u0435\u0434\u043F\u043E\u0447\u0438\u0442\u0430\u044E
+      \u043F\u0440\u0438\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0442\u044C\u0441\u044F
+      \u0442\u0440\u0430\u0434\u0438\u0446\u0438\u0439"
+    PersonIdSecond: 1
+  - Id: 14
+    QuestionText: "\u041A\u0430\u043A \u0432\u044B \u0432\u043E\u0441\u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442\u0435
+      \u0443\u0441\u043F\u0435\u0445?"
+    VariantFirst: "\u042D\u0442\u043E \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442
+      \u0441\u0432\u043E\u0435\u0439 \u0443\u0441\u0435\u0440\u0434\u043D\u043E\u0439
+      \u0440\u0430\u0431\u043E\u0442\u044B \u0438 \u0441\u043C\u0435\u043B\u043E\u0441\u0442\u0438"
+    PersonIdFirst: 0
+    VariantSecond: "\u042D\u0442\u043E \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435
+      \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438 \u0434\u043E\u0441\u0442\u0438\u0447\u044C
+      \u043F\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0446\u0435\u043B\u0435\u0439"
+    PersonIdSecond: 4
+  - Id: 16
+    QuestionText: "\u041A\u0430\u043A\u043E\u0435 \u0438\u0437 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0445
+      \u043C\u0435\u0441\u0442 \u0432\u0430\u043C \u0431\u043B\u0438\u0436\u0435
+      \u043F\u043E \u0434\u0443\u0445\u0443?"
+    VariantFirst: "\u0422\u0438\u0445\u0438\u0439 \u043F\u0430\u0440\u043A \u0441
+      \u043F\u0440\u0443\u0434\u043E\u043C \u0438 \u0443\u044E\u0442\u043D\u044B\u043C\u0438
+      \u0441\u043A\u0430\u043C\u0435\u0439\u043A\u0430\u043C\u0438"
+    PersonIdFirst: 1
+    VariantSecond: "\u041C\u0443\u0437\u0435\u0439 \u0441\u043E\u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\u043E
+      \u0438\u0441\u043A\u0443\u0441\u0441\u0442\u0432\u0430 \u0441 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C\u0438
+      \u044D\u043A\u0441\u043F\u043E\u043D\u0430\u0442\u0430\u043C\u0438"
+    PersonIdSecond: 3
+  ENQuestionItems:
+  - Id: 0
+    QuestionText: How do you prefer to spend your weekends?
+    VariantFirst: Participate in active sports activities
+    PersonIdFirst: 0
+    VariantSecond: Spend time with a book or doing something creative
+    PersonIdSecond: 3
+  - Id: 1
+    QuestionText: Which communication style is closer to you?
+    VariantFirst: I start conversations easily and try to keep the conversation going
+    PersonIdFirst: 2
+    VariantSecond: I prefer deep conversations with a small group of friends
+    PersonIdSecond: 1
+  - Id: 2
+    QuestionText: How do you react to unpredictable situations?
+    VariantFirst: I adapt quickly and try to find positive aspects in them
+    PersonIdFirst: 0
+    VariantSecond: I prefer to act cautiously and analyse the situation
+    PersonIdSecond: 4
+  - Id: 3
+    QuestionText: Your approach to creativity
+    VariantFirst: I am willing to experiment and look for unusual ideas
+    PersonIdFirst: 3
+    VariantSecond: I think about details and try to stick to tradition
+    PersonIdSecond: 1
+  - Id: 4
+    QuestionText: How do you feel about showing emotions in society?
+    VariantFirst: I express my emotions openly and am not shy
+    PersonIdFirst: 0
+    VariantSecond: I prefer to keep my emotions under control
+    PersonIdSecond: 4
+  - Id: 5
+    QuestionText: How do you feel about new ideas or suggestions?
+    VariantFirst: I am very interested in exploring new things
+    PersonIdFirst: 3
+    VariantSecond: 'I carefully analyse before making a decision. decision '
+    PersonIdSecond: 4
+  - Id: 6
+    QuestionText: How do you react to difficulties?
+    VariantFirst: I overcome them with optimism and energy
+    PersonIdFirst: 0
+    VariantSecond: Reflect on how to find the best way out of the situation
+    PersonIdSecond: 4
+  - Id: 7
+    QuestionText: Which type of entertainment is closer to you?
+    VariantFirst: Extreme activities such as amusement rides or sports
+    PersonIdFirst: 0
+    VariantSecond: Attending exhibitions and cultural events
+    PersonIdSecond: 2
+  - Id: 8
+    QuestionText: How do you respond to difficulties?
+    VariantFirst: I overcome them with optimism and try to find a solution
+    PersonIdFirst: 0
+    VariantSecond: I analyse the situation and find the best solution
+    PersonIdSecond: 4
+  - Id: 9
+    QuestionText: How do you spend time alone?
+    VariantFirst: Creating or thinking
+    PersonIdFirst: 3
+    VariantSecond: Spending time with a book or research
+    PersonIdSecond: 4
+  - Id: 10
+    QuestionText: How do you feel about planning for the future?
+    VariantFirst: I often plan for the future and set goals for myself
+    PersonIdFirst: 4
+    VariantSecond: 'I prefer to live in the moment and not fill my head with plans.
+      with plans '
+    PersonIdSecond: 0
+  - Id: 11
+    QuestionText: What is your approach to helping your friends in difficult times?
+    VariantFirst: I try to support them emotionally and help them
+    PersonIdFirst: 2
+    VariantSecond: Offer creative solutions and actively help solve problems
+    PersonIdSecond: 3
+  - Id: 12
+    QuestionText: How do you deal with waiting for results?
+    VariantFirst: Waiting patiently and believing in a positive outcome
+    PersonIdFirst: 0
+    VariantSecond: Nervous and trying to think about other things
+    PersonIdSecond: 4
+  - Id: 13
+    QuestionText: Your attitude towards tradition and innovation?
+    VariantFirst: I am willing to make changes and try new approaches
+    PersonIdFirst: 3
+    VariantSecond: I prefer to stick to tradition and proven methods
+    PersonIdSecond: 1
+  - Id: 14
+    QuestionText: How do you perceive success?
+    VariantFirst: I see it as a result of my hard work and courage
+    PersonIdFirst: 0
+    VariantSecond: "\u0412\u0438\u0436\u0443 \u0432 \u043D\u0435\u043C \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435
+      \u0441\u0432\u043E\u0435\u0439 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438
+      \u0434\u043E\u0441\u0442\u0438\u0447\u044C \u043F\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445
+      \u0446\u0435\u043B\u0435\u0439"
+    PersonIdSecond: 4
+  - Id: 16
+    QuestionText: Which of the following places is closer to your heart?
+    VariantFirst: "\u0422\u0438\u0445\u0438\u0439 \u043F\u0430\u0440\u043A \u0441
+      \u043F\u0440\u0443\u0434\u043E\u043C \u0438 \u0443\u044E\u0442\u043D\u044B\u043C\u0438
+      \u0441\u043A\u0430\u043C\u0435\u0439\u043A\u0430\u043C\u0438"
+    PersonIdFirst: 1
+    VariantSecond: Museum of Modern Art with interesting exhibits
+    PersonIdSecond: 3
+  TRQuestionItems:
+  - Id: 0
+    QuestionText: "Hafta sonlar\u0131n\u0131z\u0131 nas\u0131l ge\xE7irmeyi tercih
+      edersiniz?"
+    VariantFirst: "Aktif spor aktivitelerine kat\u0131l\u0131n"
+    PersonIdFirst: 0
+    VariantSecond: "Bir kitapla veya yarat\u0131c\u0131 bir \u015Feyler yaparak vakit
+      ge\xE7irin"
+    PersonIdSecond: 3
+  - Id: 1
+    QuestionText: "Hangi ileti\u015Fim tarz\u0131 size daha yak\u0131n?"
+    VariantFirst: "Kolayca sohbete ba\u015Fl\u0131yorum ve sohbeti s\xFCrd\xFCrmeye
+      \xE7al\u0131\u015F\u0131yorum"
+    PersonIdFirst: 2
+    VariantSecond: "K\xFC\xE7\xFCk bir arkada\u015F grubuyla derin sohbetleri tercih
+      ederim"
+    PersonIdSecond: 1
+  - Id: 2
+    QuestionText: "\xD6ng\xF6r\xFClemeyen durumlara nas\u0131l tepki verirsiniz?"
+    VariantFirst: "\xC7abuk adapte oluyorum ve olumlu y\xF6nleri bulmaya \xE7al\u0131\u015F\u0131yorum"
+    PersonIdFirst: 0
+    VariantSecond: "Tedbirli davran\u0131p durumu analiz etmeyi tercih ederim"
+    PersonIdSecond: 4
+  - Id: 3
+    QuestionText: "Yarat\u0131c\u0131l\u0131\u011Fa yakla\u015F\u0131m\u0131n\u0131z"
+    VariantFirst: "Denemeye ve al\u0131\u015F\u0131lmad\u0131k fikirler aramaya haz\u0131r\u0131m"
+    PersonIdFirst: 3
+    VariantSecond: "Ayr\u0131nt\u0131lar\u0131 d\xFC\u015F\xFCn\xFCr\xFCm ve gelene\u011Fe
+      ba\u011Fl\u0131 kalmaya \xE7al\u0131\u015F\u0131r\u0131m"
+    PersonIdSecond: 1
+  - Id: 4
+    QuestionText: "Toplumda duygular\u0131n\u0131z\u0131 g\xF6sterme konusunda ne
+      d\xFC\u015F\xFCn\xFCyorsunuz?"
+    VariantFirst: "Duygular\u0131m\u0131 a\xE7\u0131k\xE7a ifade ederim ve utanga\xE7
+      de\u011Filim"
+    PersonIdFirst: 0
+    VariantSecond: "Duygular\u0131m\u0131 kontrol alt\u0131nda tutmay\u0131 tercih
+      ederim"
+    PersonIdSecond: 4
+  - Id: 5
+    QuestionText: "Yeni fikirler veya \xF6neriler hakk\u0131nda ne d\xFC\u015F\xFCn\xFCyorsunuz?"
+    VariantFirst: "Yeni \u015Feyler ke\u015Ffetmeye \xE7ok ilgim var"
+    PersonIdFirst: 3
+    VariantSecond: "Bir karar vermeden \xF6nce dikkatlice analiz ederim"
+    PersonIdSecond: 4
+  - Id: 6
+    QuestionText: "Zorluklara nas\u0131l tepki verirsiniz?"
+    VariantFirst: "\u0130yimserlik ve enerjiyle bunlar\u0131n \xFCstesinden geliyorum"
+    PersonIdFirst: 0
+    VariantSecond: "Bu durumdan \xE7\u0131kman\u0131n en iyi yolunu nas\u0131l bulaca\u011F\u0131n\u0131z\u0131
+      d\xFC\u015F\xFCn\xFCn"
+    PersonIdSecond: 4
+  - Id: 7
+    QuestionText: "Hangi e\u011Flence t\xFCr\xFC size daha yak\u0131n?"
+    VariantFirst: "E\u011Flence gezileri veya spor gibi ekstrem aktiviteler"
+    PersonIdFirst: 0
+    VariantSecond: "Sergilere ve k\xFClt\xFCrel etkinliklere kat\u0131lmak"
+    PersonIdSecond: 2
+  - Id: 8
+    QuestionText: "Zorluklara nas\u0131l tepki verirsiniz?"
+    VariantFirst: "Bunlar\u0131n \xFCstesinden geliyorum ve bir \xE7\xF6z\xFCm bulmaya
+      \xE7al\u0131\u015F\u0131yorum"
+    PersonIdFirst: 0
+    VariantSecond: "Durumu analiz edip en iyi \xE7\xF6z\xFCm\xFC bulurum"
+    PersonIdSecond: 4
+  - Id: 9
+    QuestionText: "Yaln\u0131z vakit nas\u0131l ge\xE7irilir?"
+    VariantFirst: "Yaratmak veya d\xFC\u015F\xFCnmek"
+    PersonIdFirst: 3
+    VariantSecond: "Bir kitapla veya ara\u015Ft\u0131rmayla vakit ge\xE7irmek"
+    PersonIdSecond: 4
+  - Id: 10
+    QuestionText: "Gelece\u011Fe dair planlama yapma konusunda ne d\xFC\u015F\xFCn\xFCyorsunuz?"
+    VariantFirst: "S\u0131k s\u0131k gelecek i\xE7in plan yapar\u0131m ve kendime
+      hedefler koyar\u0131m"
+    PersonIdFirst: 4
+    VariantSecond: "An\u0131 ya\u015Famay\u0131 ve kafam\u0131 planlarla doldurmamay\u0131
+      tercih ederim. planlarla "
+    PersonIdSecond: 0
+  - Id: 11
+    QuestionText: "Zor zamanlarda arkada\u015Flar\u0131n\u0131za yard\u0131m etme
+      konusundaki yakla\u015F\u0131m\u0131n\u0131z nedir?"
+    VariantFirst: "Onlar\u0131 duygusal olarak desteklemeye ve yard\u0131m etmeye
+      \xE7al\u0131\u015F\u0131yorum"
+    PersonIdFirst: 2
+    VariantSecond: "\xC7\xF6z\xFCmler sunmak ve sorunlar\u0131n \xE7\xF6z\xFClmesine
+      yard\u0131mc\u0131 olmak"
+    PersonIdSecond: 3
+  - Id: 12
+    QuestionText: "Sonu\xE7lar\u0131 beklerken nas\u0131l ba\u015Fa \xE7\u0131k\u0131yorsunuz?"
+    VariantFirst: "Sab\u0131rla beklemek ve olumlu sonuca inanmak"
+    PersonIdFirst: 0
+    VariantSecond: "Gergin ve ba\u015Fka \u015Feyler d\xFC\u015F\xFCnmeye \xE7al\u0131\u015F\u0131yorum"
+    PersonIdSecond: 4
+  - Id: 13
+    QuestionText: "Gelene\u011Fe ve yenili\u011Fe kar\u015F\u0131 tavr\u0131n\u0131z?"
+    VariantFirst: "De\u011Fi\u015Fiklik yapmaya ve yeni yakla\u015F\u0131mlar denemeye
+      haz\u0131r\u0131m"
+    PersonIdFirst: 3
+    VariantSecond: "Gelene\u011Fe ve kan\u0131tlanm\u0131\u015F y\xF6ntemlere ba\u011Fl\u0131
+      kalmay\u0131 tercih ederim"
+    PersonIdSecond: 1
+  - Id: 14
+    QuestionText: "Ba\u015Far\u0131y\u0131 nas\u0131l alg\u0131l\u0131yorsunuz?"
+    VariantFirst: "Bunu \xE7ok \xE7al\u0131\u015Fmam\u0131n ve cesaretimin bir sonucu
+      olarak g\xF6r\xFCyorum"
+    PersonIdFirst: 0
+    VariantSecond: "Onda hedeflerine ula\u015Fma yetene\u011Fi g\xF6r\xFCyorum."
+    PersonIdSecond: 4
+  - Id: 16
+    QuestionText: "A\u015Fa\u011F\u0131daki yerlerden hangisi kalbinize daha yak\u0131n?"
+    VariantFirst: "G\xF6leti ve rahat banklar\u0131 olan sessiz park"
+    PersonIdFirst: 1
+    VariantSecond: "\u0130lgin\xE7 sergileriyle Modern Sanat M\xFCzesi"
+    PersonIdSecond: 3

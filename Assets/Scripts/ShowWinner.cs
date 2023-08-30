@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 
 public class ShowWinner : MonoBehaviour
@@ -37,13 +38,15 @@ public class ShowWinner : MonoBehaviour
             _indexOfGirl = 0;
             objectsList[_indexOfGirl].SetActive(true);
         }
+
+        
+        YandexGame.SwitchLanguage(YandexGame.EnvironmentData.language);
     }
 
     private void UndressButton()
     {
         try
         {
-            // вкл рекламу и вырубить звук , затем включить (если был включен)
             dressImages[_indexOfGirl].enabled = false;
         }
         catch (Exception e)

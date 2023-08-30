@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using YG;
 
 public class GameController : MonoBehaviour
 {
@@ -23,13 +24,29 @@ public class GameController : MonoBehaviour
         _questionItems.Clear();
         _startGamePG.SetActive(true);
         _endGamePG.SetActive(false);
-        foreach (var questionItem in _questionsList.QuestionItems)
+        foreach (var questionItem in GetLocalizationDataList())
         {
             _questionItems.Add(questionItem);
         }
         
         Shuffle(_questionItems);
         CreateNewUI();
+    }
+
+    private List<QuestionItem> GetLocalizationDataList()
+    {
+        Debug.Log((YandexGame.EnvironmentData.language.ToString()));
+        YandexGame.EnvironmentData.language = "tr";
+        if (YandexGame.EnvironmentData.language.Equals("en"))
+        {
+            return _questionsList.ENQuestionItems;
+        }
+        else if (YandexGame.EnvironmentData.language.Equals("tr"))
+        {
+            return _questionsList.TRQuestionItems;
+        }
+        
+        return _questionsList.QuestionItems;
     }
 
     private void CreateNewUI()
