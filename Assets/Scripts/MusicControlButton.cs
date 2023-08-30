@@ -15,6 +15,7 @@ public class MusicControlButton : MonoBehaviour
     
     private bool _isFadeInActive = false;
     private bool _isFadeOutActive = false;
+    private bool _tempMusicSettings;
     void Start()
     {
         _startVolume = _backMusic.volume;
@@ -56,6 +57,8 @@ public class MusicControlButton : MonoBehaviour
             audioSource.volume += 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
+
+        _tempMusicSettings = true;
         _isFadeInActive = false;
     }
 
@@ -68,6 +71,30 @@ public class MusicControlButton : MonoBehaviour
             audioSource.volume -= 0.01f;
             yield return new WaitForSeconds(0.01f);
         }
+
+        _tempMusicSettings = false;
         _isFadeOutActive = false;
+    }
+
+    public void OffMusicOnAds()
+    {
+        StopAllCoroutines();
+        _isFadeInActive = false;
+        _isFadeOutActive = false;
+        if(!_tempMusicSettings)
+            return;
+        else
+            StartCoroutine(MusicFadeOut(_backMusic));
+    }
+
+    public void OnMusicAds()
+    {
+        StopAllCoroutines();
+        _isFadeInActive = false;
+        _isFadeOutActive = false;
+        if(!_tempMusicSettings)
+            return;
+        else
+            StartCoroutine(MusicFadeIn(_backMusic));
     }
 }

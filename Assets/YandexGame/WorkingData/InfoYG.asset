@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa747916aa66674d96ea40ca8a480b2, type: 3}
   m_Name: InfoYG
   m_EditorClassIdentifier: 
-  scopes: 1
+  scopes: 0
   playerPhotoSize: 0
-  leaderboardEnable: 1
-  saveCloud: 1
+  leaderboardEnable: 0
+  saveCloud: 0
   flush: 0
   localSaveSync: 1
   saveCloudInterval: 5
@@ -63,9 +63,24 @@ MonoBehaviour:
     hi: 0
   fonts:
     defaultFont: []
-    ru: []
-    en: []
-    tr: []
+    ru:
+    - {fileID: 12800000, guid: 3cf8f75e039e4a54ab3c4a2ea4c1fe4a, type: 3}
+    - {fileID: 12800000, guid: 0ee6d7ea436fe3f41ab730ca6e390064, type: 3}
+    - {fileID: 12800000, guid: 889ce583ba92854439d80446d8c00637, type: 3}
+    - {fileID: 12800000, guid: 65fc26b60991d7d42a71775d5084865b, type: 3}
+    - {fileID: 12800000, guid: 31c9731c08ec3dd42bbd6d5ed4d912c2, type: 3}
+    en:
+    - {fileID: 12800000, guid: 3cf8f75e039e4a54ab3c4a2ea4c1fe4a, type: 3}
+    - {fileID: 12800000, guid: 0ee6d7ea436fe3f41ab730ca6e390064, type: 3}
+    - {fileID: 12800000, guid: 889ce583ba92854439d80446d8c00637, type: 3}
+    - {fileID: 12800000, guid: 65fc26b60991d7d42a71775d5084865b, type: 3}
+    - {fileID: 12800000, guid: 31c9731c08ec3dd42bbd6d5ed4d912c2, type: 3}
+    tr:
+    - {fileID: 12800000, guid: 3cf8f75e039e4a54ab3c4a2ea4c1fe4a, type: 3}
+    - {fileID: 12800000, guid: 0ee6d7ea436fe3f41ab730ca6e390064, type: 3}
+    - {fileID: 12800000, guid: 889ce583ba92854439d80446d8c00637, type: 3}
+    - {fileID: 12800000, guid: 65fc26b60991d7d42a71775d5084865b, type: 3}
+    - {fileID: 12800000, guid: 31c9731c08ec3dd42bbd6d5ed4d912c2, type: 3}
     az: []
     be: []
     he: []
@@ -118,7 +133,7 @@ MonoBehaviour:
     it: 
     de: 
     hi: 
-  debug: 1
+  debug: 0
   archivingBuild: 1
   bakcgroundImage: 2
   pixelRatioEnable: 0

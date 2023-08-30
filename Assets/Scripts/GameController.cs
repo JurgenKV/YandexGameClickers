@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -10,13 +11,18 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private QuestionsList _questionsList;
     [SerializeField] private QuestionUI _questionUis;
-    [SerializeField] private GameObject _gamePlayground;
+    [SerializeField] private GameObject _startGamePG;
+    [SerializeField] private GameObject _endGamePG;
+    [SerializeField] private TMP_Text _questionCount;
+    [SerializeField] private ShowWinner _showWinner;
+
     [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
     private void Start()
     {
         _questionsList.NewGame();
         _questionItems.Clear();
-        
+        _startGamePG.SetActive(true);
+        _endGamePG.SetActive(false);
         foreach (var questionItem in _questionsList.QuestionItems)
         {
             _questionItems.Add(questionItem);
@@ -29,7 +35,7 @@ public class GameController : MonoBehaviour
     private void CreateNewUI()
     {
         _questionUis.CreateUI(_questionItems.First());
-
+        ChangeCountOfQuestions();
     }
 
     public void HandleButtonVariantFirst(QuestionItem questionItem)
@@ -63,7 +69,9 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GameCompleted" + GetIdWinGirl());
-        _gamePlayground.SetActive(false);
+        _startGamePG.SetActive(false);
+        _endGamePG.SetActive(true);
+        _showWinner.SetWinner();
     }
 
     private int GetIdWinGirl()
@@ -84,5 +92,10 @@ public class GameController : MonoBehaviour
             n--;
             (list[k], list[n]) = (list[n], list[k]);
         }
+    }
+
+    private void ChangeCountOfQuestions()
+    {
+        _questionCount.text = $"{_questionsList.QuestionItems.Count - _questionItems.Count + 1}/{_questionsList.QuestionItems.Count}";
     }
 }
