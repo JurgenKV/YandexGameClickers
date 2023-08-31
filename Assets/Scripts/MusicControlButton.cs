@@ -78,25 +78,25 @@ public class MusicControlButton : MonoBehaviour
 
     public void OffMusicOnAds()
     {
-        StopAllCoroutines();
-        _isFadeInActive = false;
-        _isFadeOutActive = false;
-        
-        if(!_tempMusicSettings)
-            return;
-        else
-            StartCoroutine(MusicFadeOut(_backMusic));
+        // StopAllCoroutines();
+        // _isFadeInActive = false;
+        // _isFadeOutActive = false;
+        //
+        // if(!_tempMusicSettings)
+        //     return;
+        // else
+        //     StartCoroutine(MusicFadeOut(_backMusic));
     }
 
     public void OnMusicAds()
     {
-        StopAllCoroutines();
-        _isFadeInActive = false;
-        _isFadeOutActive = false;
-        
-        if(!_tempMusicSettings)
-            return;
-        else
-            StartCoroutine(MusicFadeIn(_backMusic));
+        // StopAllCoroutines();
+        // _isFadeInActive = false;
+        // _isFadeOutActive = false;
+        //
+        // if(!_tempMusicSettings)
+        //     return;
+        // else
+        //     StartCoroutine(MusicFadeIn(_backMusic));
     }
 }

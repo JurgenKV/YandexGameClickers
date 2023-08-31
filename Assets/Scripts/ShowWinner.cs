@@ -10,7 +10,7 @@ public class ShowWinner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> objectsList;
     [SerializeField] private List<Image> dressImages;
-    
+    [SerializeField] private GameObject ADSButton;
     [SerializeField] private QuestionsList QuestionsList;
     private int _indexOfGirl;
     
@@ -43,11 +43,14 @@ public class ShowWinner : MonoBehaviour
         YandexGame.SwitchLanguage(YandexGame.EnvironmentData.language);
     }
 
-    private void UndressButton()
+    public void UndressButton()
     {
         try
         {
+            YandexGame.RewVideoShow(0);
             dressImages[_indexOfGirl].enabled = false;
+            ADSButton.SetActive(false);
+            
         }
         catch (Exception e)
         {
