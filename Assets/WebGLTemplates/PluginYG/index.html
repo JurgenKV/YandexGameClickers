@@ -93,9 +93,10 @@
 
 </head>
 <body class="{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}">
-<div id="unity-container" class="unity-desktop" style = "position: absolute; width: 100%; height: 100%; left: 0%; top: 0%;">>
-    <canvas id="unity-canvas" style = "position: absolute; width: 100%; height: 100%;"></canvas>
+<div id="unity-container" style="position: absolute; width: 100%; height: 100%">
+  <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} style="width: 100%; height: 100%"></canvas>
 </div>
+
 <div id="loading-cover" style="display:none;">
     <div id="unity-loading-bar">
         <div id="unity-logo"><img src="logo.png"></div>
@@ -105,7 +106,7 @@
         <div class="spinner"></div>
     </div>
 </div>
-
+</div>
 #if BANNER_DYNAMIC_1
 <div id="RTB1">
     <script>

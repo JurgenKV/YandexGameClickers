@@ -28,50 +28,54 @@ public class MusicControlButton : MonoBehaviour
     {
         if (change.isOn)
         {
-            if(_isFadeOutActive || _isFadeInActive)
-            {
-                change.isOn = false;
-                return;
-            }
+            // if(_isFadeOutActive || _isFadeInActive)
+            // {
+            //     change.isOn = false;
+            //     return;
+            // }
             
-            StartCoroutine(MusicFadeIn(_backMusic));
+            //StartCoroutine(MusicFadeIn(_backMusic));
+            Debug.Log("On Music");
+            MusicFadeIn(_backMusic);
         }
         else
         {
-            if(_isFadeOutActive || _isFadeInActive)
-            {
-                change.isOn = true;
-                return;
-            }
+            // if(_isFadeOutActive || _isFadeInActive)
+            // {
+            //     change.isOn = true;
+            //     return;
+            // }
             
-            StartCoroutine(MusicFadeOut(_backMusic));
+            //StartCoroutine();
+            Debug.Log("Off Music");
+            MusicFadeOut(_backMusic);
         }
     }
 
-    private IEnumerator MusicFadeIn(AudioSource audioSource)
+    private void MusicFadeIn(AudioSource audioSource)
     {
         _isFadeInActive = true;
         _image.sprite = _onImage;
-        while (audioSource.volume < _startVolume)
-        {
-            audioSource.volume += 0.01f;
-            yield return new WaitForSeconds(0.01f);
-        }
-
+        // while (audioSource.volume < _startVolume)
+        // {
+        //     audioSource.volume += 0.01f;
+        //     yield return new WaitForSeconds(0.01f);
+        // }
+        audioSource.mute = false;
         _tempMusicSettings = true;
         _isFadeInActive = false;
     }
 
-    private IEnumerator MusicFadeOut(AudioSource audioSource)
+    private void MusicFadeOut(AudioSource audioSource)
     {
-        _isFadeOutActive = true;
+        //_isFadeOutActive = true;
         _image.sprite = _offImage;
-        while (audioSource.volume > 0)
-        {
-            audioSource.volume -= 0.01f;
-            yield return new WaitForSeconds(0.01f);
-        }
-
+        // while (audioSource.volume > 0)
+        // {
+        //     audioSource.volume -= 0.01f;
+        //     yield return new WaitForSeconds(0.01f);
+        // }
+        audioSource.mute = true;
         _tempMusicSettings = false;
         _isFadeOutActive = false;
     }
