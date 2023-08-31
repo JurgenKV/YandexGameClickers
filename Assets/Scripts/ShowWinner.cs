@@ -19,7 +19,7 @@ public class ShowWinner : MonoBehaviour
         try
         {
             int maxScore = QuestionsList.Persons.Max(i => i.Score);
-            int _indexOfGirl = QuestionsList.Persons.FindIndex(i => i.Score.Equals(maxScore));
+            _indexOfGirl = QuestionsList.Persons.FindIndex(i => i.Score.Equals(maxScore));
             foreach (GameObject o in objectsList)
             {
                 o.SetActive(false);
