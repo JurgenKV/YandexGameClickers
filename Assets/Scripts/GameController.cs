@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     private List<QuestionItem> GetLocalizationDataList()
     {
         Debug.Log((YandexGame.EnvironmentData.language.ToString()));
-        YandexGame.EnvironmentData.language = "tr";
+        //YandexGame.EnvironmentData.language = "tr";
         if (YandexGame.EnvironmentData.language.Equals("en"))
         {
             return _questionsList.ENQuestionItems;

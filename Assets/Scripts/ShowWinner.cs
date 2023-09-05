@@ -12,6 +12,8 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] private List<Image> dressImages;
     [SerializeField] private GameObject ADSButton;
     [SerializeField] private QuestionsList QuestionsList;
+    [SerializeField] private List<GameObject> _objectsToOff;
+    [SerializeField] private List<GameObject> _clicerObjectsToOn;
     private int _indexOfGirl;
     
     public void SetWinner()
@@ -47,14 +49,28 @@ public class ShowWinner : MonoBehaviour
     {
         try
         {
-            YandexGame.RewVideoShow(0);
             dressImages[_indexOfGirl].enabled = false;
             ADSButton.SetActive(false);
-            
+            YandexGame.RewVideoShow(0);
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
+            dressImages[_indexOfGirl].enabled = false;
+            ADSButton.SetActive(false);
+        }
+    }
+
+    public void ToDatePart()
+    {
+        foreach (GameObject o in _objectsToOff)
+        {
+            o.SetActive(false);
+        }
+
+        foreach (GameObject o in _clicerObjectsToOn)
+        {
+            o.SetActive(true);
         }
     }
 }
