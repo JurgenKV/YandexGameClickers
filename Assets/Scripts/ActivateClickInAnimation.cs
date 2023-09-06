@@ -11,6 +11,7 @@ public class ActivateClickInAnimation : MonoBehaviour
     private Animator _animator;
     private Vector3 _currentPosition;
     private static readonly int Scale = Animator.StringToHash("Scale");
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -18,24 +19,26 @@ public class ActivateClickInAnimation : MonoBehaviour
 
     public void ClickEvent()
     {
-        if(_clickerScore == null)
+        if (_clickerScore == null)
             return;
-        
-        if(gameObject.activeSelf)
+
+        if (gameObject.activeSelf)
             _clickerScore.Click();
     }
 
     public void PlayAnim()
     {
-        if(_animator == null)
+        if (_animator == null)
             return;
-        
-        if(_clickerScore == null)
+
+        if (_clickerScore == null)
             return;
-        
-        if(!_clickerScore.gameObject.activeSelf)
+
+        if (!_clickerScore.gameObject.activeSelf)
             return;
-        Instantiate(_clickerScore.ParticleSystems[Random.Range(0,_clickerScore.ParticleSystems.Count)],_currentPosition, Quaternion.identity );
+        Instantiate(_clickerScore.ParticleSystems[Random.Range(0, _clickerScore.ParticleSystems.Count)],
+            _currentPosition, Quaternion.identity);
+        //tempObj.AddComponent<ParticleTimer>();
         _animator.SetTrigger(Scale);
     }
 
@@ -53,7 +56,7 @@ public class ActivateClickInAnimation : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            Vector2 inputPosition = Input.touchCount > 0 ? Input.GetTouch(0).position : (Vector2)Input.mousePosition;
+            Vector2 inputPosition = Input.touchCount > 0 ? Input.GetTouch(0).position : (Vector2) Input.mousePosition;
             _currentPosition = Camera.main.ScreenToWorldPoint(new Vector3(inputPosition.x, inputPosition.y, 1));
         }
     }

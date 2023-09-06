@@ -12,6 +12,6 @@
 
         private void Delete()
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }

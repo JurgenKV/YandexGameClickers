@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7800487929510106989}
   - component: {fileID: -3587189853700512025}
   - component: {fileID: 5232509780980939793}
-  - component: {fileID: 8701135054413141584}
+  - component: {fileID: 6101566574028539571}
   m_Layer: 0
   m_Name: Particle 3
   m_TagString: Untagged
@@ -4924,7 +4924,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
---- !u!114 &8701135054413141584
+--- !u!114 &6101566574028539571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
