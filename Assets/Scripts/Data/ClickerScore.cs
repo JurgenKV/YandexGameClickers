@@ -12,15 +12,15 @@ public class ClickerScore : MonoBehaviour
 {
     [SerializeField] private TMP_Text clicksUI;
     [SerializeField] private Button _buttonX2;
-    
     [SerializeField] private Button _buttonUpdate;
     
     public long ClicksCount = 0;
     private bool _coroutineX2CLicks = false;
     public int ClickMultiplayer = 1;
+
+    [SerializeField] public List<GameObject> ParticleSystems;
+    //[SerializeField] private List<Animator> _animators;
     
-    [SerializeField] private List<Animator> _animators;
-    private static readonly int Scale = Animator.StringToHash("Scale");
 
     private void Update()
     {
@@ -39,11 +39,6 @@ public class ClickerScore : MonoBehaviour
         else
         {
             ClicksCount += 1 * ClickMultiplayer;
-        }
-
-        foreach (Animator animator in _animators)
-        {
-            animator.SetTrigger(Scale);
         }
     }
 
