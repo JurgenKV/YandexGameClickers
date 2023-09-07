@@ -28,7 +28,15 @@ public class GameController : MonoBehaviour
         {
             _questionItems.Add(questionItem);
         }
-        YandexGame.FullscreenShow();
+
+        try
+        {
+            YandexGame.FullscreenShow();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
         Shuffle(_questionItems);
         CreateNewUI();
     }
@@ -37,6 +45,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log((YandexGame.EnvironmentData.language.ToString()));
         //YandexGame.EnvironmentData.language = "tr";
+        //YandexGame.EnvironmentData.language = "en";
         if (YandexGame.EnvironmentData.language.Equals("en"))
         {
             return _questionsList.ENQuestionItems;
