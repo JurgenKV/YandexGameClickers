@@ -16,19 +16,62 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _endGamePG;
     [SerializeField] private TMP_Text _questionCount;
     [SerializeField] private ShowWinner _showWinner;
+    [SerializeField] private ClickerScore _clickerScore;
+    [SerializeField] private GameObject _startDateButton;
+    [SerializeField] private GameObject _clickerObject;
+    [SerializeField] private ChangeBG _changeBg;
 
     [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
     private void Start()
     {
-        _questionsList.NewGame();
-        _questionItems.Clear();
-        _startGamePG.SetActive(true);
-        _endGamePG.SetActive(false);
-        foreach (var questionItem in GetLocalizationDataList())
+        if (!YandexGame.savesData.IsTestCompleted)
         {
-            _questionItems.Add(questionItem);
+            _questionsList.NewGame();
+            _questionItems.Clear();
+            _startGamePG.SetActive(true);
+            _endGamePG.SetActive(false);
+            foreach (var questionItem in GetLocalizationDataList())
+            {
+                _questionItems.Add(questionItem);
+            }
+        
+            Shuffle(_questionItems);
+            CreateNewUI();
+            ShowFullAds();
+            return;
         }
 
+        if (YandexGame.savesData.IsTestCompleted & !YandexGame.savesData.IsDateStarted)
+        {
+            _startGamePG.SetActive(false);
+            _endGamePG.SetActive(true);
+            _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
+            ShowFullAds();
+            return;
+        }
+        
+        if (YandexGame.savesData.IsTestCompleted & YandexGame.savesData.IsDateStarted)
+        {
+            _startGamePG.SetActive(false);
+            _endGamePG.SetActive(true);
+            _startDateButton.SetActive(false);
+            _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
+            _clickerObject.SetActive(true);
+            _showWinner.ToDatePart();
+            _showWinner.UndressGirlIfSave(YandexGame.savesData.GirlNumber);
+            _clickerScore.ClicksCount = YandexGame.savesData.Score;
+            _clickerScore.ClickMultiplayer = YandexGame.savesData.ScoreMultiplayer;
+            ShowFullAds();
+            return;
+        }
+        
+        
+        
+        
+    }
+
+    private void ShowFullAds()
+    {
         try
         {
             YandexGame.FullscreenShow();
@@ -37,8 +80,6 @@ public class GameController : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-        Shuffle(_questionItems);
-        CreateNewUI();
     }
 
     private List<QuestionItem> GetLocalizationDataList()
@@ -95,6 +136,10 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GameCompleted" + GetIdWinGirl());
+        YandexGame.savesData.GirlNumber = GetIdWinGirl();
+        YandexGame.savesData.IsTestCompleted = true;
+        YandexGame.SaveProgress();
+        
         _startGamePG.SetActive(false);
         _endGamePG.SetActive(true);
         _showWinner.SetWinner();
@@ -102,7 +147,8 @@ public class GameController : MonoBehaviour
 
     private int GetIdWinGirl()
     {
-        return _questionsList.Persons.Max(i => i.Score);
+        int maxSCore = _questionsList.Persons.Max(i => i.Score);
+        return _questionsList.Persons.FindIndex(i => i.Score == maxSCore);
     }
 
     private static void Shuffle<T>(IList<T> list)
@@ -123,5 +169,10 @@ public class GameController : MonoBehaviour
     private void ChangeCountOfQuestions()
     {
         _questionCount.text = $"{_questionsList.QuestionItems.Count - _questionItems.Count + 1}/{_questionsList.QuestionItems.Count}";
+    }
+
+    public static void SendMetric(string name)
+    {
+        //YandexMetrica.Send(name);
     }
 }

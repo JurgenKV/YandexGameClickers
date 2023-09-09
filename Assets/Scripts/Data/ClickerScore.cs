@@ -13,14 +13,13 @@ public class ClickerScore : MonoBehaviour
     [SerializeField] private TMP_Text clicksUI;
     [SerializeField] private Button _buttonX2;
     [SerializeField] private Button _buttonUpdate;
-    
+
     public long ClicksCount = 0;
     private bool _coroutineX2CLicks = false;
     public int ClickMultiplayer = 1;
 
     [SerializeField] public List<GameObject> ParticleSystems;
     //[SerializeField] private List<Animator> _animators;
-    
 
     private void Update()
     {
@@ -40,6 +39,9 @@ public class ClickerScore : MonoBehaviour
         {
             ClicksCount += 1 * ClickMultiplayer;
         }
+
+        YandexGame.savesData.Score = ClicksCount;
+        YandexGame.SaveProgress();
     }
 
     public void VideoClickX2()
@@ -57,7 +59,7 @@ public class ClickerScore : MonoBehaviour
     {
         _coroutineX2CLicks = true;
         _buttonX2.interactable = false;
-        yield return new WaitForSeconds(80);
+        yield return new WaitForSeconds(60);
         _buttonX2.interactable = true;
         _coroutineX2CLicks = false;
     }
@@ -70,6 +72,8 @@ public class ClickerScore : MonoBehaviour
         ClicksCount -= cost;
         
         ClickMultiplayer++;
+        YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        YandexGame.SaveProgress();
     }
     
     public void ADSUpgradeClick()
@@ -84,12 +88,13 @@ public class ClickerScore : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-        
+        YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        YandexGame.SaveProgress();
     }
     IEnumerator TimerUpdateCoroutine()
     {
         _buttonUpdate.interactable = false;
-        yield return new WaitForSeconds(80);
+        yield return new WaitForSeconds(60);
         _buttonUpdate.interactable = true;
     }
 }

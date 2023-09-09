@@ -16,6 +16,14 @@ namespace YG
         public string newPlayerName = "Hello!";
         public bool[] openLevels = new bool[3];
 
+        public long Score = 0;
+        public int ScoreMultiplayer = 1;
+        public int BgNum = -1;
+        public int GirlNumber = 0;
+        public bool IsTestCompleted = false;
+        public bool IsDateStarted = false;
+        public bool IsGirlUndressed = false;
+        
         // Ваши сохранения
 
         // ...

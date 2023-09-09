@@ -16,30 +16,43 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] private List<GameObject> _clicerObjectsToOn;
     private int _indexOfGirl;
     
-    public void SetWinner()
+    public void SetWinner(int girlNum = -1)
     {
-        try
+        Debug.Log(YandexGame.savesData.GirlNumber);
+        if (girlNum == -1)
         {
-            int maxScore = QuestionsList.Persons.Max(i => i.Score);
-            _indexOfGirl = QuestionsList.Persons.FindIndex(i => i.Score.Equals(maxScore));
-            foreach (GameObject o in objectsList)
+            try
             {
-                o.SetActive(false);
-            }
-            objectsList[_indexOfGirl].SetActive(true);
+                int maxScore = QuestionsList.Persons.Max(i => i.Score);
+                _indexOfGirl = QuestionsList.Persons.FindIndex(i => i.Score.Equals(maxScore));
+                foreach (GameObject o in objectsList)
+                {
+                    o.SetActive(false);
+                }
+                objectsList[_indexOfGirl].SetActive(true);
             
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                foreach (GameObject o in objectsList)
+                {
+                    o.SetActive(false);
+                }
+
+                _indexOfGirl = 0;
+                objectsList[_indexOfGirl].SetActive(true);
+            }
         }
-        catch (Exception e)
+        else
         {
-            Console.WriteLine(e);
             foreach (GameObject o in objectsList)
             {
                 o.SetActive(false);
             }
-
-            _indexOfGirl = 0;
-            objectsList[_indexOfGirl].SetActive(true);
+            objectsList[girlNum].SetActive(true);
         }
+        
 
         
         YandexGame.SwitchLanguage(YandexGame.EnvironmentData.language);
@@ -59,6 +72,27 @@ public class ShowWinner : MonoBehaviour
             dressImages[_indexOfGirl].enabled = false;
             ADSButton.SetActive(false);
         }
+
+        YandexGame.savesData.IsGirlUndressed = true;
+        YandexGame.SaveProgress();
+    }
+
+    public void UndressGirlIfSave(int girlNum = -1)
+    {
+        try
+        {
+            if (YandexGame.savesData.IsGirlUndressed)
+            {
+                dressImages[girlNum].enabled = false;
+                ADSButton.SetActive(false);
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
+        
     }
 
     public void ToDatePart()
@@ -72,5 +106,8 @@ public class ShowWinner : MonoBehaviour
         {
             o.SetActive(true);
         }
+
+        YandexGame.savesData.IsDateStarted = true;
+        YandexGame.SaveProgress();
     }
 }

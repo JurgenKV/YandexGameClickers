@@ -21,12 +21,13 @@ public class ChangeBG : MonoBehaviour
     private int _currentBgIndex = 0;
     private void Start()
     {
-        _images = bgParent.GetComponentsInChildren<Image>().ToList();
         foreach (Image image in _images)
         {
             image.enabled = false;
         }
         _defaultImage.enabled = true;
+
+        LoadBg(YandexGame.savesData.BgNum);
     }
 
     public void OnBgChange()
@@ -46,6 +47,33 @@ public class ChangeBG : MonoBehaviour
         } while (_currentBgIndex == index);
         _currentBgIndex = index;
         _images[_currentBgIndex].enabled = true;
+
+        YandexGame.savesData.BgNum = _currentBgIndex;
+        YandexGame.SaveProgress();
+    }
+
+    public void LoadBg(int bgNum)
+    {
+        Debug.Log(bgNum);
+        if (bgNum == -1)
+        {
+            foreach (Image image in _images)
+            {
+                image.enabled = false;
+            }
+            _defaultImage.enabled = true;
+        }
+        else
+        {
+            foreach (Image image in _images)
+            {
+                image.enabled = false;
+            }
+            _defaultImage.enabled = false;
+            _currentBgIndex = bgNum;
+            _images[bgNum].enabled = true;
+            
+        }
     }
     
     public void ADSBgClick()
@@ -65,6 +93,9 @@ public class ChangeBG : MonoBehaviour
         _images[_currentBgIndex].enabled = true;
         
         StartCoroutine(TimerBgCoroutine());
+        YandexGame.savesData.BgNum = _currentBgIndex;
+        YandexGame.SaveProgress();
+        
         try
         {
             YandexGame.RewVideoShow(3);
@@ -78,7 +109,7 @@ public class ChangeBG : MonoBehaviour
     IEnumerator TimerBgCoroutine()
     {
         _button.interactable = false;
-        yield return new WaitForSeconds(80);
+        yield return new WaitForSeconds(60);
         _button.interactable = true;
     }
 }
