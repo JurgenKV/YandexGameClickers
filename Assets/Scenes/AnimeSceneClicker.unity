@@ -5167,7 +5167,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1998546804}
+        m_TargetAssemblyTypeName: MusicControlButton, Assembly-CSharp
+        m_MethodName: MusicChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &440945366
 MonoBehaviour:
@@ -14332,6 +14344,8 @@ MonoBehaviour:
   _changeBg: {fileID: 634591745}
   _hideBlack: {fileID: 1624655875}
   _questionItems: []
+  _firstButton: {fileID: 0}
+  _secoundButton: {fileID: 0}
 --- !u!1 &1841386116
 GameObject:
   m_ObjectHideFlags: 0
@@ -15465,14 +15479,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _backMusic: {fileID: 1998546802}
-  _toggle: {fileID: 0}
-  _image: {fileID: 0}
-  _onImage: {fileID: 21300000, guid: 5373f2be6a649934b815c7c2adc03532, type: 3}
-  _offImage: {fileID: 21300000, guid: ad132af2724142f44959ee6f8593d90a, type: 3}
-  _toggle2: {fileID: 440945365}
-  _image2: {fileID: 440945368}
-  _onImage2: {fileID: 21300000, guid: edd3f21e1a5da904a8d1bac4323280a2, type: 3}
-  _offImage2: {fileID: 21300000, guid: 7ac6b90b75d766849a93ac388974165e, type: 3}
+  _toggle: {fileID: 440945365}
+  _image: {fileID: 440945368}
+  _onImage: {fileID: 21300000, guid: edd3f21e1a5da904a8d1bac4323280a2, type: 3}
+  _offImage: {fileID: 21300000, guid: 7ac6b90b75d766849a93ac388974165e, type: 3}
 --- !u!1 &1999861026
 GameObject:
   m_ObjectHideFlags: 0

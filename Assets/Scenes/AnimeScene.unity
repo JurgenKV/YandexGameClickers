@@ -1939,7 +1939,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1998546804}
+        m_TargetAssemblyTypeName: MusicControlButton, Assembly-CSharp
+        m_MethodName: MusicChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!114 &1997263572
 MonoBehaviour:
@@ -2165,10 +2177,6 @@ MonoBehaviour:
   _image: {fileID: 1997263574}
   _onImage: {fileID: 21300000, guid: 5373f2be6a649934b815c7c2adc03532, type: 3}
   _offImage: {fileID: 21300000, guid: ad132af2724142f44959ee6f8593d90a, type: 3}
-  _toggle2: {fileID: 0}
-  _image2: {fileID: 0}
-  _onImage2: {fileID: 21300000, guid: edd3f21e1a5da904a8d1bac4323280a2, type: 3}
-  _offImage2: {fileID: 21300000, guid: 7ac6b90b75d766849a93ac388974165e, type: 3}
 --- !u!1 &2075653077
 GameObject:
   m_ObjectHideFlags: 0
