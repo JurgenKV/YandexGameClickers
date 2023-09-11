@@ -25,15 +25,18 @@ public class ShowWinner : MonoBehaviour
             {
                 int maxScore = QuestionsList.Persons.Max(i => i.Score);
                 _indexOfGirl = QuestionsList.Persons.FindIndex(i => i.Score.Equals(maxScore));
+                objectsList[_indexOfGirl].SetActive(true);
+                GameObject tempObj = objectsList[_indexOfGirl];
+                tempObj.SetActive(true);
                 foreach (GameObject o in objectsList)
                 {
-                    o.SetActive(false);
+                    if(!o.Equals(tempObj))
+                        Destroy(o);
                 }
-                objectsList[_indexOfGirl].SetActive(true);
-            
             }
             catch (Exception e)
             {
+                Debug.Log("SetWinner error");
                 Console.WriteLine(e);
                 foreach (GameObject o in objectsList)
                 {
@@ -46,11 +49,19 @@ public class ShowWinner : MonoBehaviour
         }
         else
         {
+            // foreach (GameObject o in objectsList)
+            // {
+            //     o.SetActive(false);
+            // }
+            objectsList[girlNum].SetActive(true);
+            _indexOfGirl = girlNum;
+            GameObject tempObj = objectsList[_indexOfGirl];
+            tempObj.SetActive(true);
             foreach (GameObject o in objectsList)
             {
-                o.SetActive(false);
+                if(!o.Equals(tempObj))
+                    Destroy(o);
             }
-            objectsList[girlNum].SetActive(true);
         }
         
 
@@ -60,6 +71,7 @@ public class ShowWinner : MonoBehaviour
 
     public void UndressButton()
     {
+        Debug.Log("_indexOfGirl" + _indexOfGirl);
         try
         {
             dressImages[_indexOfGirl].enabled = false;
@@ -97,16 +109,33 @@ public class ShowWinner : MonoBehaviour
 
     public void ToDatePart()
     {
-        foreach (GameObject o in _objectsToOff)
+        // foreach (GameObject o in _objectsToOff)
+        // {
+        //     try
+        //     {
+        //         o.SetActive(true);
+        //         Destroy(o);
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         Console.WriteLine(e);
+        //     }
+        // }
+
+        for (int i = 0; i < _objectsToOff.Count; i++)
         {
-            o.SetActive(false);
+            if (_objectsToOff[i] != null)
+            {
+                _objectsToOff[i].SetActive(true);
+                Destroy(_objectsToOff[i]);
+            }
         }
 
         foreach (GameObject o in _clicerObjectsToOn)
         {
             o.SetActive(true);
         }
-
+        _objectsToOff.Clear();
         YandexGame.savesData.IsDateStarted = true;
         YandexGame.SaveProgress();
     }

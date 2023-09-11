@@ -23,6 +23,7 @@ namespace YG
         public bool IsTestCompleted = false;
         public bool IsDateStarted = false;
         public bool IsGirlUndressed = false;
+        public bool IsMusicEnabled = true;
         
         // Ваши сохранения
 

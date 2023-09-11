@@ -24,6 +24,7 @@ public class ChangeBG : MonoBehaviour
         foreach (Image image in _images)
         {
             image.enabled = false;
+            image.gameObject.SetActive(false);
         }
         _defaultImage.enabled = true;
 
@@ -38,6 +39,7 @@ public class ChangeBG : MonoBehaviour
         foreach (Image image in _images)
         {
             image.enabled = false;
+            image.gameObject.SetActive(false);
         }
         _defaultImage.enabled = false;
         int index;
@@ -47,7 +49,7 @@ public class ChangeBG : MonoBehaviour
         } while (_currentBgIndex == index);
         _currentBgIndex = index;
         _images[_currentBgIndex].enabled = true;
-
+        _images[_currentBgIndex].gameObject.SetActive(true);
         YandexGame.savesData.BgNum = _currentBgIndex;
         YandexGame.SaveProgress();
     }
@@ -60,6 +62,7 @@ public class ChangeBG : MonoBehaviour
             foreach (Image image in _images)
             {
                 image.enabled = false;
+                image.gameObject.SetActive(false);
             }
             _defaultImage.enabled = true;
         }
@@ -68,11 +71,12 @@ public class ChangeBG : MonoBehaviour
             foreach (Image image in _images)
             {
                 image.enabled = false;
+                image.gameObject.SetActive(false);
             }
             _defaultImage.enabled = false;
             _currentBgIndex = bgNum;
             _images[bgNum].enabled = true;
-            
+            _images[bgNum].gameObject.SetActive(true);
         }
     }
     
@@ -81,6 +85,7 @@ public class ChangeBG : MonoBehaviour
         foreach (Image image in _images)
         {
             image.enabled = false;
+            image.gameObject.SetActive(false);
         }
         _defaultImage.enabled = false;
         int index;
@@ -91,7 +96,7 @@ public class ChangeBG : MonoBehaviour
 
         _currentBgIndex = index;
         _images[_currentBgIndex].enabled = true;
-        
+        _images[_currentBgIndex].gameObject.SetActive(true);
         StartCoroutine(TimerBgCoroutine());
         YandexGame.savesData.BgNum = _currentBgIndex;
         YandexGame.SaveProgress();

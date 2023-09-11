@@ -5,7 +5,9 @@ using System.Security.Cryptography;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using YG;
 
 public class GameController : MonoBehaviour
@@ -20,8 +22,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _startDateButton;
     [SerializeField] private GameObject _clickerObject;
     [SerializeField] private ChangeBG _changeBg;
-
+    [SerializeField] private GameObject _hideBlack;
     [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
+    [SerializeField] private Button _firstButton;
+    [SerializeField] private Button _secoundButton;
+    private bool _isGameOver = false;
     private void Start()
     {
         if (!YandexGame.savesData.IsTestCompleted)
@@ -29,7 +34,7 @@ public class GameController : MonoBehaviour
             _questionsList.NewGame();
             _questionItems.Clear();
             _startGamePG.SetActive(true);
-            _endGamePG.SetActive(false);
+            //_endGamePG.SetActive(false);
             foreach (var questionItem in GetLocalizationDataList())
             {
                 _questionItems.Add(questionItem);
@@ -37,30 +42,42 @@ public class GameController : MonoBehaviour
         
             Shuffle(_questionItems);
             CreateNewUI();
+            _hideBlack.SetActive(false);
             ShowFullAds();
+            return;
+        }
+
+        if (!SceneManager.GetActiveScene().name.Equals("AnimeSceneClicker"))
+        {
+            SceneManager.LoadScene("AnimeSceneClicker");
             return;
         }
 
         if (YandexGame.savesData.IsTestCompleted & !YandexGame.savesData.IsDateStarted)
         {
-            _startGamePG.SetActive(false);
-            _endGamePG.SetActive(true);
-            _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
+            //_startGamePG.SetActive(false);
+            if(_endGamePG != null)
+                _endGamePG.SetActive(true);
+            if(_showWinner != null)
+                _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
+            _hideBlack.SetActive(false);
             ShowFullAds();
             return;
         }
         
         if (YandexGame.savesData.IsTestCompleted & YandexGame.savesData.IsDateStarted)
         {
-            _startGamePG.SetActive(false);
-            _endGamePG.SetActive(true);
-            _startDateButton.SetActive(false);
+            //_startGamePG.SetActive(false);
+            //_endGamePG.SetActive(true);
+            if(_startDateButton != null)
+                _startDateButton.SetActive(false);
             _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
             _clickerObject.SetActive(true);
             _showWinner.ToDatePart();
             _showWinner.UndressGirlIfSave(YandexGame.savesData.GirlNumber);
             _clickerScore.ClicksCount = YandexGame.savesData.Score;
             _clickerScore.ClickMultiplayer = YandexGame.savesData.ScoreMultiplayer;
+            _hideBlack.SetActive(false);
             ShowFullAds();
             return;
         }
@@ -107,6 +124,9 @@ public class GameController : MonoBehaviour
 
     public void HandleButtonVariantFirst(QuestionItem questionItem)
     {
+        if(_isGameOver)
+            return;
+        
         _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
         _questionItems.Remove(questionItem);
         
@@ -121,6 +141,9 @@ public class GameController : MonoBehaviour
     
     public void HandleButtonVariantSecond(QuestionItem questionItem)
     {
+        if(_isGameOver)
+            return;
+        
         _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdSecond)).Score++;
         _questionItems.Remove(questionItem);
         
@@ -135,14 +158,19 @@ public class GameController : MonoBehaviour
 
     private void GameOver()
     {
+        _isGameOver = true;
+        _firstButton.interactable = false;
+        _secoundButton.interactable = false;
         Debug.Log("GameCompleted" + GetIdWinGirl());
         YandexGame.savesData.GirlNumber = GetIdWinGirl();
         YandexGame.savesData.IsTestCompleted = true;
         YandexGame.SaveProgress();
+        SceneManager.LoadScene("AnimeSceneClicker");
         
-        _startGamePG.SetActive(false);
-        _endGamePG.SetActive(true);
-        _showWinner.SetWinner();
+        
+        // _startGamePG.SetActive(false);
+        // _endGamePG.SetActive(true);
+        // _showWinner.SetWinner();
     }
 
     private int GetIdWinGirl()

@@ -891,6 +891,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1810378497306578079, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
+      propertyPath: m_UpscaleRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
+      propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6899419851133702099, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class MusicControlButton : MonoBehaviour
 {
     [SerializeField] private AudioSource _backMusic;
-    [SerializeField] Toggle _toggle;
+    [SerializeField] Toggle _toggle = null;
     [SerializeField] private Image _image;
     [SerializeField] private Sprite _onImage;
     [SerializeField] private Sprite _offImage;
     
-    [SerializeField] Toggle _toggle2;
+    [SerializeField] Toggle _toggle2 = null;
     [SerializeField] private Image _image2;
     [SerializeField] private Sprite _onImage2;
     [SerializeField] private Sprite _offImage2;
@@ -25,42 +25,78 @@ public class MusicControlButton : MonoBehaviour
     void Start()
     {
         _startVolume = _backMusic.volume;
-        _toggle.onValueChanged.AddListener(delegate {
-            ToggleValueChanged(_toggle);
-        });
         
-        _toggle2.onValueChanged.AddListener(delegate {
-            ToggleValueChanged(_toggle2);
-        });
+        if (_toggle != null)
+        {
+            _toggle.onValueChanged.AddListener(delegate {
+                ToggleValueChanged(_toggle);
+            });
+        }
+        
+        if (_toggle2 != null)
+        {
+            _toggle2.onValueChanged.AddListener(delegate {
+                ToggleValueChanged(_toggle2);
+            });
+        }
+            
     }
     void ToggleValueChanged(Toggle change)
     {
-        if (change.isOn)
+        if(change == null)
+            return;
+        
+        try
         {
-            _toggle2.isOn = _toggle.isOn = true;
-            Debug.Log("On Music");
-            MusicFadeIn(_backMusic);
+            if (change.isOn)
+            {
+                if(_toggle2 != null)
+                    _toggle2.isOn = true;
+            
+                if(_toggle != null)
+                    _toggle.isOn = true;
+                Debug.Log("On Music");
+                MusicFadeIn(_backMusic);
+            }
+            else
+            {
+                if(_toggle2 != null)
+                    _toggle2.isOn = false;
+            
+                if(_toggle != null)
+                    _toggle.isOn = false;
+            
+                Debug.Log("Off Music");
+                MusicFadeOut(_backMusic);
+            }
         }
-        else
+        catch (Exception e)
         {
-            _toggle2.isOn = _toggle.isOn = false;
-            Debug.Log("Off Music");
-            MusicFadeOut(_backMusic);
+            Console.WriteLine(e);
         }
+        
     }
 
     private void MusicFadeIn(AudioSource audioSource)
     {
-        _image.sprite = _onImage;
-        _image2.sprite = _onImage2;
+        if(_image != null)
+            _image.sprite = _onImage;
+        
+        if(_image2 != null)
+            _image2.sprite = _onImage2;
+        
         audioSource.mute = false;
         _tempMusicSettings = true;
     }
 
     private void MusicFadeOut(AudioSource audioSource)
     {
-        _image.sprite = _offImage;
-        _image2.sprite = _offImage2;
+        if(_image != null)
+            _image.sprite = _offImage;
+        
+        if(_image2 != null)
+            _image2.sprite = _offImage2;
+        
         audioSource.mute = true;
         _tempMusicSettings = false;
     }
