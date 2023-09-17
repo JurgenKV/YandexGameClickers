@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
 
@@ -27,6 +28,20 @@ public class ChangeScene : MonoBehaviour
         YandexGame.savesData.IsTestCompleted = false;
         YandexGame.savesData.IsDateStarted = false;
         YandexGame.savesData.IsGirlUndressed = false;
+        UpdateLeaderboard();
         YandexGame.SaveProgress();
+    }
+    
+    private void UpdateLeaderboard()
+    {
+        try
+        {
+            YandexGame.NewLeaderboardScores("BestLevelPlayer", 0);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
     }
 }

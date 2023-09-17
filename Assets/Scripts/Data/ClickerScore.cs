@@ -11,6 +11,15 @@ using Button = UnityEngine.UI.Button;
 public class ClickerScore : MonoBehaviour
 {
     [SerializeField] private TMP_Text clicksUI;
+    [SerializeField] private TMP_Text lvlUI;
+    
+    [Header("Upgrade Click")]
+    [SerializeField] private TMP_Text upgradeClickCostUI;
+
+    [SerializeField] private double constX;
+    [SerializeField] private double degreeY;
+    
+    [Space(1)]
     [SerializeField] private Button _buttonX2;
     [SerializeField] private Button _buttonUpdate;
 
@@ -20,10 +29,16 @@ public class ClickerScore : MonoBehaviour
 
     [SerializeField] public List<GameObject> ParticleSystems;
     //[SerializeField] private List<Animator> _animators;
+    private void Start()
+    {
+        UpdateUpgradeClickUI();
+        UpdateLeaderboard();
+    }
 
     private void Update()
     {
         clicksUI.text = ClicksCount.ToString() + "$";
+        lvlUI.text = ClickMultiplayer.ToString();
     }
 
     public void Click()
@@ -64,21 +79,39 @@ public class ClickerScore : MonoBehaviour
         _coroutineX2CLicks = false;
     }
 
-    public void UpgradeClick(int cost)
+    public void UpgradeClick()
     {
-        if (ClicksCount < cost)
-            return;
+         if (ClicksCount < GetUpgradeCost())
+             return;
         
-        ClicksCount -= cost;
+         ClicksCount -= GetUpgradeCost();
         
         ClickMultiplayer++;
+        UpdateUpgradeClickUI();
         YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        UpdateLeaderboard();
         YandexGame.SaveProgress();
+    }
+
+    private void UpdateUpgradeClickUI()
+    {
+        upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
+    }
+
+    private long GetUpgradeCost()
+    {
+        //x * ((level+1) ^ y) - (x * level):
+        double cost = ((constX * Math.Pow((ClickMultiplayer+1), degreeY)) - (constX * (ClickMultiplayer+1)));
+        Debug.Log("cost = " + cost);
+        
+        
+        return (long)cost;
     }
     
     public void ADSUpgradeClick()
     {
         ClickMultiplayer++;
+        UpdateUpgradeClickUI();
         StartCoroutine(TimerUpdateCoroutine());
         try
         {
@@ -89,6 +122,7 @@ public class ClickerScore : MonoBehaviour
             Console.WriteLine(e);
         }
         YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        UpdateLeaderboard();
         YandexGame.SaveProgress();
     }
     IEnumerator TimerUpdateCoroutine()
@@ -96,5 +130,18 @@ public class ClickerScore : MonoBehaviour
         _buttonUpdate.interactable = false;
         yield return new WaitForSeconds(60);
         _buttonUpdate.interactable = true;
+    }
+
+    private void UpdateLeaderboard()
+    {
+        try
+        {
+            YandexGame.NewLeaderboardScores("BestLevelPlayer", ClickMultiplayer);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
     }
 }
