@@ -32,8 +32,9 @@ public class ChangeImage : MonoBehaviour
         
         if(_spriteType == SpriteType.Background)
             LoadImage(YandexGame.savesData.BgNum);
+        
         if(_spriteType == SpriteType.Object)
-            LoadImage(YandexGame.savesData.BgNum);
+            LoadImage(YandexGame.savesData.ObjectImageNum);
     }
 
     public void OnImageChange()
@@ -48,7 +49,7 @@ public class ChangeImage : MonoBehaviour
             index = Random.Range(0, _images.Count);
         } while (_currentBgIndex == index);
         _currentBgIndex = index;
-
+        _Image.sprite = _images[_currentBgIndex];
         YandexGame.savesData.BgNum = _currentBgIndex;
         YandexGame.SaveProgress();
     }
@@ -58,7 +59,6 @@ public class ChangeImage : MonoBehaviour
         Debug.Log(bgNum);
         if (bgNum == -1)
         {
-            
             _Image.sprite = _defaultSprite;
         }
         else
