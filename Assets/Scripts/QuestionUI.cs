@@ -14,7 +14,7 @@
         [SerializeField] private TMP_Text _textVariantSecond;
         [SerializeField] private List<GameObject> _bgVariants;
         
-        [SerializeField] private GameController _controller;
+        //[SerializeField] private GameController _controller;
         [SerializeField] private Button _button1;
         [SerializeField] private Button _button2;
 
@@ -26,8 +26,6 @@
             RoleBgVariant();
         }
         
-        
-
         public void CreateUI(QuestionItem questionItem)
         {
             _questionItem = questionItem;
@@ -38,14 +36,14 @@
 
         public void ButtonFirst()
         {
-            _controller.HandleButtonVariantFirst(_questionItem);
+            //_controller.HandleButtonVariantFirst(_questionItem);
             RoleBgVariant();
             StartCoroutine(ChillTimer());
         }
 
         public void ButtonSecond()
         {
-            _controller.HandleButtonVariantSecond(_questionItem);
+            //_controller.HandleButtonVariantSecond(_questionItem);
             RoleBgVariant();
             StartCoroutine(ChillTimer());
         }

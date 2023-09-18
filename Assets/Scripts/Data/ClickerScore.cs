@@ -6,10 +6,12 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using YG;
 using Button = UnityEngine.UI.Button;
+using Random = UnityEngine.Random;
 
 
 public class ClickerScore : MonoBehaviour
 {
+    [SerializeField] private GameController _gameController;
     [SerializeField] private TMP_Text clicksUI;
     [SerializeField] private TMP_Text lvlUI;
     
@@ -96,8 +98,26 @@ public class ClickerScore : MonoBehaviour
     private void UpdateUpgradeClickUI()
     {
         upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
+        RefreshEgg();
     }
 
+    private void RefreshEgg()
+    {
+        if(ClickMultiplayer < 10)
+            YandexGame.savesData.ObjectImageSecNum = ClickMultiplayer - 1;
+        else
+            YandexGame.savesData.ObjectImageSecNum = -1;
+        
+        if (ClickMultiplayer == 10 & !YandexGame.savesData.IsAnimal)
+        {
+            YandexGame.savesData.AnimalNum = Random.Range(0, _gameController._animalsSprites.Count);
+            YandexGame.savesData.IsAnimal = true;
+        }
+        YandexGame.SaveProgress();
+        _gameController.CheckProgress();
+    }
+    
+    
     private long GetUpgradeCost()
     {
         //x * ((level+1) ^ y) - (x * level):

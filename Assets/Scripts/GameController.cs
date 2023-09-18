@@ -12,79 +12,53 @@ using YG;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private QuestionsList _questionsList;
-    [SerializeField] private QuestionUI _questionUis;
-    [SerializeField] private GameObject _startGamePG;
-    [SerializeField] private GameObject _endGamePG;
-    [SerializeField] private TMP_Text _questionCount;
-    [SerializeField] private ShowWinner _showWinner;
-    [SerializeField] private ClickerScore _clickerScore;
-    [SerializeField] private GameObject _startDateButton;
-    [SerializeField] private GameObject _clickerObject;
-    [SerializeField] private ChangeBG _changeBg;
-    [SerializeField] private GameObject _hideBlack;
-    [SerializeField] public List<QuestionItem> _questionItems = new List<QuestionItem>();
-    [SerializeField] private Button _firstButton;
-    [SerializeField] private Button _secoundButton;
-    private bool _isGameOver = false;
+    [Header("Main")]
+    [SerializeField] private GameObject _eggObject;
+    [SerializeField] private GameObject _animalObject;
+    [SerializeField] private GameObject _recolorEgg;
+    [SerializeField] private GameObject _recolorEggADS;
+    
+    [Header("DestrEgg")]
+    [SerializeField] private Sprite _nullSprite;
+    [SerializeField] private Image _destrEgg;
+    [SerializeField] private List<Sprite> _destrEggs;
+    
+    [Header("Animal")]
+    [SerializeField] private Image _animalSprite;
+    [SerializeField] public List<Sprite> _animalsSprites;
+
     private void Start()
     {
-        if (!YandexGame.savesData.IsTestCompleted)
+        CheckProgress();
+        ShowFullAds();
+    }
+
+    public void CheckProgress()
+    {
+        if (YandexGame.savesData.IsAnimal)
         {
-            _questionsList.NewGame();
-            _questionItems.Clear();
-            _startGamePG.SetActive(true);
-            //_endGamePG.SetActive(false);
-            foreach (var questionItem in GetLocalizationDataList())
+            _eggObject.SetActive(true);
+            _animalObject.SetActive(false);
+            _recolorEgg.SetActive(true);
+            _recolorEggADS.SetActive(true);
+            _animalSprite.sprite = _animalsSprites[YandexGame.savesData.AnimalNum];
+        }
+        else
+        {
+            _eggObject.SetActive(false);
+            _animalObject.SetActive(true);
+            _recolorEgg.SetActive(false);
+            _recolorEggADS.SetActive(false);
+            
+            if (YandexGame.savesData.ObjectImageSecNum == -1)
             {
-                _questionItems.Add(questionItem);
+                _destrEgg.sprite = _nullSprite;
             }
-        
-            Shuffle(_questionItems);
-            CreateNewUI();
-            _hideBlack.SetActive(false);
-            ShowFullAds();
-            return;
+            else
+            {
+                _destrEgg.sprite = _destrEggs[YandexGame.savesData.ObjectImageSecNum];
+            }
         }
-
-        if (!SceneManager.GetActiveScene().name.Equals("AnimeSceneClicker"))
-        {
-            SceneManager.LoadScene("AnimeSceneClicker");
-            return;
-        }
-
-        if (YandexGame.savesData.IsTestCompleted & !YandexGame.savesData.IsDateStarted)
-        {
-            //_startGamePG.SetActive(false);
-            if(_endGamePG != null)
-                _endGamePG.SetActive(true);
-            if(_showWinner != null)
-                _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
-            _hideBlack.SetActive(false);
-            ShowFullAds();
-            return;
-        }
-        
-        if (YandexGame.savesData.IsTestCompleted & YandexGame.savesData.IsDateStarted)
-        {
-            //_startGamePG.SetActive(false);
-            //_endGamePG.SetActive(true);
-            if(_startDateButton != null)
-                _startDateButton.SetActive(false);
-            _showWinner.SetWinner(YandexGame.savesData.GirlNumber);
-            _clickerObject.SetActive(true);
-            _showWinner.ToDatePart();
-            _showWinner.UndressGirlIfSave(YandexGame.savesData.GirlNumber);
-            _clickerScore.ClicksCount = YandexGame.savesData.Score;
-            _clickerScore.ClickMultiplayer = YandexGame.savesData.ScoreMultiplayer;
-            _hideBlack.SetActive(false);
-            ShowFullAds();
-            return;
-        }
-        
-        
-        
-        
     }
 
     private void ShowFullAds()
@@ -99,108 +73,4 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private List<QuestionItem> GetLocalizationDataList()
-    {
-        Debug.Log((YandexGame.EnvironmentData.language.ToString()));
-        //YandexGame.EnvironmentData.language = "tr";
-        //YandexGame.EnvironmentData.language = "en";
-        if (YandexGame.EnvironmentData.language.Equals("en"))
-        {
-            return _questionsList.ENQuestionItems;
-        }
-        else if (YandexGame.EnvironmentData.language.Equals("tr"))
-        {
-            return _questionsList.TRQuestionItems;
-        }
-        
-        return _questionsList.QuestionItems;
-    }
-
-    private void CreateNewUI()
-    {
-        _questionUis.CreateUI(_questionItems.First());
-        ChangeCountOfQuestions();
-    }
-
-    public void HandleButtonVariantFirst(QuestionItem questionItem)
-    {
-        if(_isGameOver)
-            return;
-        
-        _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdFirst)).Score++;
-        _questionItems.Remove(questionItem);
-        
-        if (_questionItems.Count == 0)
-        {
-            GameOver();
-            return;
-        }
-        
-        CreateNewUI();
-    }
-    
-    public void HandleButtonVariantSecond(QuestionItem questionItem)
-    {
-        if(_isGameOver)
-            return;
-        
-        _questionsList.Persons.First(i => i.Id.Equals(questionItem.PersonIdSecond)).Score++;
-        _questionItems.Remove(questionItem);
-        
-        if (_questionItems.Count == 0)
-        {
-            GameOver();
-            return;
-        }
-        
-        CreateNewUI();
-    }
-
-    private void GameOver()
-    {
-        _isGameOver = true;
-        _firstButton.interactable = false;
-        _secoundButton.interactable = false;
-        Debug.Log("GameCompleted" + GetIdWinGirl());
-        YandexGame.savesData.GirlNumber = GetIdWinGirl();
-        YandexGame.savesData.IsTestCompleted = true;
-        YandexGame.SaveProgress();
-        SceneManager.LoadScene("AnimeSceneClicker");
-        
-        
-        // _startGamePG.SetActive(false);
-        // _endGamePG.SetActive(true);
-        // _showWinner.SetWinner();
-    }
-
-    private int GetIdWinGirl()
-    {
-        int maxSCore = _questionsList.Persons.Max(i => i.Score);
-        return _questionsList.Persons.FindIndex(i => i.Score == maxSCore);
-    }
-
-    private static void Shuffle<T>(IList<T> list)
-    {
-        RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
-        int n = list.Count;
-        while (n > 1)
-        {
-            byte[] box = new byte[1];
-            do provider.GetBytes(box);
-            while (!(box[0] < n * (Byte.MaxValue / n)));
-            int k = (box[0] % n);
-            n--;
-            (list[k], list[n]) = (list[n], list[k]);
-        }
-    }
-
-    private void ChangeCountOfQuestions()
-    {
-        _questionCount.text = $"{_questionsList.QuestionItems.Count - _questionItems.Count + 1}/{_questionsList.QuestionItems.Count}";
-    }
-
-    public static void SendMetric(string name)
-    {
-        //YandexMetrica.Send(name);
-    }
 }

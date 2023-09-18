@@ -18,7 +18,7 @@ public class ShowWinner : MonoBehaviour
     
     public void SetWinner(int girlNum = -1)
     {
-        Debug.Log(YandexGame.savesData.GirlNumber);
+       // Debug.Log(YandexGame.savesData.GirlNumber);
         if (girlNum == -1)
         {
             try
@@ -85,7 +85,7 @@ public class ShowWinner : MonoBehaviour
             ADSButton.SetActive(false);
         }
 
-        YandexGame.savesData.IsGirlUndressed = true;
+       // YandexGame.savesData.IsGirlUndressed = true;
         YandexGame.SaveProgress();
     }
 
@@ -93,11 +93,11 @@ public class ShowWinner : MonoBehaviour
     {
         try
         {
-            if (YandexGame.savesData.IsGirlUndressed)
-            {
-                dressImages[girlNum].enabled = false;
-                ADSButton.SetActive(false);
-            }
+            // if (YandexGame.savesData.IsGirlUndressed)
+            // {
+            //     dressImages[girlNum].enabled = false;
+            //     ADSButton.SetActive(false);
+            // }
         }
         catch (Exception e)
         {
@@ -136,7 +136,7 @@ public class ShowWinner : MonoBehaviour
             o.SetActive(true);
         }
         _objectsToOff.Clear();
-        YandexGame.savesData.IsDateStarted = true;
+       // YandexGame.savesData.IsDateStarted = true;
         YandexGame.SaveProgress();
     }
 }

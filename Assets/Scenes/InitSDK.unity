@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753d8b84a9764154ab02969657a08d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: AnimeScene
+  _sceneName: SceneClicker
 --- !u!114 &636824647
 MonoBehaviour:
   m_ObjectHideFlags: 0

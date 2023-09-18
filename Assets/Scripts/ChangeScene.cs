@@ -24,10 +24,9 @@ public class ChangeScene : MonoBehaviour
         YandexGame.savesData.Score = 0;
         YandexGame.savesData.ScoreMultiplayer = 1;
         YandexGame.savesData.BgNum = -1;
-        YandexGame.savesData.GirlNumber = 0;
-        YandexGame.savesData.IsTestCompleted = false;
-        YandexGame.savesData.IsDateStarted = false;
-        YandexGame.savesData.IsGirlUndressed = false;
+        YandexGame.savesData.ObjectImageNum = -1;
+        YandexGame.savesData.ObjectImageSecNum = -1;
+        YandexGame.savesData.IsAnimal = false;
         UpdateLeaderboard();
         YandexGame.SaveProgress();
     }

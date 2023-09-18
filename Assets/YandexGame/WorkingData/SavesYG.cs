@@ -19,10 +19,10 @@ namespace YG
         public long Score = 0;
         public int ScoreMultiplayer = 1;
         public int BgNum = -1;
-        public int GirlNumber = 0;
-        public bool IsTestCompleted = false;
-        public bool IsDateStarted = false;
-        public bool IsGirlUndressed = false;
+        public int ObjectImageNum = -1;
+        public int ObjectImageSecNum = -1;
+        public int AnimalNum = -1;
+        public bool IsAnimal = false;
         public bool IsMusicEnabled = true;
         
         // Ваши сохранения
