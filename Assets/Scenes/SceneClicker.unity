@@ -764,7 +764,17 @@ MonoBehaviour:
   _recolorEggADS: {fileID: 1089144085}
   _nullSprite: {fileID: 21300000, guid: f53cafe6b2cae144c864afd70e3e7cf8, type: 3}
   _destrEgg: {fileID: 787429494}
-  _destrEggs: []
+  _destrEggs:
+  - {fileID: 21300000, guid: 2052f4abd4bd70f41b6f069a362e2392, type: 3}
+  - {fileID: 21300000, guid: 87ce8fac739fb3442aee106705812aa8, type: 3}
+  - {fileID: 21300000, guid: a16ad3034257f184a9adbabdb9a805e9, type: 3}
+  - {fileID: 21300000, guid: 65788cdb66fb7a94fa5fc8f023031761, type: 3}
+  - {fileID: 21300000, guid: 12fcf394c4936224cb2cc145b31e3368, type: 3}
+  - {fileID: 21300000, guid: 2052f4abd4bd70f41b6f069a362e2392, type: 3}
+  - {fileID: 21300000, guid: 87ce8fac739fb3442aee106705812aa8, type: 3}
+  - {fileID: 21300000, guid: a16ad3034257f184a9adbabdb9a805e9, type: 3}
+  - {fileID: 21300000, guid: 65788cdb66fb7a94fa5fc8f023031761, type: 3}
+  - {fileID: 21300000, guid: 12fcf394c4936224cb2cc145b31e3368, type: 3}
   _animalSprite: {fileID: 2087128931}
   _animalsSprites:
   - {fileID: 21300000, guid: 951f1807a14b1284a8b739e2664f878a, type: 3}
@@ -1838,6 +1848,8 @@ GameObject:
   - component: {fileID: 763761723}
   - component: {fileID: 763761725}
   - component: {fileID: 763761724}
+  - component: {fileID: 763761727}
+  - component: {fileID: 763761726}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -1948,7 +1960,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1114971028}
+      - m_Target: {fileID: 763761726}
         m_TargetAssemblyTypeName: ActivateClickInAnimation, Assembly-CSharp
         m_MethodName: PlayAnim
         m_Mode: 1
@@ -2000,6 +2012,40 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &763761726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763761719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e57aafebe54801818b03c01cce5062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickerScore: {fileID: 2097246767}
+--- !u!95 &763761727
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763761719}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31403759b00c663499fa5fb78b8b640b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &787429489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,8 +2724,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114971026}
-  - component: {fileID: 1114971027}
-  - component: {fileID: 1114971028}
   m_Layer: 0
   m_Name: Obj egg
   m_TagString: Untagged
@@ -2707,40 +2751,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1114971027
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114971025}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31403759b00c663499fa5fb78b8b640b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1114971028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114971025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e57aafebe54801818b03c01cce5062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clickerScore: {fileID: 2097246767}
 --- !u!1 &1163515447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3665,7 +3675,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!114 &1541464439
 MonoBehaviour:
@@ -5637,10 +5647,11 @@ MonoBehaviour:
   ClicksCount: 0
   ClickMultiplayer: 1
   ParticleSystems:
-  - {fileID: 9215180084365062601, guid: 4de82dfe6774d4841b61799e8acc173f, type: 3}
   - {fileID: 9215180084365062601, guid: fd056b636a64eda47aae576ef304d6a7, type: 3}
   - {fileID: 9215180084365062601, guid: 3577d30b1e4cd7546b1a9167d2867fe5, type: 3}
   - {fileID: 9215180084365062601, guid: 9166d8273579b884a9bdc3772e042d3e, type: 3}
+  - {fileID: 9215180084365062601, guid: 5c8e8ff96682abd43b20d1ca98404868, type: 3}
+  - {fileID: 9215180084365062601, guid: 2a76331704fafe844819ba15110a35bb, type: 3}
 --- !u!1 &2107083016
 GameObject:
   m_ObjectHideFlags: 0

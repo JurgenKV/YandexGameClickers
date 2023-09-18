@@ -57,7 +57,7 @@ public class ClickerScore : MonoBehaviour
             ClicksCount += 1 * ClickMultiplayer;
         }
 
-        YandexGame.savesData.Score = ClicksCount;
+        YandexGame.savesData.MoneyScore = ClicksCount;
         YandexGame.SaveProgress();
     }
 
@@ -92,13 +92,13 @@ public class ClickerScore : MonoBehaviour
         UpdateUpgradeClickUI();
         YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
         UpdateLeaderboard();
+        RefreshEgg();
         YandexGame.SaveProgress();
     }
 
     private void UpdateUpgradeClickUI()
     {
         upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
-        RefreshEgg();
     }
 
     private void RefreshEgg()
@@ -143,6 +143,7 @@ public class ClickerScore : MonoBehaviour
         }
         YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
         UpdateLeaderboard();
+        RefreshEgg();
         YandexGame.SaveProgress();
     }
     IEnumerator TimerUpdateCoroutine()

@@ -21,7 +21,7 @@ public class ChangeScene : MonoBehaviour
 
     private void ResetPlayerData()
     {
-        YandexGame.savesData.Score = 0;
+        YandexGame.savesData.MoneyScore = 0;
         YandexGame.savesData.ScoreMultiplayer = 1;
         YandexGame.savesData.BgNum = -1;
         YandexGame.savesData.ObjectImageNum = -1;
@@ -29,6 +29,7 @@ public class ChangeScene : MonoBehaviour
         YandexGame.savesData.IsAnimal = false;
         UpdateLeaderboard();
         YandexGame.SaveProgress();
+        Debug.Log("ResetPlayerData");
     }
     
     private void UpdateLeaderboard()

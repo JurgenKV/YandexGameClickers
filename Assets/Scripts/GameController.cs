@@ -35,14 +35,6 @@ public class GameController : MonoBehaviour
 
     public void CheckProgress()
     {
-        // YandexGame.savesData.Score = 0;
-        // YandexGame.savesData.ScoreMultiplayer = 1;
-        // YandexGame.savesData.BgNum = -1;
-        // YandexGame.savesData.ObjectImageNum = -1;
-        // YandexGame.savesData.ObjectImageSecNum = -1;
-        // YandexGame.savesData.IsAnimal = false;
-        // YandexGame.SaveProgress();
-        
         if (!YandexGame.savesData.IsAnimal)
         {
             _eggObject.SetActive(true);
