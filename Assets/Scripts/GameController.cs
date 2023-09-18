@@ -41,6 +41,7 @@ public class GameController : MonoBehaviour
             _animalObject.SetActive(false);
             _recolorEgg.SetActive(true);
             _recolorEggADS.SetActive(true);
+            CheckDestroyableEgg();
         }
         else
         {
@@ -48,15 +49,19 @@ public class GameController : MonoBehaviour
             _animalObject.SetActive(true);
             _recolorEgg.SetActive(false);
             _recolorEggADS.SetActive(false);
-            
-            if (YandexGame.savesData.ObjectImageSecNum == -1)
-            {
-                _destrEgg.sprite = _nullSprite;
-            }
-            else
-            {
-                _destrEgg.sprite = _destrEggs[YandexGame.savesData.ObjectImageSecNum];
-            }
+            _animalSprite.sprite = _animalsSprites[YandexGame.savesData.AnimalNum];
+        }
+    }
+
+    private void CheckDestroyableEgg()
+    {
+        if (YandexGame.savesData.ObjectImageSecNum == -1)
+        {
+            _destrEgg.sprite = _nullSprite;
+        }
+        else
+        {
+            _destrEgg.sprite = _destrEggs[YandexGame.savesData.ObjectImageSecNum];
         }
     }
 

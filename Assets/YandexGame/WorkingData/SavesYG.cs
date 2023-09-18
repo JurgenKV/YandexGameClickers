@@ -24,6 +24,7 @@ namespace YG
         public int AnimalNum = -1;
         public bool IsAnimal = false;
         public bool IsMusicEnabled = true;
+        public bool IsSoundEnabled = true;
         public long MoneyScore = 0;
         public int ScoreMultiplayer = 1;
         // Ваши сохранения

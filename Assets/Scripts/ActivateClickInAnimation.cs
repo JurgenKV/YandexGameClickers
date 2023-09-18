@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using YG;
 using Random = UnityEngine.Random;
 using TouchPhase = UnityEngine.TouchPhase;
 
@@ -10,6 +12,8 @@ public class ActivateClickInAnimation : MonoBehaviour
     [SerializeField] private ClickerScore _clickerScore;
     private Animator _animator;
     private Vector3 _currentPosition;
+
+    [SerializeField] private List<AudioSource> _audioSources;
     private static readonly int Scale = Animator.StringToHash("Scale");
 
     private void Start()
@@ -38,8 +42,20 @@ public class ActivateClickInAnimation : MonoBehaviour
             return;
         Instantiate(_clickerScore.ParticleSystems[Random.Range(0, _clickerScore.ParticleSystems.Count)],
             _currentPosition, Quaternion.identity);
+        //PlayEggSound();
         //tempObj.AddComponent<ParticleTimer>();
         _animator.SetTrigger(Scale);
+    }
+
+    public void PlayEggSoundEvent()
+    {
+        if (YandexGame.savesData.IsSoundEnabled & !YandexGame.savesData.IsAnimal)
+        {
+            if (_audioSources.TrueForAll(i => !i.isPlaying))
+            {
+                _audioSources[Random.Range(0,_audioSources.Count)].Play();
+            }
+        }
     }
 
     private void OnGUI()

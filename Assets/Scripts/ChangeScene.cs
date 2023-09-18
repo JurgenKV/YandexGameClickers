@@ -36,7 +36,7 @@ public class ChangeScene : MonoBehaviour
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestLevelPlayer", 0);
+            YandexGame.NewLeaderboardScores("BestLevelPlayerEggClicker", 0);
         }
         catch (Exception e)
         {

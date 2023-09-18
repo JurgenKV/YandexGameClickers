@@ -50,7 +50,13 @@ public class ChangeImage : MonoBehaviour
         } while (_currentBgIndex == index);
         _currentBgIndex = index;
         _Image.sprite = _images[_currentBgIndex];
-        YandexGame.savesData.BgNum = _currentBgIndex;
+        
+        if(_spriteType == SpriteType.Background)
+            YandexGame.savesData.BgNum = _currentBgIndex;
+        
+        if(_spriteType == SpriteType.Object)
+            YandexGame.savesData.ObjectImageNum = _currentBgIndex;
+        
         YandexGame.SaveProgress();
     }
 
@@ -80,7 +86,13 @@ public class ChangeImage : MonoBehaviour
         _currentBgIndex = index;
         _Image.sprite = _images[_currentBgIndex];
         StartCoroutine(TimerBgCoroutine());
-        YandexGame.savesData.BgNum = _currentBgIndex;
+        
+        if(_spriteType == SpriteType.Background)
+            YandexGame.savesData.BgNum = _currentBgIndex;
+        
+        if(_spriteType == SpriteType.Object)
+            YandexGame.savesData.ObjectImageNum = _currentBgIndex;
+        
         YandexGame.SaveProgress();
         
         try

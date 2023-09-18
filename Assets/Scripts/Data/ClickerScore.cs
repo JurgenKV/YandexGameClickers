@@ -33,6 +33,7 @@ public class ClickerScore : MonoBehaviour
     //[SerializeField] private List<Animator> _animators;
     private void Start()
     {
+        LoadData();
         UpdateUpgradeClickUI();
         UpdateLeaderboard();
     }
@@ -41,6 +42,12 @@ public class ClickerScore : MonoBehaviour
     {
         clicksUI.text = ClicksCount.ToString() + "$";
         lvlUI.text = ClickMultiplayer.ToString();
+    }
+    
+    private void LoadData()
+    {
+        ClicksCount = YandexGame.savesData.MoneyScore;
+        ClickMultiplayer = YandexGame.savesData.ScoreMultiplayer;
     }
 
     public void Click()
@@ -157,7 +164,7 @@ public class ClickerScore : MonoBehaviour
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestLevelPlayer", ClickMultiplayer);
+            YandexGame.NewLeaderboardScores("BestLevelPlayerEggClicker", ClickMultiplayer);
         }
         catch (Exception e)
         {

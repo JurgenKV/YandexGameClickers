@@ -11,6 +11,7 @@
 
         private void GetData()
         {
+            Debug.Log(YandexGame.savesData.MoneyScore + "Score");
             SceneManager.LoadScene(_sceneName);
         }
         
