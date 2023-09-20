@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
     {
         CheckProgress();
         ShowFullAds();
+        YandexGame.SwitchLanguage("en");
     }
 
     public void CheckProgress()
