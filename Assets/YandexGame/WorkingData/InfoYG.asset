@@ -26,7 +26,7 @@ MonoBehaviour:
   adDisplayCalls: 0
   fullscreenAdInterval: 5
   durationOfAdSimulation: 0.5
-  LocalizationEnable: 0
+  LocalizationEnable: 1
   callingLanguageCheck: 1
   translateMethod: 0
   domainAutoLocalization: com
