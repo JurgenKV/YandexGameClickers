@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using YG;
 using Button = UnityEngine.UI.Button;
@@ -28,9 +29,9 @@ public class ClickerScore : MonoBehaviour
     private bool _coroutineX2CLicks = false;
     public int ClickMultiplayer = 1;
     
-    [SerializeField]private int _level = 0;
-    [SerializeField]private long _experience;
-    [SerializeField]private long _experienceToNextLevel;
+    [SerializeField]public int level = 1;
+    [SerializeField]public long experience;
+    [SerializeField]public long experienceToNextLevel;
 
     [SerializeField] public List<GameObject> ParticleSystems;
     //[SerializeField] private List<Animator> _animators;
@@ -38,8 +39,8 @@ public class ClickerScore : MonoBehaviour
     {
         LoadData();
         
-        if(_level == 0)
-            SetLevel(1);
+        
+        SetLevel(level);
         
         UpdateUpgradeClickUI();
         UpdateLeaderboard();
@@ -50,9 +51,9 @@ public class ClickerScore : MonoBehaviour
     {
         ClicksCount = YandexGame.savesData.MoneyAmount;
         ClickMultiplayer = YandexGame.savesData.ClickMultiplayer;
-        _level = YandexGame.savesData.Level;
-        _experience = YandexGame.savesData.Experience;
-        _experienceToNextLevel = YandexGame.savesData.ExperienceToNextLevel;
+        level = YandexGame.savesData.Level;
+        experience = YandexGame.savesData.Experience;
+        experienceToNextLevel = YandexGame.savesData.ExperienceToNextLevel;
     }
 
     public void Click()
@@ -164,24 +165,25 @@ public class ClickerScore : MonoBehaviour
 
     public void AddExperience(long experienceToAdd)
     {
-        _experience += experienceToAdd;
+        experience += experienceToAdd;
         
-        if (_experience >= _experienceToNextLevel)
+        if (experience >= experienceToNextLevel)
         {
-            SetLevel(_level + 1);
+            experience = 0;
+            SetLevel(level + 1);
         }
+        YandexGame.savesData.Experience = experience;
+        YandexGame.SaveProgress();
     }
 
     private void SetLevel(int value)
     {
-        _level = value;
-        _experience = _experience - _experienceToNextLevel;
-        _experienceToNextLevel = (int)(50f * (Mathf.Pow(_level + 1, 2) - (5 * (_level + 1)) + 8));
+        level = value;
+        experienceToNextLevel = (int)(50f * (Mathf.Pow(level + 1, 2) - (5 * (level + 1)) + 8));
         UpdateVisual();
         
-        YandexGame.savesData.Level = _level;
-        YandexGame.savesData.Experience = _experience;
-        YandexGame.savesData.ExperienceToNextLevel = _experienceToNextLevel;
+        YandexGame.savesData.Level = level;
+        YandexGame.savesData.ExperienceToNextLevel = experienceToNextLevel;
         YandexGame.SaveProgress();
         
         _progressUI.RefreshAllUI();
@@ -189,7 +191,7 @@ public class ClickerScore : MonoBehaviour
 
     public void UpdateVisual()
     {
-        Debug.Log(_level.ToString("0") + "\nto next lvl: " + _experienceToNextLevel + "\ncurrent exp: " + _experience);
+        Debug.Log(level.ToString("0") + "\nto next lvl: " + experienceToNextLevel + "\ncurrent exp: " + experience);
         //lvlUI.text = _level.ToString();
     }
 }

@@ -26,8 +26,8 @@ public class ChangeScene : MonoBehaviour
         YandexGame.savesData.ClickMultiplayer = 1;
         YandexGame.savesData.BgNum = -1;
         YandexGame.savesData.Experience = 0;
-        YandexGame.savesData.ExperienceToNextLevel = 0;
-        YandexGame.savesData.Level = 0;
+        YandexGame.savesData.ExperienceToNextLevel = 200;
+        YandexGame.savesData.Level = 1;
         YandexGame.savesData.PusheenNums = new List<int>();
         ResetLeaderboard();
         YandexGame.SaveProgress();

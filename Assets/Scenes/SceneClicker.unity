@@ -2451,7 +2451,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -147, y: 0}
-  m_SizeDelta: {x: 623.5, y: 623.5}
+  m_SizeDelta: {x: 623.5, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763761721
 MonoBehaviour:
@@ -4550,7 +4550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1541464437
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4567,7 +4567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -4.799988}
+  m_AnchoredPosition: {x: 0, y: -4.7999268}
   m_SizeDelta: {x: 326.73, y: 70.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1541464438
@@ -6646,9 +6646,9 @@ MonoBehaviour:
   _buttonUpdate: {fileID: 1462144404}
   ClicksCount: 0
   ClickMultiplayer: 1
-  _level: 0
-  _experience: 0
-  _experienceToNextLevel: 0
+  level: 1
+  experience: 0
+  experienceToNextLevel: 0
   ParticleSystems:
   - {fileID: 9215180084365062601, guid: fd056b636a64eda47aae576ef304d6a7, type: 3}
   - {fileID: 9215180084365062601, guid: 3577d30b1e4cd7546b1a9167d2867fe5, type: 3}
@@ -6668,6 +6668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyUI: {fileID: 1890290860}
+  _clickerScore: {fileID: 2097246767}
   _slider: {fileID: 1835213614}
   _sliderTextUI: {fileID: 5703982}
   _levelUI: {fileID: 1301633888}

@@ -22,7 +22,7 @@ namespace YG
         public long MoneyAmount = 0;
         public int ClickMultiplayer = 1;
         
-        public int Level = 0;
+        public int Level = 1;
         public long Experience = 0;
         public long ExperienceToNextLevel = 0;
         
