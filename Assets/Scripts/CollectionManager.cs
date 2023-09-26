@@ -15,20 +15,23 @@ public class CollectionManager : MonoBehaviour
     [SerializeField] private TMP_Text _textName;
     
     [SerializeField] private TMP_Text _textNumber;
+    [SerializeField] private TMP_Text _textCopyAmount;
     [SerializeField] private int _currentIndex = 0;
     private void Start()
     {
         UpdateUI(_currentIndex);
     }
 
-
     private void UpdateUI(int num)
     {
         _currentIndex = num;
         
         _image.sprite = _collectionItems[num].Sprite;
+        _textCopyAmount.text = GetCopyAmountText(num);
         if (YandexGame.savesData.PusheenNums.Contains(num))
+        {
             _image.material = null;
+        }
         else
             _image.material = _greyMaterial;
         
@@ -36,9 +39,22 @@ public class CollectionManager : MonoBehaviour
             _textName.text = _collectionItems[num].NameRu;
         
         if (YandexGame.savesData.language.Equals("en"))
-            _textName.text = _collectionItems[num].NameRu;
+            _textName.text = _collectionItems[num].NameEn;
 
         _textNumber.text = (num + 1) + "/" + _collectionItems.Count;
+    }
+
+    private string GetCopyAmountText(int num)
+    {
+        if (YandexGame.savesData.PusheenNums.Contains(num))
+        {
+            int count = YandexGame.savesData.PusheenNums.FindAll(i => i == num).Count;
+            
+            if(count > 1)
+                return "X" + YandexGame.savesData.PusheenNums.FindAll(i => i == num).Count.ToString();
+        }
+
+        return "";
     }
 
     public void NextItem()

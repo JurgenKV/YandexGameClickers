@@ -17,6 +17,11 @@ public class ProgressUI : MonoBehaviour
         RefreshLevelUI();
         RefreshScorebarUI();
     }
+    
+    private void Update()
+    {
+        RefreshMoneyUI();
+    }
 
     public void RefreshMoneyUI()
     {
@@ -30,8 +35,6 @@ public class ProgressUI : MonoBehaviour
     
     private void RefreshScorebarUI()
     {
-        //GetPercent(_clickerScore.experience, _clickerScore.experienceToNextLevel);
-        //_levelUI.text = YandexGame.savesData.Level.ToString();
         _slider.value =  (GetPercent(_clickerScore.experience, _clickerScore.experienceToNextLevel) + 10);
         _sliderTextUI.text = _clickerScore.experience.ToString() + "/" +
                              _clickerScore.experienceToNextLevel.ToString();

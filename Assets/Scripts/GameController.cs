@@ -19,11 +19,11 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         //CheckProgress();
-        
-        ShowFullAds();
+        if(SceneManager.GetActiveScene().name.Equals("SceneClicker"))
+            ShowFullAds();
     }
 
-    private void ShowFullAds()
+    public static void ShowFullAds()
     {
         try
         {
@@ -34,5 +34,5 @@ public class GameController : MonoBehaviour
             Console.WriteLine(e);
         }
     }
-
+    
 }

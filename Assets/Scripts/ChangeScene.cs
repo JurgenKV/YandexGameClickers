@@ -14,6 +14,12 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(_sceneName);
     }
     
+    public void ChangeSceneButtonWithAds()
+    {
+        SceneManager.LoadScene(_sceneName);
+        GameController.ShowFullAds();
+    }
+    
     public void RestartGame()
     {
         ResetPlayerData();
@@ -44,6 +50,6 @@ public class ChangeScene : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-        
     }
+    
 }
