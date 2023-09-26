@@ -113,7 +113,8 @@ public class ClickerScore : MonoBehaviour
 
     private void UpdateUpgradeClickUI()
     {
-        upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
+        if(upgradeClickCostUI != null)
+            upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
     }
 
     private long GetUpgradeCost()
