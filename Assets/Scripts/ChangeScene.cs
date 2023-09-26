@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YG;
@@ -21,22 +22,23 @@ public class ChangeScene : MonoBehaviour
 
     private void ResetPlayerData()
     {
-        YandexGame.savesData.MoneyScore = 0;
-        YandexGame.savesData.ScoreMultiplayer = 1;
+        YandexGame.savesData.MoneyAmount = 0;
+        YandexGame.savesData.ClickMultiplayer = 1;
         YandexGame.savesData.BgNum = -1;
-        YandexGame.savesData.ObjectImageNum = -1;
-        YandexGame.savesData.ObjectImageSecNum = -1;
-        YandexGame.savesData.IsAnimal = false;
-        UpdateLeaderboard();
+        YandexGame.savesData.Experience = 0;
+        YandexGame.savesData.ExperienceToNextLevel = 0;
+        YandexGame.savesData.Level = 0;
+        YandexGame.savesData.PusheenNums = new List<int>();
+        ResetLeaderboard();
         YandexGame.SaveProgress();
         Debug.Log("ResetPlayerData");
     }
     
-    private void UpdateLeaderboard()
+    private void ResetLeaderboard()
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestLevelPlayerEggClicker", 0);
+            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", 0);
         }
         catch (Exception e)
         {

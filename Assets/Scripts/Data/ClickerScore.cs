@@ -12,8 +12,7 @@ using Random = UnityEngine.Random;
 public class ClickerScore : MonoBehaviour
 {
     [SerializeField] private GameController _gameController;
-    [SerializeField] private TMP_Text clicksUI;
-    [SerializeField] private TMP_Text lvlUI;
+    [SerializeField] private ProgressUI _progressUI;
     
     [Header("Upgrade Click")]
     [SerializeField] private TMP_Text upgradeClickCostUI;
@@ -28,26 +27,32 @@ public class ClickerScore : MonoBehaviour
     public long ClicksCount = 0;
     private bool _coroutineX2CLicks = false;
     public int ClickMultiplayer = 1;
+    
+    [SerializeField]private int _level = 0;
+    [SerializeField]private long _experience;
+    [SerializeField]private long _experienceToNextLevel;
 
     [SerializeField] public List<GameObject> ParticleSystems;
     //[SerializeField] private List<Animator> _animators;
     private void Start()
     {
         LoadData();
+        
+        if(_level == 0)
+            SetLevel(1);
+        
         UpdateUpgradeClickUI();
         UpdateLeaderboard();
+        _progressUI.RefreshAllUI();
     }
 
-    private void Update()
-    {
-        clicksUI.text = ClicksCount.ToString() + "$";
-        lvlUI.text = ClickMultiplayer.ToString();
-    }
-    
     private void LoadData()
     {
-        ClicksCount = YandexGame.savesData.MoneyScore;
-        ClickMultiplayer = YandexGame.savesData.ScoreMultiplayer;
+        ClicksCount = YandexGame.savesData.MoneyAmount;
+        ClickMultiplayer = YandexGame.savesData.ClickMultiplayer;
+        _level = YandexGame.savesData.Level;
+        _experience = YandexGame.savesData.Experience;
+        _experienceToNextLevel = YandexGame.savesData.ExperienceToNextLevel;
     }
 
     public void Click()
@@ -58,14 +63,17 @@ public class ClickerScore : MonoBehaviour
         if (_coroutineX2CLicks)
         {
             ClicksCount += 1 * ClickMultiplayer * 2;
+            AddExperience(1 * ClickMultiplayer * 2);
         }
         else
         {
             ClicksCount += 1 * ClickMultiplayer;
+            AddExperience(1 * ClickMultiplayer);
         }
-
-        YandexGame.savesData.MoneyScore = ClicksCount;
+        Debug.Log("Click");
+        YandexGame.savesData.MoneyAmount = ClicksCount;
         YandexGame.SaveProgress();
+        _progressUI.RefreshAllUI();
     }
 
     public void VideoClickX2()
@@ -97,9 +105,8 @@ public class ClickerScore : MonoBehaviour
         
         ClickMultiplayer++;
         UpdateUpgradeClickUI();
-        YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
         UpdateLeaderboard();
-        RefreshEgg();
         YandexGame.SaveProgress();
     }
 
@@ -108,23 +115,6 @@ public class ClickerScore : MonoBehaviour
         upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
     }
 
-    private void RefreshEgg()
-    {
-        if(ClickMultiplayer < 10)
-            YandexGame.savesData.ObjectImageSecNum = ClickMultiplayer - 1;
-        else
-            YandexGame.savesData.ObjectImageSecNum = -1;
-        
-        if (ClickMultiplayer == 10 & !YandexGame.savesData.IsAnimal)
-        {
-            YandexGame.savesData.AnimalNum = Random.Range(0, _gameController._animalsSprites.Count);
-            YandexGame.savesData.IsAnimal = true;
-        }
-        YandexGame.SaveProgress();
-        _gameController.CheckProgress();
-    }
-    
-    
     private long GetUpgradeCost()
     {
         //x * ((level+1) ^ y) - (x * level):
@@ -134,7 +124,7 @@ public class ClickerScore : MonoBehaviour
         
         return (long)cost;
     }
-    
+
     public void ADSUpgradeClick()
     {
         ClickMultiplayer++;
@@ -148,9 +138,8 @@ public class ClickerScore : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-        YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
+        YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
         UpdateLeaderboard();
-        RefreshEgg();
         YandexGame.SaveProgress();
     }
     IEnumerator TimerUpdateCoroutine()
@@ -164,12 +153,43 @@ public class ClickerScore : MonoBehaviour
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestLevelPlayerEggClicker", ClickMultiplayer);
+            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", 0);
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
         }
         
+    }
+
+    public void AddExperience(long experienceToAdd)
+    {
+        _experience += experienceToAdd;
+        
+        if (_experience >= _experienceToNextLevel)
+        {
+            SetLevel(_level + 1);
+        }
+    }
+
+    private void SetLevel(int value)
+    {
+        _level = value;
+        _experience = _experience - _experienceToNextLevel;
+        _experienceToNextLevel = (int)(50f * (Mathf.Pow(_level + 1, 2) - (5 * (_level + 1)) + 8));
+        UpdateVisual();
+        
+        YandexGame.savesData.Level = _level;
+        YandexGame.savesData.Experience = _experience;
+        YandexGame.savesData.ExperienceToNextLevel = _experienceToNextLevel;
+        YandexGame.SaveProgress();
+        
+        _progressUI.RefreshAllUI();
+    }
+
+    public void UpdateVisual()
+    {
+        Debug.Log(_level.ToString("0") + "\nto next lvl: " + _experienceToNextLevel + "\ncurrent exp: " + _experience);
+        //lvlUI.text = _level.ToString();
     }
 }

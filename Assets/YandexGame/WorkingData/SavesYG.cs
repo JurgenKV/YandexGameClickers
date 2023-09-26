@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using UnityEngine.Serialization;
 
 namespace YG
@@ -17,16 +18,19 @@ namespace YG
         // public int money = 1;                       // Можно задать полям значения по умолчанию
         // public string newPlayerName = "Hello!";
         // public bool[] openLevels = new bool[3];
+       
+        public long MoneyAmount = 0;
+        public int ClickMultiplayer = 1;
+        
+        public int Level = 0;
+        public long Experience = 0;
+        public long ExperienceToNextLevel = 0;
         
         public int BgNum = -1;
-        public int ObjectImageNum = -1;
-        public int ObjectImageSecNum = -1;
-        public int AnimalNum = -1;
-        public bool IsAnimal = false;
+        public List<int> PusheenNums = new List<int>();
         public bool IsMusicEnabled = true;
         public bool IsSoundEnabled = true;
-        public long MoneyScore = 0;
-        public int ScoreMultiplayer = 1;
+
         // Ваши сохранения
 
         // ...

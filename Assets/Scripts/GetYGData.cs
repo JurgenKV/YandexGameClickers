@@ -12,7 +12,7 @@
 
         private void GetData()
         {
-            Debug.Log(YandexGame.savesData.MoneyScore + "Score");
+            Debug.Log(YandexGame.savesData.MoneyAmount + "Score");
             SceneManager.LoadScene(_sceneName);
         }
         

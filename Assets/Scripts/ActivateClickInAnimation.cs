@@ -49,7 +49,7 @@ public class ActivateClickInAnimation : MonoBehaviour
 
     public void PlayEggSoundEvent()
     {
-        if (YandexGame.savesData.IsSoundEnabled & !YandexGame.savesData.IsAnimal)
+        if (YandexGame.savesData.IsSoundEnabled)
         {
             if (_audioSources.TrueForAll(i => !i.isPlaying))
             {

@@ -33,8 +33,8 @@ public class ChangeImage : MonoBehaviour
         if(_spriteType == SpriteType.Background)
             LoadImage(YandexGame.savesData.BgNum);
         
-        if(_spriteType == SpriteType.Object)
-            LoadImage(YandexGame.savesData.ObjectImageNum);
+        // if(_spriteType == SpriteType.Object)
+        //     LoadImage(YandexGame.savesData.ObjectImageNum);
     }
 
     public void OnImageChange()
@@ -54,8 +54,8 @@ public class ChangeImage : MonoBehaviour
         if(_spriteType == SpriteType.Background)
             YandexGame.savesData.BgNum = _currentBgIndex;
         
-        if(_spriteType == SpriteType.Object)
-            YandexGame.savesData.ObjectImageNum = _currentBgIndex;
+        // if(_spriteType == SpriteType.Object)
+        //     YandexGame.savesData.ObjectImageNum = _currentBgIndex;
         
         YandexGame.SaveProgress();
     }
@@ -89,10 +89,7 @@ public class ChangeImage : MonoBehaviour
         
         if(_spriteType == SpriteType.Background)
             YandexGame.savesData.BgNum = _currentBgIndex;
-        
-        if(_spriteType == SpriteType.Object)
-            YandexGame.savesData.ObjectImageNum = _currentBgIndex;
-        
+
         YandexGame.SaveProgress();
         
         try

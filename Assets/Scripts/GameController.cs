@@ -12,57 +12,15 @@ using YG;
 
 public class GameController : MonoBehaviour
 {
-    [Header("Main")]
-    [SerializeField] private GameObject _eggObject;
-    [SerializeField] private GameObject _animalObject;
-    [SerializeField] private GameObject _recolorEgg;
-    [SerializeField] private GameObject _recolorEggADS;
-    
-    [Header("DestrEgg")]
-    [SerializeField] private Sprite _nullSprite;
-    [SerializeField] private Image _destrEgg;
-    [SerializeField] private List<Sprite> _destrEggs;
-    
-    [Header("Animal")]
-    [SerializeField] private Image _animalSprite;
-    [SerializeField] public List<Sprite> _animalsSprites;
+    // [Header("Main")]
+    // [SerializeField] private GameObject _Object;
+
 
     private void Start()
     {
-        CheckProgress();
+        //CheckProgress();
+        
         ShowFullAds();
-    }
-
-    public void CheckProgress()
-    {
-        if (!YandexGame.savesData.IsAnimal)
-        {
-            _eggObject.SetActive(true);
-            _animalObject.SetActive(false);
-            _recolorEgg.SetActive(true);
-            _recolorEggADS.SetActive(true);
-            CheckDestroyableEgg();
-        }
-        else
-        {
-            _eggObject.SetActive(false);
-            _animalObject.SetActive(true);
-            _recolorEgg.SetActive(false);
-            _recolorEggADS.SetActive(false);
-            _animalSprite.sprite = _animalsSprites[YandexGame.savesData.AnimalNum];
-        }
-    }
-
-    private void CheckDestroyableEgg()
-    {
-        if (YandexGame.savesData.ObjectImageSecNum == -1)
-        {
-            _destrEgg.sprite = _nullSprite;
-        }
-        else
-        {
-            _destrEgg.sprite = _destrEggs[YandexGame.savesData.ObjectImageSecNum];
-        }
     }
 
     private void ShowFullAds()
