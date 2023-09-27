@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 15, y: 15, z: 15, w: 15}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1748,8 +1748,8 @@ MonoBehaviour:
     NameRu: "\u0414\u0438\u0434\u0436\u0435\u0439 \u041A\u043E\u0442\u0441"
     NameEn: DJ Cat
   - Sprite: {fileID: 21300000, guid: 377a2b2aee45b054f9a02b40d1c3b989, type: 3}
-    NameRu: Unicorn
-    NameEn: "\u0415\u0434\u0438\u043D\u043E\u043A\u043E\u0448\u043A\u0430"
+    NameRu: "\u0415\u0434\u0438\u043D\u043E\u043A\u043E\u0448\u043A\u0430"
+    NameEn: Unicorn
   - Sprite: {fileID: 21300000, guid: f845dcde5f679834b8609dcce61085ea, type: 3}
     NameRu: "\u0421\u043C\u0435\u0448\u043E\u0447\u0435\u043A"
     NameEn: Little Laugh
@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 15, y: 15, z: 15, w: 15}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
