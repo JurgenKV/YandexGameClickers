@@ -35,4 +35,16 @@ public class GameController : MonoBehaviour
         }
     }
     
+    public static void SetLeaderboard(int num)
+    {
+        try
+        {
+            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", num);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+    
 }

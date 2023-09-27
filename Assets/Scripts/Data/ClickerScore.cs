@@ -41,9 +41,8 @@ public class ClickerScore : MonoBehaviour
         
         
         SetLevel(level);
-        
+       
         UpdateUpgradeClickUI();
-        UpdateLeaderboard();
         _progressUI.RefreshAllUI();
     }
 
@@ -107,7 +106,6 @@ public class ClickerScore : MonoBehaviour
         ClickMultiplayer++;
         UpdateUpgradeClickUI();
         YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
-        UpdateLeaderboard();
         YandexGame.SaveProgress();
     }
 
@@ -141,7 +139,6 @@ public class ClickerScore : MonoBehaviour
             Console.WriteLine(e);
         }
         YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
-        UpdateLeaderboard();
         YandexGame.SaveProgress();
     }
     IEnumerator TimerUpdateCoroutine()
@@ -149,19 +146,6 @@ public class ClickerScore : MonoBehaviour
         _buttonUpdate.interactable = false;
         yield return new WaitForSeconds(60);
         _buttonUpdate.interactable = true;
-    }
-
-    private void UpdateLeaderboard()
-    {
-        try
-        {
-            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", 0);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-        
     }
 
     public void AddExperience(long experienceToAdd)
@@ -185,6 +169,7 @@ public class ClickerScore : MonoBehaviour
         
         YandexGame.savesData.Level = level;
         YandexGame.savesData.ExperienceToNextLevel = experienceToNextLevel;
+        GameController.SetLeaderboard(level);
         YandexGame.SaveProgress();
         
         _progressUI.RefreshAllUI();

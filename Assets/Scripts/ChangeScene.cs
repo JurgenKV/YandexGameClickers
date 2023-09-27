@@ -35,21 +35,8 @@ public class ChangeScene : MonoBehaviour
         YandexGame.savesData.ExperienceToNextLevel = 100;
         YandexGame.savesData.Level = 1;
         YandexGame.savesData.PusheenNums = new List<int>();
-        ResetLeaderboard();
+        GameController.SetLeaderboard(0);
         YandexGame.SaveProgress();
         Debug.Log("ResetPlayerData");
     }
-    
-    private void ResetLeaderboard()
-    {
-        try
-        {
-            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", 0);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-    }
-    
 }
