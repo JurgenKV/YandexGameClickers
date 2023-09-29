@@ -36,7 +36,7 @@ MonoBehaviour:
   languages:
     ru: 1
     en: 1
-    tr: 1
+    tr: 0
     az: 0
     be: 0
     he: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
     de: 
     hi: 
   debug: 0
-  archivingBuild: 1
+  archivingBuild: 0
   bakcgroundImage: 2
   pixelRatioEnable: 0
   pixelRatioValue: 1
