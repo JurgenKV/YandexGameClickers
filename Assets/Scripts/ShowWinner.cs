@@ -74,9 +74,9 @@ public class ShowWinner : MonoBehaviour
         Debug.Log("_indexOfGirl" + _indexOfGirl);
         try
         {
+            YandexGame.RewVideoShow(0);
             dressImages[_indexOfGirl].enabled = false;
             ADSButton.SetActive(false);
-            YandexGame.RewVideoShow(0);
         }
         catch (Exception e)
         {

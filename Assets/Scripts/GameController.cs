@@ -14,7 +14,10 @@ public class GameController : MonoBehaviour
 {
     // [Header("Main")]
     // [SerializeField] private GameObject _Object;
-
+    private void Awake()
+    {
+        //YandexGame._SetSDKReady();
+    }
 
     private void Start()
     {
@@ -34,7 +37,7 @@ public class GameController : MonoBehaviour
             Console.WriteLine(e);
         }
     }
-    
+
     public static void SetLeaderboard(int num)
     {
         try

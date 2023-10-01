@@ -80,9 +80,8 @@ public class ClickerScore : MonoBehaviour
     {
         if (!_coroutineX2CLicks)
         {
-            StartCoroutine(TimerX2Coroutine());
             YandexGame.RewVideoShow(1);
-            
+            StartCoroutine(TimerX2Coroutine());
         }
            
     }
@@ -127,9 +126,7 @@ public class ClickerScore : MonoBehaviour
 
     public void ADSUpgradeClick()
     {
-        ClickMultiplayer++;
-        UpdateUpgradeClickUI();
-        StartCoroutine(TimerUpdateCoroutine());
+        
         try
         {
             YandexGame.RewVideoShow(2);
@@ -138,6 +135,9 @@ public class ClickerScore : MonoBehaviour
         {
             Console.WriteLine(e);
         }
+        ClickMultiplayer++;
+        UpdateUpgradeClickUI();
+        StartCoroutine(TimerUpdateCoroutine());
         YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
         YandexGame.SaveProgress();
     }

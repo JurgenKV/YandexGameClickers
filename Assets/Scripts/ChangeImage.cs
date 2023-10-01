@@ -76,6 +76,14 @@ public class ChangeImage : MonoBehaviour
     
     public void ADSBgClick()
     {
+        try
+        {
+            YandexGame.RewVideoShow(3);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
         
         int index;
         do
@@ -91,15 +99,6 @@ public class ChangeImage : MonoBehaviour
             YandexGame.savesData.BgNum = _currentBgIndex;
 
         YandexGame.SaveProgress();
-        
-        try
-        {
-            YandexGame.RewVideoShow(3);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
 
     }
     IEnumerator TimerBgCoroutine()

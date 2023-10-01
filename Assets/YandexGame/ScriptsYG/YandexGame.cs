@@ -360,6 +360,16 @@ namespace YG
 #endif
         }
         #endregion Initialization SDK
+        
+        // #region Set SDK Ready
+        // [DllImport("__Internal")]
+        // private static extern void SetSDKReady();
+        //
+        // public static void _SetSDKReady()
+        // {
+        //     SetSDKReady();
+        // }
+        // #endregion Set SDK Ready
 
         #region Init Leaderboard
         [DllImport("__Internal")]
