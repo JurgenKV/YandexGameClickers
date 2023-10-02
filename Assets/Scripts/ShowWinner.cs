@@ -71,22 +71,22 @@ public class ShowWinner : MonoBehaviour
 
     public void UndressButton()
     {
-        Debug.Log("_indexOfGirl" + _indexOfGirl);
-        try
-        {
-            YandexGame.RewVideoShow(0);
-            dressImages[_indexOfGirl].enabled = false;
-            ADSButton.SetActive(false);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            dressImages[_indexOfGirl].enabled = false;
-            ADSButton.SetActive(false);
-        }
-
-       // YandexGame.savesData.IsGirlUndressed = true;
-        YandexGame.SaveProgress();
+       //  Debug.Log("_indexOfGirl" + _indexOfGirl);
+       //  try
+       //  {
+       //      YandexGame.RewVideoShow(0);
+       //      dressImages[_indexOfGirl].enabled = false;
+       //      ADSButton.SetActive(false);
+       //  }
+       //  catch (Exception e)
+       //  {
+       //      Console.WriteLine(e);
+       //      dressImages[_indexOfGirl].enabled = false;
+       //      ADSButton.SetActive(false);
+       //  }
+       //
+       // // YandexGame.savesData.IsGirlUndressed = true;
+       //  YandexGame.SaveProgress();
     }
 
     public void UndressGirlIfSave(int girlNum = -1)

@@ -76,14 +76,36 @@ public class ChangeImage : MonoBehaviour
     
     public void ADSBgClick()
     {
-        try
-        {
-            YandexGame.RewVideoShow(3);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        // try
+        // {
+        //     YandexGame.RewVideoShow(3);
+        // }
+        // catch (Exception e)
+        // {
+        //     Console.WriteLine(e);
+        // }
+        
+        YGRewardedVideoManager.OpenRewardAd(3);
+        //
+        // int index;
+        // do
+        // { 
+        //     index = Random.Range(0, _images.Count);
+        // } while (_currentBgIndex == index);
+        //
+        // _currentBgIndex = index;
+        // _Image.sprite = _images[_currentBgIndex];
+        // StartCoroutine(TimerBgCoroutine());
+        //
+        // if(_spriteType == SpriteType.Background)
+        //     YandexGame.savesData.BgNum = _currentBgIndex;
+        //
+        // YandexGame.SaveProgress();
+        //
+    }
+
+    public void EndRewardADSBgClick()
+    {
         
         int index;
         do
@@ -101,6 +123,7 @@ public class ChangeImage : MonoBehaviour
         YandexGame.SaveProgress();
 
     }
+    
     IEnumerator TimerBgCoroutine()
     {
         _button.interactable = false;
