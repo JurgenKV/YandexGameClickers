@@ -25,6 +25,8 @@ public class ClickerScore : MonoBehaviour
     [SerializeField] private Button _buttonX2;
     [SerializeField] private Button _buttonUpdate;
 
+    [SerializeField] private ChangeImage _changeImage;
+
     private long _clickCount = 0;
     public long ClicksCount
     {
@@ -212,5 +214,6 @@ public class ClickerScore : MonoBehaviour
     {
         Debug.Log(level.ToString("0") + "\nto next lvl: " + experienceToNextLevel + "\ncurrent exp: " + experience);
         //lvlUI.text = _level.ToString();
+        _changeImage.LoadImage(YandexGame.savesData.catType);
     }
 }

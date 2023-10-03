@@ -27,7 +27,7 @@ namespace YG
         public long Experience = 0;
         public long ExperienceToNextLevel = 0;
         
-        public int ObjectImageNum = 0;
+        //public int ObjectImageNum = 0;
         public int roomLevel = -1;
         public int catType = 0;
         // public List<int> PusheenNums = new List<int>();

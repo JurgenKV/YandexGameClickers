@@ -44,6 +44,7 @@ public class ActivateClickInAnimation : MonoBehaviour
             _currentPosition, Quaternion.identity);
         //PlayEggSound();
         //tempObj.AddComponent<ParticleTimer>();
+        ClickEvent();
         _animator.SetTrigger(Scale);
     }
 

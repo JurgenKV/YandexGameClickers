@@ -20,42 +20,42 @@ public class ChangeImage : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private int _cost = 250;
 
-    [SerializeField] private List<Sprite> _images = new List<Sprite>();
-    [SerializeField] private Sprite _defaultSprite;
+    [SerializeField] private List<ColorsCollection> _spritesLists;
     [SerializeField] private Image _Image;
     [SerializeField] private SpriteType _spriteType;
-    
+
+    [SerializeField] private List<GameObject> _shadows = new List<GameObject>();
     private int _currentIndex = 0;
     private void Start()
     {
-        _Image.sprite = _defaultSprite;
-        
+
         // if(_spriteType == SpriteType.Background)
         //     LoadImage(YandexGame.savesData.BgNum);
         
         if(_spriteType == SpriteType.Object)
-            LoadImage(YandexGame.savesData.ObjectImageNum);
+            LoadImage(YandexGame.savesData.catType);
     }
 
     public void OnImageChange()
     {
         if (_clickerScore.ClicksCount < _cost)
             return;
+        
         _clickerScore.ClicksCount -= _cost;
         
         int index;
         do
         { 
-            index = Random.Range(0, _images.Count);
+            index = Random.Range(0, _spritesLists.Count);
         } while (_currentIndex == index);
         _currentIndex = index;
-        _Image.sprite = _images[_currentIndex];
+        _Image.sprite = GetImageByLevel(_currentIndex);
         
         // if(_spriteType == SpriteType.Background)
         //     YandexGame.savesData.BgNum = _currentBgIndex;
         
         if(_spriteType == SpriteType.Object)
-            YandexGame.savesData.ObjectImageNum = _currentIndex;
+            YandexGame.savesData.catType = _currentIndex;
         
         YandexGame.SaveProgress();
     }
@@ -65,12 +65,12 @@ public class ChangeImage : MonoBehaviour
         Debug.Log(bgNum);
         if (bgNum == -1)
         {
-            _Image.sprite = _defaultSprite;
+           // _Image.sprite = _defaultSprite;
         }
         else
         {
             _currentIndex = bgNum;
-            _Image.sprite = _images[bgNum];
+            _Image.sprite = GetImageByLevel(_currentIndex);
         }
     }
     
@@ -85,13 +85,18 @@ public class ChangeImage : MonoBehaviour
         int index;
         do
         { 
-            index = Random.Range(0, _images.Count);
+            index = Random.Range(0, _spritesLists.Count);
         } while (_currentIndex == index);
-
         _currentIndex = index;
-        _Image.sprite = _images[_currentIndex];
-        StartCoroutine(TimerBgCoroutine());
+        _Image.sprite = GetImageByLevel(_currentIndex);
         
+        // if(_spriteType == SpriteType.Background)
+        //     YandexGame.savesData.BgNum = _currentBgIndex;
+        
+        if(_spriteType == SpriteType.Object)
+            YandexGame.savesData.catType = _currentIndex;
+
+        StartCoroutine(TimerBgCoroutine());
         // if(_spriteType == SpriteType.Background)
         //     YandexGame.savesData.BgNum = _currentBgIndex;
 
@@ -105,4 +110,34 @@ public class ChangeImage : MonoBehaviour
         yield return new WaitForSeconds(60);
         _button.interactable = true;
     }
+
+    private Sprite GetImageByLevel(int index)
+    {
+        foreach (GameObject shadow in _shadows)
+        {
+            shadow.SetActive(false);
+        }
+
+        int ind = _clickerScore.level - 1;
+        if(ind < 3 )
+            _shadows[0].SetActive(true);
+
+        if (3 <= ind & ind <= 5)
+            _shadows[1].SetActive(true);
+        
+        if(ind > 5)
+            _shadows[2].SetActive(true);
+
+        if (_clickerScore.level < 10)
+            return _spritesLists[index].Sprites[_clickerScore.level - 1];
+        else
+            return _spritesLists[index].Sprites.Last();
+    }
+    
+    [Serializable]
+    protected class ColorsCollection
+    {
+        public List<Sprite> Sprites = new List<Sprite>();
+    }
 }
+
