@@ -14,18 +14,31 @@ public class ClickerScore : MonoBehaviour
 {
     [SerializeField] private GameController _gameController;
     [SerializeField] private ProgressUI _progressUI;
-    
-    [Header("Upgrade Click")]
-    [SerializeField] private TMP_Text upgradeClickCostUI;
+
+    [Header("Upgrade Click")] [SerializeField]
+    private TMP_Text upgradeClickCostUI;
 
     [SerializeField] private double constX;
     [SerializeField] private double degreeY;
-    
-    [Space(1)]
-    [SerializeField] private Button _buttonX2;
+
+    [Space(1)] [SerializeField] private Button _buttonX2;
     [SerializeField] private Button _buttonUpdate;
 
-    public long ClicksCount = 0;
+    private long _clickCount = 0;
+    public long ClicksCount
+    {
+        get
+        {
+            return _clickCount ; // возвращаем значение свойства
+        }
+        set
+        {
+            YandexGame.savesData.MoneyAmount = value;
+            YandexGame.SaveProgress();
+            _clickCount = value; // устанавливаем новое значение свойства
+        }
+    }
+
     private bool _coroutineX2CLicks = false;
     public int ClickMultiplayer = 1;
     

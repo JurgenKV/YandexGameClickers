@@ -30,9 +30,9 @@ public class CollectionButton : MonoBehaviour
         int index = Random.Range(0, maxCollectionCount + 1);
         
         YandexGame.savesData.PusheenNums.Add(index);
+        YandexGame.SaveProgress();
         StartCoroutine(TimerCoroutine());
         
-        YandexGame.SaveProgress();
     }
 
     IEnumerator TimerCoroutine()
