@@ -25,16 +25,16 @@ public class ChangeImage : MonoBehaviour
     [SerializeField] private Image _Image;
     [SerializeField] private SpriteType _spriteType;
     
-    private int _currentBgIndex = 0;
+    private int _currentIndex = 0;
     private void Start()
     {
         _Image.sprite = _defaultSprite;
         
-        if(_spriteType == SpriteType.Background)
-            LoadImage(YandexGame.savesData.BgNum);
+        // if(_spriteType == SpriteType.Background)
+        //     LoadImage(YandexGame.savesData.BgNum);
         
-        // if(_spriteType == SpriteType.Object)
-        //     LoadImage(YandexGame.savesData.ObjectImageNum);
+        if(_spriteType == SpriteType.Object)
+            LoadImage(YandexGame.savesData.ObjectImageNum);
     }
 
     public void OnImageChange()
@@ -47,15 +47,15 @@ public class ChangeImage : MonoBehaviour
         do
         { 
             index = Random.Range(0, _images.Count);
-        } while (_currentBgIndex == index);
-        _currentBgIndex = index;
-        _Image.sprite = _images[_currentBgIndex];
+        } while (_currentIndex == index);
+        _currentIndex = index;
+        _Image.sprite = _images[_currentIndex];
         
-        if(_spriteType == SpriteType.Background)
-            YandexGame.savesData.BgNum = _currentBgIndex;
+        // if(_spriteType == SpriteType.Background)
+        //     YandexGame.savesData.BgNum = _currentBgIndex;
         
-        // if(_spriteType == SpriteType.Object)
-        //     YandexGame.savesData.ObjectImageNum = _currentBgIndex;
+        if(_spriteType == SpriteType.Object)
+            YandexGame.savesData.ObjectImageNum = _currentIndex;
         
         YandexGame.SaveProgress();
     }
@@ -69,39 +69,14 @@ public class ChangeImage : MonoBehaviour
         }
         else
         {
-            _currentBgIndex = bgNum;
+            _currentIndex = bgNum;
             _Image.sprite = _images[bgNum];
         }
     }
     
     public void ADSBgClick()
     {
-        // try
-        // {
-        //     YandexGame.RewVideoShow(3);
-        // }
-        // catch (Exception e)
-        // {
-        //     Console.WriteLine(e);
-        // }
-        
         YGRewardedVideoManager.OpenRewardAd(3);
-        //
-        // int index;
-        // do
-        // { 
-        //     index = Random.Range(0, _images.Count);
-        // } while (_currentBgIndex == index);
-        //
-        // _currentBgIndex = index;
-        // _Image.sprite = _images[_currentBgIndex];
-        // StartCoroutine(TimerBgCoroutine());
-        //
-        // if(_spriteType == SpriteType.Background)
-        //     YandexGame.savesData.BgNum = _currentBgIndex;
-        //
-        // YandexGame.SaveProgress();
-        //
     }
 
     public void EndRewardADSBgClick()
@@ -111,14 +86,14 @@ public class ChangeImage : MonoBehaviour
         do
         { 
             index = Random.Range(0, _images.Count);
-        } while (_currentBgIndex == index);
+        } while (_currentIndex == index);
 
-        _currentBgIndex = index;
-        _Image.sprite = _images[_currentBgIndex];
+        _currentIndex = index;
+        _Image.sprite = _images[_currentIndex];
         StartCoroutine(TimerBgCoroutine());
         
-        if(_spriteType == SpriteType.Background)
-            YandexGame.savesData.BgNum = _currentBgIndex;
+        // if(_spriteType == SpriteType.Background)
+        //     YandexGame.savesData.BgNum = _currentBgIndex;
 
         YandexGame.SaveProgress();
 

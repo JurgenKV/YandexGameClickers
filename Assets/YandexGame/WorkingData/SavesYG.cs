@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace YG
@@ -26,8 +27,10 @@ namespace YG
         public long Experience = 0;
         public long ExperienceToNextLevel = 0;
         
-        public int BgNum = -1;
-        public List<int> PusheenNums = new List<int>();
+        public int ObjectImageNum = 0;
+        public int roomLevel = -1;
+        public int catType = 0;
+        // public List<int> PusheenNums = new List<int>();
         public bool IsMusicEnabled = true;
         public bool IsSoundEnabled = true;
 
@@ -49,6 +52,20 @@ namespace YG
             // Длина массива в проекте должна быть задана один раз!
             // Если после публикации игры изменить длину массива, то после обновления игры у пользователей сохранения могут поломаться
             // Если всё же необходимо увеличить длину массива, сдвиньте данное поле массива в самую нижнюю строку кода
+        }
+
+        public static void ResetPlayerData()
+        {
+            YandexGame.savesData.MoneyAmount = 0;
+            YandexGame.savesData.ClickMultiplayer = 1;
+            YandexGame.savesData.Experience = 0;
+            YandexGame.savesData.ExperienceToNextLevel = 100;
+            YandexGame.savesData.Level = 1;
+            YandexGame.savesData.roomLevel = -1;
+            YandexGame.savesData.catType = 0;
+            GameController.SetLeaderboard(0);
+            YandexGame.SaveProgress();
+            Debug.Log("ResetPlayerData");
         }
     }
 }

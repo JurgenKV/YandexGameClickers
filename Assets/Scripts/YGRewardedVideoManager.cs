@@ -7,6 +7,7 @@
     {
         [SerializeField] private ClickerScore _clickerScore;
         [SerializeField] private ChangeImage _changeImage;
+        [SerializeField] private UpgradeRoom _upgradeRoom;
 
         private static int _rewardIndex;
         private void OnEnable()
@@ -37,6 +38,10 @@
                     break;
                 case 3:
                     _changeImage.EndRewardADSBgClick();
+                    Debug.Log("EndReward");
+                    break;
+                case 4:
+                    _upgradeRoom.EndRewardADSUpgradeRoomClick();
                     Debug.Log("EndReward");
                     break;
             }
