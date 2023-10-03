@@ -59,7 +59,7 @@ namespace YG
             YandexGame.savesData.MoneyAmount = 0;
             YandexGame.savesData.ClickMultiplayer = 1;
             YandexGame.savesData.Experience = 0;
-            YandexGame.savesData.ExperienceToNextLevel = 100;
+            YandexGame.savesData.ExperienceToNextLevel = 1000;
             YandexGame.savesData.Level = 1;
             YandexGame.savesData.roomLevel = -1;
             YandexGame.savesData.catType = 0;

@@ -199,7 +199,7 @@ public class ClickerScore : MonoBehaviour
     private void SetLevel(int value)
     {
         level = value;
-        experienceToNextLevel = (int)(50f * (Mathf.Pow(level + 1, 2) - (5 * (level + 1)) + 8));
+        experienceToNextLevel = (int)(500 * (Mathf.Pow(level + 1, 2) - (5 * (level + 1)) + 8));
         UpdateVisual();
         
         YandexGame.savesData.Level = level;
