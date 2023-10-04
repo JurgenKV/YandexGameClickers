@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -26,7 +27,9 @@ public class ClickerScore : MonoBehaviour
     [SerializeField] private Button _buttonUpdate;
 
     [SerializeField] private ChangeImage _changeImage;
-
+    
+    [SerializeField] private List<AudioSource> _sources = new List<AudioSource>();
+    
     private long _clickCount = 0;
     public long ClicksCount
     {
@@ -91,6 +94,26 @@ public class ClickerScore : MonoBehaviour
         YandexGame.savesData.MoneyAmount = ClicksCount;
         YandexGame.SaveProgress();
         _progressUI.RefreshAllUI();
+    }
+
+    public void ConvertMoneyToExp(int cost)
+    {
+        if(ClicksCount < cost)
+            return;
+        ClicksCount -= cost;
+
+        AddExperience((long) (ClickMultiplayer * 1.5f) + 5);
+        
+        if (YandexGame.savesData.IsSoundEnabled)
+        {
+            if (_sources.All(i => !i.isPlaying))
+            {
+                _sources[Random.Range(0, _sources.Count)].Play();
+            }
+        }
+        _progressUI.RefreshAllUI();
+        YandexGame.savesData.MoneyAmount = ClicksCount;
+        YandexGame.SaveProgress();
     }
 
     public void VideoClickX2()
