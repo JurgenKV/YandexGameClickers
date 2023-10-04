@@ -60,7 +60,6 @@ public class UpgradeRoom : MonoBehaviour
 
     public void EndRewardADSUpgradeRoomClick()
     {
-        _clickerScore.ClicksCount -= _cost;
         _roomLevel++;
         LoadImage(_roomLevel);
         YandexGame.savesData.roomLevel = _roomLevel;
