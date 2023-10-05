@@ -20,14 +20,10 @@ namespace YG
         // public bool[] openLevels = new bool[3];
        
         public long MoneyAmount = 0;
-        public int ClickMultiplayer = 1;
+        public long BestScore = 0;
         
-        public int Level = 1;
-        public long Experience = 0;
-        public long ExperienceToNextLevel = 0;
-        
-        public int BgNum = -1;
         public List<int> PusheenNums = new List<int>();
+        
         public bool IsMusicEnabled = true;
         public bool IsSoundEnabled = true;
 

@@ -5,8 +5,8 @@
 
     public class YGRewardedVideoManager : MonoBehaviour
     {
-        [SerializeField] private ClickerScore _clickerScore;
-        [SerializeField] private ChangeImage _changeImage;
+       // [SerializeField] private ClickerScore _clickerScore;
+        //[SerializeField] private ChangeImage _changeImage;
 
         private static int _rewardIndex;
         private void OnEnable()
@@ -28,15 +28,15 @@
             switch (id)
             {
                 case 1:
-                    _clickerScore.EndRewardStartTimerX2Coroutine();
+                   // _clickerScore.EndRewardStartTimerX2Coroutine();
                     Debug.Log("EndReward");
                     break;
                 case 2:
-                    _clickerScore.EndRewardUpgradeClick();
+                   // _clickerScore.EndRewardUpgradeClick();
                     Debug.Log("EndReward");
                     break;
                 case 3:
-                    _changeImage.EndRewardADSBgClick();
+                   // _changeImage.EndRewardADSBgClick();
                     Debug.Log("EndReward");
                     break;
             }
@@ -47,15 +47,15 @@
             switch (_rewardIndex)
             {
                 case 1:
-                    _clickerScore.EndRewardStartTimerX2Coroutine();
+                   // _clickerScore.EndRewardStartTimerX2Coroutine();
                     Debug.Log("EndReward RewardedError");
                     break;
                 case 2:
-                    _clickerScore.EndRewardUpgradeClick();
+                  //  _clickerScore.EndRewardUpgradeClick();
                     Debug.Log("EndReward RewardedError");
                     break;
                 case 3:
-                    _changeImage.EndRewardADSBgClick();
+                   // _changeImage.EndRewardADSBgClick();
                     Debug.Log("EndReward RewardedError");
                     break;
             }

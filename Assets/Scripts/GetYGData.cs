@@ -18,21 +18,9 @@ public class GetYGData : MonoBehaviour
 
     private void OnDisable() => YandexGame.GetDataEvent -= GetData;
 
-    // private void Awake()
-    // {
-    //     if (YandexGame.SDKEnabled == true)
-    //     {
-    //         GetData();
-    //         Debug.Log("SDKEnabled == true");
-    //     }
-    // }
-
     private void GetData()
     {
         Debug.Log(YandexGame.savesData.MoneyAmount + "Score");
-        //_animator.SetTrigger("AnimEnd");
-        //Invoke(nameof(LoadGameEvent), 1);
-        //LoadGameEvent();
         _data = true;
     }
 
