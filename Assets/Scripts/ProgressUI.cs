@@ -7,8 +7,8 @@ using YG;
 public class ProgressUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _moneyUI;
-    [SerializeField] private Slider _slider;
-    [SerializeField] private TMP_Text _sliderTextUI;
+    //[SerializeField] private Slider _slider;
+    //[SerializeField] private TMP_Text _sliderTextUI;
     [SerializeField] private TMP_Text _score;
 
     public void RefreshAllUI()

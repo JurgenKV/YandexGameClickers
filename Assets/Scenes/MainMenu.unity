@@ -3060,8 +3060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyUI: {fileID: 1890290860}
-  _slider: {fileID: 0}
-  _sliderTextUI: {fileID: 0}
   _score: {fileID: 0}
 --- !u!1 &2136688056
 GameObject:
@@ -3645,9 +3643,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 26c9bac248611d5428bda962935ad576, type: 2}
     - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.2901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 7284057660243040257, guid: 26c9bac248611d5428bda962935ad576, type: 2}
+    - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278922058
+      objectReference: {fileID: 0}
     - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
