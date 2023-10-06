@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         //CheckProgress();
-        if(SceneManager.GetActiveScene().name.Equals("SceneClicker"))
+        if(SceneManager.GetActiveScene().name.Equals("MainMenu"))
             ShowFullAds();
     }
 
