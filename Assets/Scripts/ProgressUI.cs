@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -7,30 +8,67 @@ using YG;
 public class ProgressUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text _moneyUI;
-    //[SerializeField] private Slider _slider;
-    //[SerializeField] private TMP_Text _sliderTextUI;
-    [SerializeField] private TMP_Text _score;
+    [SerializeField] private TMP_Text _bestScoreUI;
+
+    public long Money
+    {
+        get => _money;
+
+        set
+        {
+            _money = value;
+            YandexGame.savesData.MoneyAmount = _money;
+            YandexGame.SaveProgress();
+            RefreshMoneyUI();
+        }
+    }
+    private long _money;
+
+    public long BestScore
+    {
+        get => _bestScore;
+
+        set
+        {
+            if(value <= _bestScore)
+                return;
+            
+            _bestScore = value;
+            YandexGame.savesData.BestScore = _bestScore;
+            YandexGame.SaveProgress();
+            RefreshBestScoreUI();
+        }
+    }
+    private long _bestScore;
+    
+    private void Start()
+    {
+        Money = YandexGame.savesData.MoneyAmount;
+        BestScore = YandexGame.savesData.BestScore;
+        RefreshAllUI();
+    }
 
     public void RefreshAllUI()
     {
         RefreshMoneyUI();
-        RefreshLevelUI();
-       // RefreshScorebarUI();
+        RefreshBestScoreUI();
     }
     
-    private void Update()
-    {
-        RefreshMoneyUI();
-    }
+    // private void Update()
+    // {
+    //     RefreshMoneyUI();
+    // }
 
     public void RefreshMoneyUI()
     {
-       // _moneyUI.text = _clickerScore.ClicksCount.ToString() + "$";
+        if(_bestScoreUI != null)
+            _moneyUI.text = Money.ToString() + "$";
     }
 
-    private void RefreshLevelUI()
+    private void RefreshBestScoreUI()
     {
-       // _score.text = _clickerScore.level.ToString();
+        if(_bestScoreUI != null)
+            _bestScoreUI.text = BestScore.ToString();
     }
 
     public static float GetPercent(long a, long b)

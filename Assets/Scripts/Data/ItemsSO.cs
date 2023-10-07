@@ -7,8 +7,9 @@ using UnityEngine;
 [Serializable]
 public class ItemsSO : ScriptableObject
 {
-    public List<Item> Items;
+    [SerializeField] public List<Item> Items;
     
+    [Serializable]
     public class Item
     {
         public int Index;

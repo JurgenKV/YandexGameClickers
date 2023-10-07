@@ -22,7 +22,7 @@ namespace YG
         public long MoneyAmount = 0;
         public long BestScore = 0;
         
-        public List<int> PusheenNums = new List<int>();
+        public List<ItemsSO.Item> Items = new List<ItemsSO.Item>();
         
         public bool IsMusicEnabled = true;
         public bool IsSoundEnabled = true;
