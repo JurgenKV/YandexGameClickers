@@ -29,7 +29,8 @@ public class ChangeScene : MonoBehaviour
     private void ResetPlayerData()
     {
         YandexGame.savesData.MoneyAmount = 0;
-        YandexGame.savesData.Items = new List<ItemsSO.Item>();
+        YandexGame.savesData.ActiveItems = new System.Collections.Generic.List<int>();
+        YandexGame.savesData.SoldItems = new System.Collections.Generic.List<int>();
         GameController.SetLeaderboard(0);
         YandexGame.SaveProgress();
         Debug.Log("ResetPlayerData");

@@ -8,7 +8,7 @@ public class ShopItem : MonoBehaviour
 {
     public Image Image;
     public Image ActivityImage;
-    public Button ButtonActive;
+    //public Button ButtonActive;
     public Button ButtonShop;
     public TMP_Text Price;
     public Image RewardImagePrice;
@@ -35,6 +35,7 @@ public class ShopItem : MonoBehaviour
     {
         ItemData = itemData;
         Image.sprite = ItemData.Sprite;
+        ActivityImage.sprite = ItemData.Sprite;
         if (!ItemData.IsSold)
         {
             ButtonShop.gameObject.SetActive(true);
@@ -55,6 +56,7 @@ public class ShopItem : MonoBehaviour
         else
         {
             ButtonShop.gameObject.SetActive(false);
+            ActivityImage.enabled = ItemData.IsActive;
         }
     }
 
@@ -65,7 +67,7 @@ public class ShopItem : MonoBehaviour
 
         if (ItemData.IsRewardCost)
         {
-            FindObjectOfType<YGRewardedVideoManager>();
+            FindObjectOfType<YGRewardedVideoManager>().OpenRewardAdWithSoldItem(1,ItemData.Index );
         }
         else
         {
@@ -80,6 +82,15 @@ public class ShopItem : MonoBehaviour
                 _shopManager.SaveChanges(ItemData);
             }
         }
+    }
+
+    public void BuyByRewardEnd()
+    {
+        ButtonShop.gameObject.SetActive(false);
+        ItemData.IsSold = true;
+        ItemData.IsActive = true;
+        ActivityImage.enabled = true;
+        _shopManager.SaveChanges(ItemData);
     }
 
     public void SelectToggleItem()

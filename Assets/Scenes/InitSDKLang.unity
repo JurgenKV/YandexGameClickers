@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753d8b84a9764154ab02969657a08d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: SceneClicker
+  _sceneName: MainMenu
   _animator: {fileID: 0}
   _ruButton: {fileID: 569731317}
   _enButton: {fileID: 1013110501}

@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyUI: {fileID: 1890290860}
-  _score: {fileID: 0}
+  _bestScoreUI: {fileID: 1890290860}
 --- !u!1 &2136688056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,6 +3633,14 @@ PrefabInstance:
     - target: {fileID: 7426699752047993099, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 7002810260646149966}
+    - target: {fileID: 7426699752047993099, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSceneButtonWithAds
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426699752047993099, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7573707837630836264, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_text
@@ -3669,8 +3677,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6580280848305450280, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7002810260646149966}
   m_SourcePrefab: {fileID: 100100000, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+--- !u!1 &7002810260646149965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6580280848305450280, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+  m_PrefabInstance: {fileID: 7002810260646149964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7002810260646149966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002810260646149965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc364808cbc431895eb26542d994114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Shop
 --- !u!1001 &7115643312907683957
 PrefabInstance:
   m_ObjectHideFlags: 0
