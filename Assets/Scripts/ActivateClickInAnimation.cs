@@ -19,6 +19,17 @@ public class ActivateClickInAnimation : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        
+        InvokeRepeating(nameof(AutoClick), 1,1);
+    }
+    
+    private void AutoClick()
+    {
+        if (_clickerScore.IsAutoClickActive)
+        {
+            _animator.SetTrigger(Scale);
+            _clickerScore.Click();
+        }
     }
 
     public void ClickEvent()
@@ -26,8 +37,11 @@ public class ActivateClickInAnimation : MonoBehaviour
         if (_clickerScore == null)
             return;
 
-        if (gameObject.activeSelf)
-            _clickerScore.Click();
+        if (!gameObject.activeSelf)
+            return;
+        
+        _clickerScore.Click();
+        PlaySound();
     }
 
     public void PlayAnim()
@@ -49,6 +63,17 @@ public class ActivateClickInAnimation : MonoBehaviour
     }
 
     public void PlayEggSoundEvent()
+    {
+        // if (YandexGame.savesData.IsSoundEnabled)
+        // {
+        //     if (_audioSources.TrueForAll(i => !i.isPlaying))
+        //     {
+        //         _audioSources[Random.Range(0,_audioSources.Count)].Play();
+        //     }
+        // }
+    }
+
+    private void PlaySound()
     {
         if (YandexGame.savesData.IsSoundEnabled)
         {

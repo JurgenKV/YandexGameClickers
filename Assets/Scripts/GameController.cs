@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     {
         //CheckProgress();
         if(SceneManager.GetActiveScene().name.Equals("SceneClicker"))
-            ShowFullAds();
+            Invoke(nameof(ShowFullAds),1f);
     }
 
     public static void ShowFullAds()

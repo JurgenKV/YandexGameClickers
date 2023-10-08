@@ -107,7 +107,7 @@ public class ChangeImage : MonoBehaviour
     IEnumerator TimerBgCoroutine()
     {
         _button.interactable = false;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(30);
         _button.interactable = true;
     }
 

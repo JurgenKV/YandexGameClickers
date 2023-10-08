@@ -44,6 +44,10 @@
                     _upgradeRoom.EndRewardADSUpgradeRoomClick();
                     Debug.Log("EndReward");
                     break;
+                case 5:
+                    _clickerScore.EndRewardAutoClickCoroutine();
+                    Debug.Log("EndReward");
+                    break;
             }
         }
         

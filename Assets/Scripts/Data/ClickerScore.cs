@@ -24,11 +24,15 @@ public class ClickerScore : MonoBehaviour
     
     [Space(1)]
     [SerializeField] private Button _buttonX2;
+
+    [SerializeField] private Button _buttonAuto;
     [SerializeField] private Button _buttonUpdate;
 
     [SerializeField] private ChangeImage _changeImage;
     
     [SerializeField] private List<AudioSource> _sources = new List<AudioSource>();
+
+    public bool IsAutoClickActive = false;
     
     private long _clickCount = 0;
     public long ClicksCount
@@ -64,7 +68,15 @@ public class ClickerScore : MonoBehaviour
        
         UpdateUpgradeClickUI();
         _progressUI.RefreshAllUI();
+        
+        //InvokeRepeating(nameof(AutoClick), 1,1);
     }
+
+    // private void AutoClick()
+    // {
+    //     if(IsAutoClickActive)
+    //         Click();
+    // }
 
     private void LoadData()
     {
@@ -131,6 +143,11 @@ public class ClickerScore : MonoBehaviour
     {
         StartCoroutine(TimerX2Coroutine());
     }
+    
+    public void EndRewardAutoClickCoroutine()
+    {
+        StartCoroutine(TimerAutoClickCoroutine());
+    }
 
     IEnumerator TimerX2Coroutine()
     {
@@ -139,6 +156,15 @@ public class ClickerScore : MonoBehaviour
         yield return new WaitForSeconds(60);
         _buttonX2.interactable = true;
         _coroutineX2CLicks = false;
+    }
+    
+    IEnumerator TimerAutoClickCoroutine()
+    {
+        IsAutoClickActive = true;
+        _buttonAuto.interactable = false;
+        yield return new WaitForSeconds(90);
+        _buttonAuto.interactable = true;
+        IsAutoClickActive = false;
     }
 
     public void UpgradeClick()
@@ -187,6 +213,11 @@ public class ClickerScore : MonoBehaviour
         // StartCoroutine(TimerUpdateCoroutine());
         // YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
         // YandexGame.SaveProgress();
+    }
+    
+    public void ADSAutoClick()
+    {
+        YGRewardedVideoManager.OpenRewardAd(5);
     }
 
     public void EndRewardUpgradeClick()
