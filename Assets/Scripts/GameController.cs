@@ -12,30 +12,16 @@ using YG;
 
 public class GameController : MonoBehaviour
 {
-    // [Header("Main")]
-    // [SerializeField] private GameObject _Object;
     private void Awake()
     {
-        //YandexGame._SetSDKReady();
+        
     }
 
     private void Start()
     {
         //CheckProgress();
         if(SceneManager.GetActiveScene().name.Equals("MainMenu"))
-            ShowFullAds();
-    }
-
-    public static void ShowFullAds()
-    {
-        try
-        {
-            YandexGame.FullscreenShow();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+            YGRewardedVideoManager.ShowFullAds();
     }
 
     public static void SetLeaderboard(int num)

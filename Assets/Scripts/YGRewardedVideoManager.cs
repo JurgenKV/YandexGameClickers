@@ -96,4 +96,16 @@
                 Console.WriteLine(e);
             }
         }
+        
+        public static void ShowFullAds()
+        {
+            try
+            {
+                YandexGame.FullscreenShow();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
     }

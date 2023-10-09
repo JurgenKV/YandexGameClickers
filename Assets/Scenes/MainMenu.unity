@@ -3399,7 +3399,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 432296397203678591, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: Button game
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: en
@@ -3516,12 +3516,41 @@ PrefabInstance:
     - target: {fileID: 8639936551154287733, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2195035460736320469}
+    - target: {fileID: 8639936551154287733, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeSceneButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639936551154287733, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChangeScene, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 432296397203678591, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2195035460736320469}
   m_SourcePrefab: {fileID: 100100000, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+--- !u!1 &2195035460736320468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 432296397203678591, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+  m_PrefabInstance: {fileID: 2195035460736320467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2195035460736320469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2195035460736320468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc364808cbc431895eb26542d994114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: GameScene
 --- !u!1001 &7002810260646149964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3628,7 +3657,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6580280848305450280, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_Name
-      value: Button white
+      value: Button white shop
       objectReference: {fileID: 0}
     - target: {fileID: 7426699752047993099, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3712,6 +3741,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.8705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.9568628
+      objectReference: {fileID: 0}
     - target: {fileID: 6899419851133702099, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3778,6 +3819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fe4c317b27498a97d5f86fa28581fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shopManager: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
