@@ -35,7 +35,7 @@ public class ShopItem : MonoBehaviour
     {
         ItemData = itemData;
         Image.sprite = ItemData.Sprite;
-        ActivityImage.sprite = ItemData.Sprite;
+        //ActivityImage.sprite = ItemData.Sprite;
         if (!ItemData.IsSold)
         {
             ButtonShop.gameObject.SetActive(true);

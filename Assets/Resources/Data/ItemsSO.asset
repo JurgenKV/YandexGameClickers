@@ -13,16 +13,22 @@ MonoBehaviour:
   m_Name: ItemsSO
   m_EditorClassIdentifier: 
   Items:
+  - Index: 16
+    Sprite: {fileID: 21300000, guid: b1b2683128a4e224f8e70e7098daa5db, type: 3}
+    Cost: 0
+    IsRewardCost: 0
+    IsActive: 0
+    IsSold: 1
   - Index: 0
     Sprite: {fileID: 21300000, guid: 27150e1d893948b45961a458c5237a57, type: 3}
-    Cost: 300
-    IsRewardCost: 0
+    Cost: 0
+    IsRewardCost: 1
     IsActive: 0
     IsSold: 0
   - Index: 1
     Sprite: {fileID: 21300000, guid: b404d436d13697249857eb67f20982d4, type: 3}
-    Cost: 300
-    IsRewardCost: 0
+    Cost: 0
+    IsRewardCost: 1
     IsActive: 0
     IsSold: 0
   - Index: 2
@@ -33,8 +39,8 @@ MonoBehaviour:
     IsSold: 0
   - Index: 3
     Sprite: {fileID: 21300000, guid: 12d4b44f800fd534399fa01d10a07545, type: 3}
-    Cost: 300
-    IsRewardCost: 0
+    Cost: 0
+    IsRewardCost: 1
     IsActive: 0
     IsSold: 0
   - Index: 4
@@ -45,26 +51,26 @@ MonoBehaviour:
     IsSold: 0
   - Index: 5
     Sprite: {fileID: 21300000, guid: 2d8aa84bc10a0b2419a1765cd33e4cf9, type: 3}
-    Cost: 0
-    IsRewardCost: 1
+    Cost: 300
+    IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 6
     Sprite: {fileID: 21300000, guid: de009ada5352ecc43ad1ce1baa740022, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 7
     Sprite: {fileID: 21300000, guid: b84959b45a3b737468c321933c547104, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 8
     Sprite: {fileID: 21300000, guid: ec0b0955b70cd274c828241e87e42e55, type: 3}
-    Cost: 0
-    IsRewardCost: 1
+    Cost: 300
+    IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 9
@@ -75,73 +81,79 @@ MonoBehaviour:
     IsSold: 0
   - Index: 10
     Sprite: {fileID: 21300000, guid: 19e7d0979a70cf94d8a3f5f4e16d6c12, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 11
     Sprite: {fileID: 21300000, guid: 9fd123572c31afc4f9f42c8cb5318dfa, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 12
     Sprite: {fileID: 21300000, guid: c220c4507feb5a74bbb7163a69ed96d2, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 13
     Sprite: {fileID: 21300000, guid: 49df9655a9ef1fb469d860f6ad47fb95, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 14
     Sprite: {fileID: 21300000, guid: 39bd8f0c63d33bc45b468718a851ab99, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 15
     Sprite: {fileID: 21300000, guid: 96cd342ae73e81f4e88d91bb69a9fa24, type: 3}
-    Cost: 0
-    IsRewardCost: 0
-    IsActive: 0
-    IsSold: 0
-  - Index: 16
-    Sprite: {fileID: 21300000, guid: b1b2683128a4e224f8e70e7098daa5db, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 17
     Sprite: {fileID: 21300000, guid: 5fbfb128955fa23459e143c362386595, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 18
     Sprite: {fileID: 21300000, guid: 10e42536b7fff3848ad829fe21e0bbeb, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 19
     Sprite: {fileID: 21300000, guid: 90c81ff3dc68a9c4987832a640525dc5, type: 3}
-    Cost: 0
-    IsRewardCost: 0
+    Cost: 300
+    IsRewardCost: 1
     IsActive: 0
     IsSold: 0
   - Index: 20
     Sprite: {fileID: 21300000, guid: bfcbbee36f063934cbc6d2ad1b596493, type: 3}
-    Cost: 0
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 21
     Sprite: {fileID: 21300000, guid: b2f12209cb98c824a9352de79f172636, type: 3}
-    Cost: 0
+    Cost: 300
+    IsRewardCost: 0
+    IsActive: 0
+    IsSold: 0
+  - Index: 22
+    Sprite: {fileID: 21300000, guid: 3be6c8eaf6b70c1459e3bbec7bc7f806, type: 3}
+    Cost: 300
+    IsRewardCost: 0
+    IsActive: 0
+    IsSold: 0
+  - Index: 23
+    Sprite: {fileID: 21300000, guid: 23e41ec1e7d1a2549a9bbda181412220, type: 3}
+    Cost: 300
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0

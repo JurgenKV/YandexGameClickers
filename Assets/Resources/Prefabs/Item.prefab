@@ -251,7 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 4186154444882120913}
   ActivityImage: {fileID: 8448756270340465568}
-  ButtonActive: {fileID: 6890065444554926988}
   ButtonShop: {fileID: 8134797886558678482}
   Price: {fileID: 3117419539557615868}
   RewardImagePrice: {fileID: 839085493478484714}
@@ -273,7 +272,6 @@ GameObject:
   - component: {fileID: 657509613149569859}
   - component: {fileID: 3528241103157686535}
   - component: {fileID: 8448756270340465568}
-  - component: {fileID: 6794186584478856478}
   - component: {fileID: 4648356514967895600}
   m_Layer: 0
   m_Name: ImageActivity
@@ -289,7 +287,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4386374997174299469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -298,8 +296,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 40, y: 40}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3528241103157686535
 CanvasRenderer:
@@ -329,7 +327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 39bd8f0c63d33bc45b468718a851ab99, type: 3}
+  m_Sprite: {fileID: 21300000, guid: caa1864c38641b846a43e06362372aac, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -339,21 +337,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6794186584478856478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4386374997174299469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
-  m_EffectDistance: {x: 1, y: -1}
-  m_UseGraphicAlpha: 0
 --- !u!223 &4648356514967895600
 Canvas:
   m_ObjectHideFlags: 0
@@ -375,7 +358,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &4727522223283150541
 GameObject:
