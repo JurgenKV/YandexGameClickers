@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -7800487929510106989}
   - component: {fileID: 5800916547572354389}
   - component: {fileID: 2112834254031041912}
-  - component: {fileID: 6504853051405888454}
   m_Layer: 0
   m_Name: Particle 1
   m_TagString: Untagged
@@ -57,7 +56,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4924,16 +4923,3 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 3
   m_TargetDisplay: 0
---- !u!114 &6504853051405888454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215180084365062601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba40f6b8237c448cae9787900710282c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 3

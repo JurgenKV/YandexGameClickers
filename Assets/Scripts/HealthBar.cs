@@ -17,11 +17,12 @@ public class HealthBar : MonoBehaviour
     
     public void Start()
     {
-        for (int i = 0; i < _maxHealth; i++)
+        foreach (Animator hearthsAnimator in _hearthsAnimators)
         {
-            _hearthsAnimators[i].SetBool(IsFill, true);
+             hearthsAnimator.SetBool(IsFill, true);
         }
-        
+
+        _maxHealth = _hearthsAnimators.Count;
         _tempHealth = _hearthsAnimators.Count;
     }
     public void Damage()

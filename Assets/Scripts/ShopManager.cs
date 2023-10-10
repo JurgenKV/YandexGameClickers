@@ -134,4 +134,12 @@ public class ShopManager : MonoBehaviour
             Destroy(gridObject);
         }
     }
+
+    public bool IsHasOneActiveItem()
+    {
+        if (_items.FindAll(i=> i.IsActive).Count == 1)
+            return true;
+
+        return false;
+    }
 }

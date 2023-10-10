@@ -105,6 +105,8 @@ public class ShopItem : MonoBehaviour
         }
         else
         {
+            if (_shopManager.IsHasOneActiveItem())
+                return;
             ItemData.IsActive = false;
             ActivityImage.enabled = false;
         }
