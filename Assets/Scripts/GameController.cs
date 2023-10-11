@@ -169,7 +169,7 @@ public class GameController : MonoBehaviour
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestLevelPlayerPusheenClicker", num);
+            YandexGame.NewLeaderboardScores("BestScorePlayerPusheenCatch", num);
         }
         catch (Exception e)
         {

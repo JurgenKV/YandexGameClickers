@@ -17,7 +17,7 @@ public class ChangeScene : MonoBehaviour
     public void ChangeSceneButtonWithAds()
     {
         SceneManager.LoadScene(_sceneName);
-        YGRewardedVideoManager.ShowFullAds();
+        //YGRewardedVideoManager.ShowFullAds();
     }
     
     public void RestartGame()
