@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moneyUI: {fileID: 1890290860}
-  _bestScoreUI: {fileID: 1890290860}
+  _bestScoreUI: {fileID: 1301633888}
 --- !u!1 &2136688056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,6 +3820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shopManager: {fileID: 0}
+  _gameController: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

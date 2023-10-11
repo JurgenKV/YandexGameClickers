@@ -6,8 +6,8 @@
     public class YGRewardedVideoManager : MonoBehaviour
     {
        // [SerializeField] private ClickerScore _clickerScore;
-       [SerializeField] private ShopManager _shopManager;
-
+       [SerializeField] private ShopManager _shopManager = null;
+       [SerializeField] private GameController _gameController = null;
         private static int _rewardIndex;
 
         private static int indexOfSoldItem = -1;
@@ -35,16 +35,16 @@
                     
                     _shopManager.RewardEndSoldItem(indexOfSoldItem);
                     indexOfSoldItem = -1;
-                   // _clickerScore.EndRewardStartTimerX2Coroutine();
+                   
                     Debug.Log("EndReward");
                    
                     break;
                 case 2:
-                   // _clickerScore.EndRewardUpgradeClick();
+                    _gameController.EndRewardSlowTime();
                     Debug.Log("EndReward");
                     break;
                 case 3:
-                   // _changeImage.EndRewardADSBgClick();
+                   _gameController.EndRewardHealth();
                     Debug.Log("EndReward");
                     break;
             }
@@ -55,16 +55,15 @@
             switch (_rewardIndex)
             {
                 case 1:
-                    
                     Debug.Log("EndReward RewardedError");
                     break;
                 case 2:
-                  //  _clickerScore.EndRewardUpgradeClick();
-                    Debug.Log("EndReward RewardedError");
+                    _gameController.EndRewardSlowTime();
+                    Debug.Log("EndReward");
                     break;
                 case 3:
-                   // _changeImage.EndRewardADSBgClick();
-                    Debug.Log("EndReward RewardedError");
+                    _gameController.EndRewardHealth();
+                    Debug.Log("EndReward");
                     break;
             }
         }

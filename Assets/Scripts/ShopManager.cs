@@ -133,6 +133,7 @@ public class ShopManager : MonoBehaviour
         {
             Destroy(gridObject);
         }
+        gridObjects.Clear();
     }
 
     public bool IsHasOneActiveItem()

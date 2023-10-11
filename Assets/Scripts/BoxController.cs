@@ -17,21 +17,29 @@ public class BoxController : MonoBehaviour
     [SerializeField] private Animator _boxAnimator;
     [SerializeField] private Image _image;
     [SerializeField] private ParticleSystem _particleSystem;
-
+    
     private BoxType _boxType;
     private bool _isInteractable = false;
     private static readonly int SpeedMultiplayer = Animator.StringToHash("SpeedMultiplayer");
     private static readonly int ClickButton = Animator.StringToHash("ClickButton");
     private static readonly int Start1 = Animator.StringToHash("Start");
-
-    private void Start()
-    {
-        
-    }
+    
 
     private void Update()
     {
-        _boxAnimator.SetFloat(SpeedMultiplayer, _gameController.SpeedMultiplayer);
+        CheckGameState();
+    }
+
+    private void CheckGameState()
+    {
+        if (!_gameController.IsGameStarted || _gameController.IsGameOver || _gameController.IsOnPause || _gameController.IsOnRewardPause)
+        {
+            _boxAnimator.SetFloat(SpeedMultiplayer, 0);
+        }
+        else
+        {
+            _boxAnimator.SetFloat(SpeedMultiplayer, _gameController.SpeedMultiplayer);
+        }
     }
 
     public void Click()
@@ -56,7 +64,7 @@ public class BoxController : MonoBehaviour
                 _gameController.HealthBar.Damage();
                 break;
         }
-        
+        Debug.Log("ClickButton true");
         _boxAnimator.SetBool(ClickButton, true);
     }
 
@@ -90,11 +98,11 @@ public class BoxController : MonoBehaviour
 
         switch (rand)
         {
-            case < 50:
+            case < 60:
                 _boxType = BoxType.Default;
                 _image.sprite = _gameController.SpritesToSpawn[Random.Range(0,_gameController.SpritesToSpawn.Count)];
                 break;
-            case >= 50 and <+ 70 :
+            case >= 60 and <= 70 :
                 _boxType = BoxType.Health;
                 _image.sprite = _gameController.HealthSprite;
                 break;
@@ -109,7 +117,7 @@ public class BoxController : MonoBehaviour
 
     private IEnumerator StartAnimCor()
     {
-        yield return new WaitForSeconds(3/_gameController.SpeedMultiplayer);
+        yield return new WaitForSeconds(Random.Range(1,5) / _gameController.SpeedMultiplayer);
         _isInteractable = true;
         _boxAnimator.SetBool(Start1, true);
         
