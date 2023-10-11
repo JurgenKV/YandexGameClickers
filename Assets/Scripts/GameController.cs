@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
 
     public List<Sprite> SpritesToSpawn;
     public Sprite HealthSprite;
-    public Sprite DamageSprite;
+    public List<Sprite> DamageSprites;
 
     private int _scoreAmount;
 

@@ -94,9 +94,7 @@ public class BoxController : MonoBehaviour
 
     private void GenerateBoxType()
     {
-        int rand = Random.Range(1, 101);
-
-        switch (rand)
+        switch (Random.Range(1, 101))
         {
             case < 60:
                 _boxType = BoxType.Default;
@@ -108,10 +106,15 @@ public class BoxController : MonoBehaviour
                 break;
             case > 70:
                 _boxType = BoxType.Damage;
-                _image.sprite = _gameController.DamageSprite;
+                _image.sprite = _gameController.DamageSprites[Random.Range(0,_gameController.DamageSprites.Count)];
                 break;
         }
-
+        
+        if (Random.Range(0, 2) == 0)
+            _image.gameObject.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+        else
+            _image.gameObject.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 1);
+        
         StartCoroutine(StartAnimCor());
     }
 

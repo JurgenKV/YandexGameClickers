@@ -2473,7 +2473,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 90c81ff3dc68a9c4987832a640525dc5, type: 3}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
@@ -3475,7 +3475,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 90c81ff3dc68a9c4987832a640525dc5, type: 3}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
@@ -5650,7 +5650,9 @@ MonoBehaviour:
   HealthBar: {fileID: 29449757}
   SpritesToSpawn: []
   HealthSprite: {fileID: 21300000, guid: f20c22b88a10b0042ad13c5c210fe2f2, type: 3}
-  DamageSprite: {fileID: 21300000, guid: e787a8b01be3e0946a5d20e3251caed9, type: 3}
+  DamageSprites:
+  - {fileID: 21300000, guid: e787a8b01be3e0946a5d20e3251caed9, type: 3}
+  - {fileID: 21300000, guid: bdff0aec689f2ac4f84590dd5367a4c1, type: 3}
 --- !u!1 &1998546801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6179,7 +6181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 90c81ff3dc68a9c4987832a640525dc5, type: 3}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
