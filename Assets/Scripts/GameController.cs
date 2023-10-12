@@ -15,6 +15,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private TMP_Text _money;
     [SerializeField] private GameObject _gameOverUI;
     [SerializeField] private Button _slowButton;
+    
+    
+    [SerializeField] public List<GameObject> wellClickParticles;
+    [SerializeField] public List<GameObject> healthParticles;
+    
     public bool IsGameStarted = false;
     public bool IsOnPause = false;
     public bool IsOnRewardPause = false;
@@ -60,21 +65,21 @@ public class GameController : MonoBehaviour
         get => _moneyAmount;
         set
         {
-            _moneyAmount = value;
-            _money.text = _moneyAmount.ToString() + "$";
             try
             {
-                YandexGame.savesData.MoneyAmount += MoneyAmount;
+                YandexGame.savesData.MoneyAmount += value - _moneyAmount;
                 YandexGame.SaveProgress();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
+            _moneyAmount = value;
+            _money.text = _moneyAmount.ToString() + "$";
         }
     }
 
-    private int _moneyAmount;
+    private int _moneyAmount = 0;
     
 
     private void Start()

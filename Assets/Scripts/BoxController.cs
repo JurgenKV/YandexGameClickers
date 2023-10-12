@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -16,8 +17,8 @@ public class BoxController : MonoBehaviour
     [SerializeField] private GameController _gameController;
     [SerializeField] private Animator _boxAnimator;
     [SerializeField] private Image _image;
-    [SerializeField] private ParticleSystem _particleSystem;
-    
+    [SerializeField] private GameObject _spawnParticlesPosition;
+
     private BoxType _boxType;
     private bool _isInteractable = false;
     private static readonly int SpeedMultiplayer = Animator.StringToHash("SpeedMultiplayer");
@@ -53,11 +54,12 @@ public class BoxController : MonoBehaviour
             case BoxType.Default:
                 _gameController.ScoreAmount++;
                 _gameController.MoneyAmount += 1 + (int)(1 * _gameController.SpeedMultiplayer);
-                _particleSystem.Play();
+                Instantiate(_gameController.wellClickParticles[Random.Range(0, _gameController.wellClickParticles.Count)], _spawnParticlesPosition.transform.position, Quaternion.identity);
                 break;
             
             case BoxType.Health:
                 _gameController.HealthBar.Regenerate();
+                Instantiate(_gameController.healthParticles[Random.Range(0, _gameController.healthParticles.Count)], _spawnParticlesPosition.transform.position, Quaternion.identity);
                 break;
             
             case BoxType.Damage:
