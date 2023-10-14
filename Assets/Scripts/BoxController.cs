@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 using Random = UnityEngine.Random;
 
 enum BoxType
@@ -48,6 +49,9 @@ public class BoxController : MonoBehaviour
         if(!_gameController.IsGameStarted || _gameController.IsGameOver || _gameController.IsOnPause || !_isInteractable)
             return;
         
+        if(YandexGame.savesData.IsSoundEnabled)
+            _gameController.AudioSources[Random.Range(0, _gameController.AudioSources.Count)].Play();
+
         _isInteractable = false;
         switch (_boxType)
         {
@@ -64,6 +68,7 @@ public class BoxController : MonoBehaviour
             
             case BoxType.Damage:
                 _gameController.HealthBar.Damage();
+                Instantiate(_gameController.damageParticles[Random.Range(0, _gameController.damageParticles.Count)], _spawnParticlesPosition.transform.position, Quaternion.identity);
                 break;
         }
         Debug.Log("ClickButton true");

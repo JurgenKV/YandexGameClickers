@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2112834254031041912}
   - component: {fileID: -6915060167425746837}
   m_Layer: 0
-  m_Name: Particle 4
+  m_Name: Particle bone 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 9215180084365062601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -815,7 +815,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 160
       mode: 0
       spread: 0
       speed:
@@ -1552,7 +1552,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 84dd6c365cf46e24799eae8d86beaf43, type: 3}
+    - sprite: {fileID: 21300000, guid: 3492a768221a19144b92cfe09e5914e9, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

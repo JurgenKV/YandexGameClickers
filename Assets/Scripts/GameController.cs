@@ -19,6 +19,9 @@ public class GameController : MonoBehaviour
     
     [SerializeField] public List<GameObject> wellClickParticles;
     [SerializeField] public List<GameObject> healthParticles;
+    [SerializeField] public List<GameObject> damageParticles;
+    
+    [SerializeField] public List<AudioSource> AudioSources;
     
     public bool IsGameStarted = false;
     public bool IsOnPause = false;

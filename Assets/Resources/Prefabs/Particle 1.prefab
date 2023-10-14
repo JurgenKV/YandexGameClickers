@@ -815,7 +815,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 180
+      value: 160
       mode: 0
       spread: 0
       speed:
@@ -1552,7 +1552,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 6eb68f2813798174bb8da46a3256cd5f, type: 3}
+    - sprite: {fileID: 21300000, guid: 6a05242680689c6449b6c993960e8492, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
