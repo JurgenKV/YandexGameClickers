@@ -4433,7 +4433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: en
-      value: Play
+      value: Slowdown
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: ru
@@ -4445,11 +4445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3279114760279829737, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 364.54
+      value: 354.85
       objectReference: {fileID: 0}
     - target: {fileID: 3279114760279829737, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.39
+      value: 27.51
       objectReference: {fileID: 0}
     - target: {fileID: 4243134102657339181, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_text
@@ -4463,6 +4463,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -7551757927916445891, guid: b875511ce445f834588a83fd7897d372, type: 2}
+    - target: {fileID: 4243134102657339181, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 8192
+      objectReference: {fileID: 0}
     - target: {fileID: 4243134102657339181, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
