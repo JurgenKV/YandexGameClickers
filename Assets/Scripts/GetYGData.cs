@@ -47,6 +47,14 @@ public class GetYGData : MonoBehaviour
     {
         yield return new WaitWhile(() => _data == false);
         YandexGame.savesData.language = "ru";
+        
+        if (YandexGame.savesData.SoldItems.Count == 0 && YandexGame.savesData.ActiveItems.Count == 0)
+        {
+            YandexGame.savesData.SoldItems.Add(16);
+            YandexGame.savesData.ActiveItems.Add(16);
+            YandexGame.SaveProgress();
+        }
+        
         LoadGameEvent();
     }
     
@@ -54,6 +62,15 @@ public class GetYGData : MonoBehaviour
     {
         yield return new WaitWhile(() => _data == false);
         YandexGame.savesData.language = "en";
+        
+        
+        if (YandexGame.savesData.SoldItems.Count == 0 && YandexGame.savesData.ActiveItems.Count == 0)
+        {
+            YandexGame.savesData.SoldItems.Add(16);
+            YandexGame.savesData.ActiveItems.Add(16);
+            YandexGame.SaveProgress();
+        }
+        
         LoadGameEvent();
     }
 }

@@ -67,6 +67,11 @@ public class ShopManager : MonoBehaviour
 
     private void CheckSoldItemsYG()
     {
+        foreach (ItemsSO.Item item  in _items)
+        {
+            item.IsSold = false;
+        }
+        
         foreach (int soldItem in YandexGame.savesData.SoldItems)
         {
             _items.Find(i => i.Index == soldItem).IsSold = true;
@@ -75,6 +80,11 @@ public class ShopManager : MonoBehaviour
 
     private void CheckActiveItemsYG()
     {
+        foreach (ItemsSO.Item item  in _items)
+        {
+            item.IsActive = false;
+        }
+        
         foreach (int activeItem in YandexGame.savesData.ActiveItems)
         {
             _items.Find(i => i.Index == activeItem).IsActive = true;
