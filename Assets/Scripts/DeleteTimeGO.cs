@@ -7,11 +7,12 @@
         [SerializeField] private float time = 3;
         private void Start()
         {
-            Invoke(nameof(DeleteObject), time);
+            //Invoke(nameof(DeleteObject), time);
+            Destroy(gameObject, time);
         }
 
-        private void DeleteObject()
-        {
-            Destroy(gameObject);
-        }
+        // private void DeleteObject()
+        // {
+        //     Destroy(gameObject, time);
+        // }
     }

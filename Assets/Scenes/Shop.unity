@@ -534,6 +534,10 @@ PrefabInstance:
       value: "\u0414\u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: tr
+      value: Evet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1018,7 +1022,7 @@ MonoBehaviour:
   ru: "\u0412\u044B\u0439\u0442\u0438 \u0432 \u0433\u043B\u0430\u0432\u043D\u043E\u0435
     \u043C\u0435\u043D\u044E?"
   en: Exit to main menu?
-  tr: "Oyun \u0130lerlemesini S\u0131f\u0131rla"
+  tr: "Ana men\xFCye gidelim mi?"
   az: 
   be: 
   he: 
@@ -2613,6 +2617,10 @@ PrefabInstance:
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: ru
       value: "\u041D\u0435\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: tr
+      value: "Hay\u0131r"
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_Enabled

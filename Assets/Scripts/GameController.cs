@@ -111,6 +111,7 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         IsGameOver = true;
+        SetLeaderboard((int)YandexGame.savesData.BestScore);
         _gameOverUI.SetActive(true);
     }
 
