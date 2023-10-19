@@ -1601,7 +1601,7 @@ MonoBehaviour:
   text: 
   ru: "\u0420\u0435\u043A\u043E\u0440\u0434"
   en: Record
-  tr: Seviye
+  tr: "Kay\u0131t"
   az: 
   be: 
   he: 
@@ -3310,6 +3310,10 @@ PrefabInstance:
       value: "\u0418\u0433\u0440\u0430\u0442\u044C"
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: tr
+      value: Oyun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -3466,6 +3470,10 @@ PrefabInstance:
     - target: {fileID: 4664319447863544673, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: ru
       value: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4664319447863544673, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
+      propertyPath: tr
+      value: "Ma\u011Faza"
       objectReference: {fileID: 0}
     - target: {fileID: 4664319447863544673, guid: 0554ce7a9c849ae4a8e39291661abdf0, type: 3}
       propertyPath: m_Enabled

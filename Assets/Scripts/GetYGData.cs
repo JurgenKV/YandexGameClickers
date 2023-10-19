@@ -12,6 +12,7 @@ public class GetYGData : MonoBehaviour
 
     [SerializeField] private UnityEngine.UI.Button _ruButton;
     [SerializeField] private UnityEngine.UI.Button _enButton;
+    [SerializeField] private UnityEngine.UI.Button _trButton;
 
     private bool _data = false;
     private void OnEnable() => YandexGame.GetDataEvent += GetData;
@@ -31,38 +32,26 @@ public class GetYGData : MonoBehaviour
 
     public void RuEngButton()
     {
-        _ruButton.interactable = false;
-        _enButton.interactable = false;
-        StartCoroutine(WaitRu());
+        DisableAllButtons();
+        StartCoroutine(Wait("ru"));
     }
 
     public void EnEngButton()
     {
-        _ruButton.interactable = false;
-        _enButton.interactable = false;
-        StartCoroutine(WaitEn());
-    }
-
-    private IEnumerator WaitRu()
-    {
-        yield return new WaitWhile(() => _data == false);
-        YandexGame.savesData.language = "ru";
-        
-        if (YandexGame.savesData.SoldItems.Count == 0 && YandexGame.savesData.ActiveItems.Count == 0)
-        {
-            YandexGame.savesData.SoldItems.Add(16);
-            YandexGame.savesData.ActiveItems.Add(16);
-            YandexGame.SaveProgress();
-        }
-        
-        LoadGameEvent();
+        DisableAllButtons();
+        StartCoroutine(Wait("en"));
     }
     
-    private IEnumerator WaitEn()
+    public void TrEngButton()
+    {
+        DisableAllButtons();
+        StartCoroutine(Wait("tr"));
+    }
+
+    private IEnumerator Wait(string language = "ru")
     {
         yield return new WaitWhile(() => _data == false);
-        YandexGame.savesData.language = "en";
-        
+        YandexGame.savesData.language = language;
         
         if (YandexGame.savesData.SoldItems.Count == 0 && YandexGame.savesData.ActiveItems.Count == 0)
         {
@@ -73,4 +62,12 @@ public class GetYGData : MonoBehaviour
         
         LoadGameEvent();
     }
+
+    private void DisableAllButtons()
+    {
+        _ruButton.interactable = false;
+        _enButton.interactable = false;
+        _trButton.interactable = false;
+    }
+
 }

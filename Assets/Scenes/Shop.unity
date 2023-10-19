@@ -2892,7 +2892,7 @@ MonoBehaviour:
   text: 
   ru: "\u0420\u0435\u043A\u043E\u0440\u0434"
   en: Record
-  tr: Seviye
+  tr: "Kay\u0131t"
   az: 
   be: 
   he: 
@@ -3354,7 +3354,7 @@ MonoBehaviour:
   gridObjects: []
   minPg: 0
   maxPg: 6
-  _maxUIPage: 4
+  _maxUIPage: 8
 --- !u!114 &1742483047
 MonoBehaviour:
   m_ObjectHideFlags: 0

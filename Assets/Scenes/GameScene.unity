@@ -2902,7 +2902,7 @@ MonoBehaviour:
   text: 
   ru: "\u0421\u0447\u0435\u0442"
   en: Score
-  tr: Seviye
+  tr: Skor
   az: 
   be: 
   he: 
@@ -4438,6 +4438,10 @@ PrefabInstance:
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: ru
       value: "\u0417\u0430\u043C\u0435\u0434\u043B\u0435\u043D\u0438\u0435"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
+      propertyPath: tr
+      value: "Yava\u015Flama"
       objectReference: {fileID: 0}
     - target: {fileID: 2089081326453628850, guid: 4070bb367cc39284d94dd9cad3a4590d, type: 3}
       propertyPath: m_Enabled

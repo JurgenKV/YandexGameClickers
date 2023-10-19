@@ -24,7 +24,7 @@ public class ShopManager : MonoBehaviour
     //[SerializeField] private int pageNumber = 0;
     [SerializeField] private int minPg = 0;
     [SerializeField] private int maxPg = 6;
-    [SerializeField] private int _maxUIPage = 4;
+    [SerializeField] private int _maxUIPage = 8;
     
     private void Start()
     {
@@ -34,6 +34,7 @@ public class ShopManager : MonoBehaviour
         //FindObjectOfType<ProgressUI>().Money = 10000;
         _prevPageButton.SetActive(false);
         CreateGrid(0, 6);
+        _pageText.text = (maxPg / 6).ToString() + "/" + _maxUIPage.ToString();
     }
 
     public void NextPage()
