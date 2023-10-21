@@ -48,6 +48,10 @@
                     _clickerScore.EndRewardAutoClickCoroutine();
                     Debug.Log("EndReward");
                     break;
+                case 6:
+                    _clickerScore.EndRewardUpgradeMultiplayer();
+                    Debug.Log("EndReward");
+                    break;
             }
         }
         

@@ -18,15 +18,18 @@ public class ClickerScore : MonoBehaviour
     
     [Header("Upgrade Click")]
     [SerializeField] private TMP_Text upgradeClickCostUI;
-
+        
     [SerializeField] private double constX;
     [SerializeField] private double degreeY;
     
     [Space(1)]
     [SerializeField] private Button _buttonX2;
-
     [SerializeField] private Button _buttonAuto;
     [SerializeField] private Button _buttonUpdate;
+    
+    [Header("Upgrade Exp Multiplayer")]
+    [SerializeField] private TMP_Text upgradeExpCostUI;
+    [SerializeField] private Button _buttonUpgaradeExp;
 
     [SerializeField] private ChangeImage _changeImage;
     
@@ -53,6 +56,7 @@ public class ClickerScore : MonoBehaviour
     public int ClickMultiplayer = 1;
     
     [SerializeField]public int level = 1;
+    [SerializeField]public long experienceMultiplayer = 1;
     [SerializeField]public long experience;
     [SerializeField]public long experienceToNextLevel;
 
@@ -69,7 +73,7 @@ public class ClickerScore : MonoBehaviour
         UpdateUpgradeClickUI();
         _progressUI.RefreshAllUI();
         
-        //InvokeRepeating(nameof(AutoClick), 1,1);
+        InvokeRepeating(nameof(AutoExp), 1,1);
     }
 
     // private void AutoClick()
@@ -85,6 +89,7 @@ public class ClickerScore : MonoBehaviour
         level = YandexGame.savesData.Level;
         experience = YandexGame.savesData.Experience;
         experienceToNextLevel = YandexGame.savesData.ExperienceToNextLevel;
+        experienceMultiplayer = YandexGame.savesData.ExperienceMultiplayer;
     }
 
     public void Click()
@@ -95,16 +100,22 @@ public class ClickerScore : MonoBehaviour
         if (_coroutineX2CLicks)
         {
             ClicksCount += 1 * ClickMultiplayer * 2;
-            AddExperience(1 * ClickMultiplayer * 2);
+            //AddExperience(1 * ClickMultiplayer * 2);
         }
         else
         {
             ClicksCount += 1 * ClickMultiplayer;
-            AddExperience(1 * ClickMultiplayer);
+            //AddExperience(1 * ClickMultiplayer);
         }
         Debug.Log("Click");
         YandexGame.savesData.MoneyAmount = ClicksCount;
         YandexGame.SaveProgress();
+        _progressUI.RefreshAllUI();
+    }
+
+    private void AutoExp()
+    {
+        AddExperience(experienceMultiplayer);
         _progressUI.RefreshAllUI();
     }
 
@@ -169,27 +180,56 @@ public class ClickerScore : MonoBehaviour
 
     public void UpgradeClick()
     {
-         if (ClicksCount < GetUpgradeCost())
+         if (ClicksCount < GetUpgradeCostClick())
              return;
         
-         ClicksCount -= GetUpgradeCost();
+         ClicksCount -= GetUpgradeCostClick();
         
         ClickMultiplayer++;
         UpdateUpgradeClickUI();
         YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
         YandexGame.SaveProgress();
     }
+    
+    public void UpgradeExpMultiplayer()
+    {
+        if (ClicksCount < GetUpgradeCostExp())
+            return;
+        
+        ClicksCount -= GetUpgradeCostExp();
+        
+        experienceMultiplayer++;
+        UpdateUpgradeExpUI();
+        YandexGame.savesData.ExperienceMultiplayer = experienceMultiplayer;
+        YandexGame.SaveProgress();
+    }
 
     private void UpdateUpgradeClickUI()
     {
         if(upgradeClickCostUI != null)
-            upgradeClickCostUI.text = GetUpgradeCost().ToString() + "$";
+            upgradeClickCostUI.text = GetUpgradeCostClick().ToString() + "$";
+    }
+    
+    private void UpdateUpgradeExpUI()
+    {
+        if(upgradeExpCostUI != null)
+            upgradeExpCostUI.text = GetUpgradeCostExp().ToString() + "$";
     }
 
-    private long GetUpgradeCost()
+    private long GetUpgradeCostClick()
     {
         //x * ((level+1) ^ y) - (x * level):
         double cost = ((constX * Math.Pow((ClickMultiplayer+1), degreeY)) - (constX * (ClickMultiplayer+1)));
+        Debug.Log("cost = " + cost);
+        
+        
+        return (long)cost;
+    }
+    
+    private long GetUpgradeCostExp()
+    {
+        //x * ((level+1) ^ y) - (x * level):
+        double cost = ((constX * Math.Pow((ClickMultiplayer+2), degreeY)) - (constX * (ClickMultiplayer+1)));
         Debug.Log("cost = " + cost);
         
         
@@ -215,6 +255,11 @@ public class ClickerScore : MonoBehaviour
         // YandexGame.SaveProgress();
     }
     
+    public void ADSUpgradeExp()
+    {
+        YGRewardedVideoManager.OpenRewardAd(6);
+    }
+    
     public void ADSAutoClick()
     {
         YGRewardedVideoManager.OpenRewardAd(5);
@@ -229,12 +274,28 @@ public class ClickerScore : MonoBehaviour
         YandexGame.SaveProgress();
     }
     
+    public void EndRewardUpgradeMultiplayer()
+    {
+        experienceMultiplayer++;
+        UpdateUpgradeExpUI();
+        StartCoroutine(TimerUpdateExpCoroutine());
+        YandexGame.savesData.ExperienceMultiplayer = experienceMultiplayer;
+        YandexGame.SaveProgress();
+    }
+    
     
     IEnumerator TimerUpdateCoroutine()
     {
         _buttonUpdate.interactable = false;
         yield return new WaitForSeconds(60);
         _buttonUpdate.interactable = true;
+    }
+    
+    IEnumerator TimerUpdateExpCoroutine()
+    {
+        _buttonUpgaradeExp.interactable = false;
+        yield return new WaitForSeconds(60);
+        _buttonUpgaradeExp.interactable = true;
     }
 
     public void AddExperience(long experienceToAdd)

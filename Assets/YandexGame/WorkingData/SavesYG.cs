@@ -25,6 +25,7 @@ namespace YG
         
         public int Level = 1;
         public long Experience = 0;
+        public long ExperienceMultiplayer = 1;
         public long ExperienceToNextLevel = 0;
         
         //public int ObjectImageNum = 0;
@@ -59,6 +60,7 @@ namespace YG
             YandexGame.savesData.MoneyAmount = 0;
             YandexGame.savesData.ClickMultiplayer = 1;
             YandexGame.savesData.Experience = 0;
+            YandexGame.savesData.ExperienceMultiplayer = 1;
             YandexGame.savesData.ExperienceToNextLevel = 1000;
             YandexGame.savesData.Level = 1;
             YandexGame.savesData.roomLevel = -1;

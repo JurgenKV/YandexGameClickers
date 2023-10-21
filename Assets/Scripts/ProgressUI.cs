@@ -36,8 +36,16 @@ public class ProgressUI : MonoBehaviour
     private void RefreshScorebarUI()
     {
         _slider.value =  (GetPercent(_clickerScore.experience, _clickerScore.experienceToNextLevel) + 10);
-        _sliderTextUI.text = _clickerScore.experience.ToString() + "/" +
-                             _clickerScore.experienceToNextLevel.ToString();
+
+        if (YandexGame.savesData.language.Equals("ru"))
+        {
+            _sliderTextUI.text = "Скорость роста " + _clickerScore.experienceMultiplayer.ToString();
+        }else if (YandexGame.savesData.language.Equals("en"))
+        {
+            _sliderTextUI.text = "Growth rate " + _clickerScore.experienceMultiplayer.ToString();
+        }
+        // _sliderTextUI.text = _clickerScore.experience.ToString() + "/" +
+        //                      _clickerScore.experienceToNextLevel.ToString();
     }
     
     public static float GetPercent(long a, long b)
