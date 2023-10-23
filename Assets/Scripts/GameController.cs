@@ -22,8 +22,8 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         //CheckProgress();
-        if(SceneManager.GetActiveScene().name.Equals("SceneClicker"))
-            Invoke(nameof(ShowFullAds),1f);
+        if (SceneManager.GetActiveScene().name.Equals("SceneClicker"))
+            ShowFullAds();
     }
 
     public static void ShowFullAds()

@@ -71,6 +71,7 @@ public class ClickerScore : MonoBehaviour
         SetLevel(level);
        
         UpdateUpgradeClickUI();
+        UpdateUpgradeExpUI();
         _progressUI.RefreshAllUI();
         
         InvokeRepeating(nameof(AutoExp), 1,1);
@@ -89,7 +90,16 @@ public class ClickerScore : MonoBehaviour
         level = YandexGame.savesData.Level;
         experience = YandexGame.savesData.Experience;
         experienceToNextLevel = YandexGame.savesData.ExperienceToNextLevel;
+        experience = YandexGame.savesData.Experience;
         experienceMultiplayer = YandexGame.savesData.ExperienceMultiplayer;
+
+        if (YandexGame.savesData.ExperienceMultiplayer == 0)
+        {
+            experienceMultiplayer = YandexGame.savesData.ExperienceMultiplayer = 1;
+            YandexGame.SaveProgress();
+        }
+            
+        
     }
 
     public void Click()
@@ -229,7 +239,7 @@ public class ClickerScore : MonoBehaviour
     private long GetUpgradeCostExp()
     {
         //x * ((level+1) ^ y) - (x * level):
-        double cost = ((constX * Math.Pow((ClickMultiplayer+2), degreeY)) - (constX * (ClickMultiplayer+1)));
+        double cost = ((constX * Math.Pow((ClickMultiplayer+1.2), degreeY)) - (constX * (ClickMultiplayer+1)));
         Debug.Log("cost = " + cost);
         
         
