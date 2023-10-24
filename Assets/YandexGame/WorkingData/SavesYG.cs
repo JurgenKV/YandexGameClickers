@@ -31,7 +31,7 @@ namespace YG
         //public int ObjectImageNum = 0;
         public int roomLevel = -1;
         public int catType = 0;
-        // public List<int> PusheenNums = new List<int>();
+        public List<int> ContentNums = new List<int>();
         public bool IsMusicEnabled = true;
         public bool IsSoundEnabled = true;
 
@@ -65,6 +65,7 @@ namespace YG
             YandexGame.savesData.Level = 1;
             YandexGame.savesData.roomLevel = -1;
             YandexGame.savesData.catType = 0;
+            YandexGame.savesData.ContentNums = new List<int>();
             GameController.SetLeaderboard(0);
             YandexGame.SaveProgress();
             Debug.Log("ResetPlayerData");

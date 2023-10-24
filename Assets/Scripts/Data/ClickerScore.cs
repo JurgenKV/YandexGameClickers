@@ -34,7 +34,11 @@ public class ClickerScore : MonoBehaviour
     [SerializeField] private ChangeImage _changeImage;
     
     [SerializeField] private List<AudioSource> _sources = new List<AudioSource>();
-
+    [Header("Sim Content")]
+    [SerializeField] private List<GameObject> _simsContent;
+    [SerializeField] private Button _clearSimButton;
+    
+    [Header("End Sim Content")]
     public bool IsAutoClickActive = false;
     
     private long _clickCount = 0;
@@ -61,7 +65,8 @@ public class ClickerScore : MonoBehaviour
     [SerializeField]public long experienceToNextLevel;
 
     [SerializeField] public List<GameObject> ParticleSystems;
-    
+    private static readonly int Active = Animator.StringToHash("Active");
+
     //[SerializeField] private List<Animator> _animators;
     private void Start()
     {
@@ -75,13 +80,8 @@ public class ClickerScore : MonoBehaviour
         _progressUI.RefreshAllUI();
         
         InvokeRepeating(nameof(AutoExp), 1,1);
+        Invoke(nameof(GenerateContent), 60);
     }
-
-    // private void AutoClick()
-    // {
-    //     if(IsAutoClickActive)
-    //         Click();
-    // }
 
     private void LoadData()
     {
@@ -98,8 +98,8 @@ public class ClickerScore : MonoBehaviour
             experienceMultiplayer = YandexGame.savesData.ExperienceMultiplayer = 1;
             YandexGame.SaveProgress();
         }
-            
-        
+
+        LoadContent();
     }
 
     public void Click()
@@ -121,6 +121,71 @@ public class ClickerScore : MonoBehaviour
         YandexGame.savesData.MoneyAmount = ClicksCount;
         YandexGame.SaveProgress();
         _progressUI.RefreshAllUI();
+    }
+
+    public void ButtonClearContent()
+    {
+        if (_simsContent.TrueForAll(i => !i.activeSelf))
+            return;
+        
+        if(ClicksCount < 50)
+            return;
+        
+        ClicksCount -= 50;
+        
+        AddExperience((long) (experienceMultiplayer * 2f) + 5);
+
+        int index = _simsContent.FindIndex(i => i.activeSelf);
+        _simsContent[index].GetComponent<Animator>().SetBool(Active, false);
+        _simsContent[index].SetActive(false);
+        YandexGame.savesData.ContentNums.Remove(index);
+        YandexGame.SaveProgress();
+    }
+
+    private void GenerateContent()
+    {
+        if (_simsContent.TrueForAll(i => i.activeSelf))
+        {
+            Invoke(nameof(GenerateContent), Random.Range(60, 180));
+            return;
+        }
+
+        int index = -1;
+            
+        while (true)
+        {
+            index = Random.Range(0, _simsContent.Count);
+            
+            if(!_simsContent[index].activeSelf)
+                break;
+        }
+        _simsContent[index].SetActive(true);
+        _simsContent[index].GetComponent<Animator>().SetBool(Active, true);
+
+        YandexGame.savesData.ContentNums.Add(index);
+        YandexGame.SaveProgress();
+        
+        Invoke(nameof(GenerateContent), Random.Range(60, 180));
+    }
+
+    private void LoadContent()
+    {
+        if (YandexGame.savesData.ContentNums == null)
+        {
+            YandexGame.savesData.ContentNums = new List<int>();
+            YandexGame.SaveProgress();
+            return;
+        }
+            
+        
+        for (int i = 0; i < _simsContent.Count; i++)
+        {
+            if (YandexGame.savesData.ContentNums.Contains(i))
+            {
+                _simsContent[i].SetActive(true);
+                _simsContent[i].GetComponent<Animator>().SetBool(Active, true);
+            }
+        }
     }
 
     private void AutoExp()
@@ -248,21 +313,7 @@ public class ClickerScore : MonoBehaviour
 
     public void ADSUpgradeClick()
     {
-        // try
-        // {
-        //     YandexGame.RewVideoShow(2);
-        // }
-        // catch (Exception e)
-        // {
-        //     Console.WriteLine(e);
-        // }
         YGRewardedVideoManager.OpenRewardAd(2);
-        
-        // ClickMultiplayer++;
-        // UpdateUpgradeClickUI();
-        // StartCoroutine(TimerUpdateCoroutine());
-        // YandexGame.savesData.ClickMultiplayer = ClickMultiplayer;
-        // YandexGame.SaveProgress();
     }
     
     public void ADSUpgradeExp()

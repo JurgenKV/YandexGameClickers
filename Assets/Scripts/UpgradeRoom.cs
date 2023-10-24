@@ -13,7 +13,7 @@ public class UpgradeRoom : MonoBehaviour
     [SerializeField] private int max = 7;
     [SerializeField] private List<GameObject> _images = new List<GameObject>();
 
-    [SerializeField] private GameObject button;
+    [SerializeField] private Button buttonObj;
     
     //[SerializeField] private SpriteType _spriteType;
 
@@ -81,7 +81,8 @@ public class UpgradeRoom : MonoBehaviour
         {
             _roomLevel = 7;
             StopAllCoroutines();
-            button.SetActive(false);
+            buttonObj.interactable = false;
+            _button.interactable = false;
         }
     }
 }
