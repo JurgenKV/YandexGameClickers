@@ -118,7 +118,7 @@ public class ChangeImage : MonoBehaviour
             shadow.SetActive(false);
         }
 
-        int ind = _clickerScore.level - 1;
+        int ind = YandexGame.savesData.Level - 1;
         if(ind < 3 )
             _shadows[0].SetActive(true);
 
@@ -128,8 +128,8 @@ public class ChangeImage : MonoBehaviour
         if(ind > 5)
             _shadows[2].SetActive(true);
 
-        if (_clickerScore.level < 10)
-            return _spritesLists[index].Sprites[_clickerScore.level - 1];
+        if (YandexGame.savesData.Level < 10)
+            return _spritesLists[index].Sprites[YandexGame.savesData.Level - 1];
         else
             return _spritesLists[index].Sprites.Last();
     }

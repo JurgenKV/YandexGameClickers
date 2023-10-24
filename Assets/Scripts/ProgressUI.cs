@@ -39,10 +39,10 @@ public class ProgressUI : MonoBehaviour
 
         if (YandexGame.savesData.language.Equals("ru"))
         {
-            _sliderTextUI.text = "Скорость роста " + _clickerScore.experienceMultiplayer.ToString();
+            _sliderTextUI.text = "Рост в секунду " + _clickerScore.experienceMultiplayer.ToString();
         }else if (YandexGame.savesData.language.Equals("en"))
         {
-            _sliderTextUI.text = "Growth rate " + _clickerScore.experienceMultiplayer.ToString();
+            _sliderTextUI.text = "Growth per second " + _clickerScore.experienceMultiplayer.ToString();
         }
         // _sliderTextUI.text = _clickerScore.experience.ToString() + "/" +
         //                      _clickerScore.experienceToNextLevel.ToString();

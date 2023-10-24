@@ -133,13 +133,14 @@ public class ClickerScore : MonoBehaviour
         
         ClicksCount -= 50;
         
-        AddExperience((long) (experienceMultiplayer * 2f) + 5);
+        AddExperience((long) (experienceMultiplayer * 3f) + 5);
 
         int index = _simsContent.FindIndex(i => i.activeSelf);
         _simsContent[index].GetComponent<Animator>().SetBool(Active, false);
         _simsContent[index].SetActive(false);
         YandexGame.savesData.ContentNums.Remove(index);
         YandexGame.SaveProgress();
+        CheckButtonClearState();
     }
 
     private void GenerateContent()
@@ -164,7 +165,7 @@ public class ClickerScore : MonoBehaviour
 
         YandexGame.savesData.ContentNums.Add(index);
         YandexGame.SaveProgress();
-        
+        CheckButtonClearState();
         Invoke(nameof(GenerateContent), Random.Range(60, 180));
     }
 
@@ -186,8 +187,17 @@ public class ClickerScore : MonoBehaviour
                 _simsContent[i].GetComponent<Animator>().SetBool(Active, true);
             }
         }
+
+        CheckButtonClearState();
     }
 
+    private void CheckButtonClearState()
+    {
+        if(_simsContent.TrueForAll(i=> !i.activeSelf))
+            _clearSimButton.interactable = false;
+        else
+            _clearSimButton.interactable = true;
+    }
     private void AutoExp()
     {
         AddExperience(experienceMultiplayer);
@@ -304,7 +314,7 @@ public class ClickerScore : MonoBehaviour
     private long GetUpgradeCostExp()
     {
         //x * ((level+1) ^ y) - (x * level):
-        double cost = ((constX * Math.Pow((ClickMultiplayer+1.2), degreeY)) - (constX * (ClickMultiplayer+1)));
+        double cost = ((constX * Math.Pow((experienceMultiplayer+1.2), degreeY)) - (constX * (experienceMultiplayer+1)));
         Debug.Log("cost = " + cost);
         
         
