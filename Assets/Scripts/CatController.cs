@@ -30,6 +30,9 @@ public class CatController : MonoBehaviour
         {
             catchController.HealthBar.Regenerate();
         }
+        
+        Instantiate(catchController.ParticleSystems[Random.Range(0, catchController.ParticleSystems.Count)],
+            catchItem.transform.position, Quaternion.identity);
         Destroy(col.gameObject);
         PlaySound();
     }

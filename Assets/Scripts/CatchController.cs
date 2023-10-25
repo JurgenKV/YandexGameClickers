@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using YG;
 using Random = UnityEngine.Random;
 
@@ -17,10 +18,11 @@ public class CatchController : MonoBehaviour
     [SerializeField] private GameObject item;
     [SerializeField] private GameObject health;
     [SerializeField] private GameObject damage;
-
+    [SerializeField] private Slider _slider;
+    
     [SerializeField] private GameObject point1;
     [SerializeField] private GameObject point2;
-
+    [SerializeField] public List<GameObject> ParticleSystems;
     public long ClicksCount
     {
         get
@@ -64,6 +66,7 @@ public class CatchController : MonoBehaviour
     {
         IsGameOver = true;
         _gameOverMenu.SetActive(true);
+        _slider.enabled = false;
     }
 
     private void GenerateItem()

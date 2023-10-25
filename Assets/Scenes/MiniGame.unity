@@ -277,8 +277,8 @@ MonoBehaviour:
   textMashProComponent: {fileID: 237460662}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u041C\u0435\u043D\u044E"
-  en: Menu
+  ru: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
+  en: Room
   tr: 
   az: 
   be: 
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u0435\u043D\u044E"
+  m_text: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dff6020ae0203df47a0c7d73c61632d8, type: 2}
   m_sharedMaterial: {fileID: 1575345401519621305, guid: dff6020ae0203df47a0c7d73c61632d8, type: 2}
@@ -690,8 +690,15 @@ MonoBehaviour:
   item: {fileID: 5924992500317749879, guid: bb01eda319359ff4d9516fe5efc92b4c, type: 3}
   health: {fileID: 5924992500317749879, guid: 4c833e8d6eb010f43bbf2849956b888c, type: 3}
   damage: {fileID: 5924992500317749879, guid: 19b979075aa9eea44a15db616d2595d8, type: 3}
+  _slider: {fileID: 1114971027}
   point1: {fileID: 1173347442}
   point2: {fileID: 2036540300}
+  ParticleSystems:
+  - {fileID: 9215180084365062601, guid: 960821a58db3e3245b5a450dfa519efc, type: 3}
+  - {fileID: 9215180084365062601, guid: 75c70960a032a5a49b5a13b473c2d9ad, type: 3}
+  - {fileID: 9215180084365062601, guid: 390140a134b5fa648996d8dc5189c279, type: 3}
+  - {fileID: 9215180084365062601, guid: 67bffce4f3557184e861ba0112008d32, type: 3}
+  - {fileID: 9215180084365062601, guid: 8296a62ddd461e44cb74d38aee101322, type: 3}
   ClickMultiplayer: 1
   IsGameOver: 0
   repeatCount: 0
@@ -1553,8 +1560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.720001, y: 0.36870956}
-  m_SizeDelta: {x: 367.76, y: 145.75}
+  m_AnchoredPosition: {x: 0.92975616, y: 0.36870956}
+  m_SizeDelta: {x: 350.9, y: 145.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457495290
 MonoBehaviour:
@@ -1576,7 +1583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041C\u0435\u043D\u044E"
+  m_text: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dff6020ae0203df47a0c7d73c61632d8, type: 2}
   m_sharedMaterial: {fileID: 1575345401519621305, guid: dff6020ae0203df47a0c7d73c61632d8, type: 2}
@@ -1670,8 +1677,8 @@ MonoBehaviour:
   textMashProComponent: {fileID: 457495290}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u041C\u0435\u043D\u044E"
-  en: Menu
+  ru: "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
+  en: Room
   tr: "Bas\u0131n X2"
   az: 
   be: 

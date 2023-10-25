@@ -200,7 +200,7 @@ public class ClickerScore : MonoBehaviour
     }
     private void AutoExp()
     {
-        AddExperience(experienceMultiplayer);
+        AddExperience(experienceMultiplayer + YandexGame.savesData.roomLevel + 1);
         _progressUI.RefreshAllUI();
     }
 
@@ -391,6 +391,7 @@ public class ClickerScore : MonoBehaviour
         YandexGame.savesData.Level = level;
         YandexGame.savesData.ExperienceToNextLevel = experienceToNextLevel;
         GameController.SetLeaderboard(level);
+        _changeImage.LoadImage(YandexGame.savesData.catType);
         YandexGame.SaveProgress();
         
         _progressUI.RefreshAllUI();

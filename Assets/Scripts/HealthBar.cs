@@ -27,6 +27,9 @@ public class HealthBar : MonoBehaviour
     }
     public void Damage()
     {
+        if(_tempHealth == 0)
+            return;
+        
         _hearthsAnimators[_tempHealth - 1].SetBool(IsFill, false);
         _tempHealth--;
     }
