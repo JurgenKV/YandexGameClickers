@@ -38,6 +38,10 @@ public class GameController : MonoBehaviour
     public List<Sprite> DamageSprites;
 
     private int _scoreAmount;
+    
+    public bool HpBuster = false;
+    public bool MoneyBuster = false;
+    public bool ScoreBuster = false;
 
     public int ScoreAmount
     {
@@ -83,14 +87,41 @@ public class GameController : MonoBehaviour
     }
 
     private int _moneyAmount = 0;
-    
+
+    private void Awake()
+    {
+        CheckBusters();
+    }
 
     private void Start()
     {
         FillSpriteList();
         IsGameStarted = true;
-        
         InvokeRepeating(nameof(IncreaseSpeedMultiplayer), 1,9);
+    }
+
+    private void CheckBusters()
+    {
+        if (YandexGame.savesData.healthBuster > 0)
+        {
+            HpBuster = true;
+            YandexGame.savesData.healthBuster -= 1;
+            YandexGame.SaveProgress();
+        }
+        
+        if (YandexGame.savesData.moneyBuster > 0)
+        {
+            MoneyBuster = true;
+            YandexGame.savesData.moneyBuster -= 1;
+            YandexGame.SaveProgress();
+        }
+        
+        if (YandexGame.savesData.scoreBuster > 0)
+        {
+            ScoreBuster = true;
+            YandexGame.savesData.scoreBuster -= 1;
+            YandexGame.SaveProgress();
+        }
     }
 
     private void Update()

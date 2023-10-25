@@ -8,6 +8,7 @@
        // [SerializeField] private ClickerScore _clickerScore;
        [SerializeField] private ShopManager _shopManager = null;
        [SerializeField] private GameController _gameController = null;
+       [SerializeField] private BusterMenu _busterMenu;
         private static int _rewardIndex;
 
         private static int indexOfSoldItem = -1;
@@ -45,6 +46,18 @@
                     break;
                 case 3:
                    _gameController.EndRewardHealth();
+                    Debug.Log("EndReward");
+                    break;
+                case 4:
+                    _busterMenu.ADSButtonBuyHealthEND();
+                    Debug.Log("EndReward");
+                    break;
+                case 5:
+                    _busterMenu.ADSButtonBuyMoneyEND();
+                    Debug.Log("EndReward");
+                    break;
+                case 6:
+                    _busterMenu.ADSButtonBuyScoreEND();
                     Debug.Log("EndReward");
                     break;
             }

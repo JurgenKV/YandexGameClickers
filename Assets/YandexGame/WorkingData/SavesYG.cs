@@ -21,6 +21,11 @@ namespace YG
        
         public long MoneyAmount = 0;
         public long BestScore = 0;
+
+        public int healthBuster = 0;
+        public int moneyBuster = 0;
+        public int scoreBuster = 0;
+
         
         public List<int> SoldItems = new List<int>();
         public List<int> ActiveItems = new List<int>();
