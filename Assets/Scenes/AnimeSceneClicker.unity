@@ -13176,9 +13176,9 @@ MonoBehaviour:
   textMashProComponent: {fileID: 1666432950}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u0420\u0410\u0417\u0414\u0415\u0422\u042C"
-  en: UNDRESS
-  tr: "Giysilerini \xE7\u0131kar"
+  ru: "\u041D\u0410\u0414\u0415\u0422\u042C \n\u041A\u0423\u041F\u0410\u041B\u042C\u041D\u0418\u041A"
+  en: SWIMSUIT
+  tr: "Y\xDCZME\nKOST\xDCM\xDC"
   az: 
   be: 
   he: 
@@ -13229,7 +13229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0410\u0417\u0414\u0415\u0422\u042C"
+  m_text: "\u041D\u0410\u0414\u0415\u0422\u042C \n\u041A\u0423\u041F\u0410\u041B\u042C\u041D\u0418\u041A"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b875511ce445f834588a83fd7897d372, type: 2}
   m_sharedMaterial: {fileID: -7551757927916445891, guid: b875511ce445f834588a83fd7897d372, type: 2}
@@ -13256,12 +13256,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
+  m_fontSize: 51.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 8.97
-  m_fontSizeMax: 55
+  m_fontSizeMax: 55.3
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
