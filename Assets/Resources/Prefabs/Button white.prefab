@@ -243,15 +243,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0442\u0435\u0445\u0442"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b875511ce445f834588a83fd7897d372, type: 2}
-  m_sharedMaterial: {fileID: -7551757927916445891, guid: b875511ce445f834588a83fd7897d372, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 92cdb968b01c8ef469a2c25a8235ef04, type: 2}
+  m_sharedMaterial: {fileID: -3976472891663965607, guid: 92cdb968b01c8ef469a2c25a8235ef04, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294908809
+  m_fontColor: {r: 0.5372549, g: 0.10588236, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Items:
   - Index: 16
-    Sprite: {fileID: 21300000, guid: b1b2683128a4e224f8e70e7098daa5db, type: 3}
+    Sprite: {fileID: 21300000, guid: dc8fb1a07fff22a4087916776c3f2110, type: 3}
     Cost: 0
     IsRewardCost: 0
-    IsActive: 0
+    IsActive: 1
     IsSold: 1
   - Index: 0
     Sprite: {fileID: 21300000, guid: 27150e1d893948b45961a458c5237a57, type: 3}
     Cost: 0
     IsRewardCost: 1
-    IsActive: 0
+    IsActive: 1
     IsSold: 1
   - Index: 1
     Sprite: {fileID: 21300000, guid: b404d436d13697249857eb67f20982d4, type: 3}
@@ -125,37 +125,37 @@ MonoBehaviour:
     Sprite: {fileID: 21300000, guid: 10e42536b7fff3848ad829fe21e0bbeb, type: 3}
     Cost: 5000
     IsRewardCost: 0
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 19
     Sprite: {fileID: 21300000, guid: 90c81ff3dc68a9c4987832a640525dc5, type: 3}
     Cost: 3000
     IsRewardCost: 1
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 20
     Sprite: {fileID: 21300000, guid: bfcbbee36f063934cbc6d2ad1b596493, type: 3}
     Cost: 5000
     IsRewardCost: 0
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 21
     Sprite: {fileID: 21300000, guid: b2f12209cb98c824a9352de79f172636, type: 3}
     Cost: 3000
     IsRewardCost: 0
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 22
     Sprite: {fileID: 21300000, guid: 3be6c8eaf6b70c1459e3bbec7bc7f806, type: 3}
     Cost: 3000
     IsRewardCost: 0
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 23
     Sprite: {fileID: 21300000, guid: 23e41ec1e7d1a2549a9bbda181412220, type: 3}
     Cost: 5000
     IsRewardCost: 0
-    IsActive: 1
+    IsActive: 0
     IsSold: 1
   - Index: 24
     Sprite: {fileID: 21300000, guid: 095e1a663528bc0499cba8f3f4701c46, type: 3}
