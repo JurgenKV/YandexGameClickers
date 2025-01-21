@@ -23,7 +23,7 @@ public class ShopManager : MonoBehaviour
 
     //[SerializeField] private int pageNumber = 0;
     [SerializeField] private int minPg = 0;
-    [SerializeField] private int maxPg = 6;
+    [SerializeField] private int maxPg = 4;
     [SerializeField] private int _maxUIPage = 8;
     
     private void Start()
@@ -33,36 +33,36 @@ public class ShopManager : MonoBehaviour
         CheckActiveItemsYG();
         //FindObjectOfType<ProgressUI>().Money = 10000;
         _prevPageButton.SetActive(false);
-        CreateGrid(0, 6);
-        _pageText.text = (maxPg / 6).ToString() + "/" + _maxUIPage.ToString();
+        CreateGrid(0, 4);
+        _pageText.text = (maxPg / 4).ToString() + "/" + _maxUIPage.ToString();
     }
 
     public void NextPage()
     {
         DestroyGridObjects();
-        CreateGrid(minPg += 6, maxPg += 6);
+        CreateGrid(minPg += 4, maxPg += 4);
         
-        if ((maxPg / 6) == _maxUIPage)
+        if ((maxPg / 4) == _maxUIPage)
         {
             _nextPageButton.SetActive(false);
         }
         
         _prevPageButton.SetActive(true);
-        _pageText.text = (maxPg / 6).ToString() + "/" + _maxUIPage.ToString();
+        _pageText.text = (maxPg / 4).ToString() + "/" + _maxUIPage.ToString();
     }
 
     public void PrevPage()
     {
         
         DestroyGridObjects();
-        CreateGrid(minPg -= 6, maxPg -= 6);
+        CreateGrid(minPg -= 4, maxPg -= 4);
         
-        if ((maxPg / 6) == 1)
+        if ((maxPg / 4) == 1)
         {
             _prevPageButton.SetActive(false);
         }
         
-        _pageText.text = (maxPg / 6).ToString() + "/" + _maxUIPage.ToString();
+        _pageText.text = (maxPg / 4).ToString() + "/" + _maxUIPage.ToString();
         _nextPageButton.SetActive(true);
     }
 

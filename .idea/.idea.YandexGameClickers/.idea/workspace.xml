@@ -5,12 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO Copy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO Copy.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/Down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/Down.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/FirstCycle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/FirstCycle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/Up.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/Up.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/WaitAfterClick.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/WaitAfterClick.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/WaitWithoutClick.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Anim/BoxItem/WaitWithoutClick.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO Copy.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO Copy.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/InitSDKLang.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InitSDKLang.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Item.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 3.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Particle bone 3.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/1.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/1.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/2.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/2.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/3.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/3.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/4.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/4.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/main.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/main.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/mainm.mp3.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/mainm.mp3.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/New Sprites/Mask group.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/New Sprites/Mask group.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,8 +65,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/Assets/Resources/Sprites/BG/1.png.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ActivateClickInAnimation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/Assets/Fonts/NoirPro-Light.ttf.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/Assets/Resources/Prefabs/Button buster.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -126,6 +152,8 @@
       <workItem from="1737364283884" duration="2446000" />
       <workItem from="1737367390790" duration="1241000" />
       <workItem from="1737379913079" duration="66000" />
+      <workItem from="1737471048580" duration="1904000" />
+      <workItem from="1737486655039" duration="3053000" />
     </task>
     <task id="LOCAL-00001" summary="Fix yg version, change compression">
       <option name="closed" value="true" />
@@ -135,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737213201558</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New UI">
+      <option name="closed" value="true" />
+      <created>1737478094078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737478094078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +211,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Fix yg version, change compression" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix yg version, change compression" />
+    <MESSAGE value="New UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="New UI" />
   </component>
 </project>

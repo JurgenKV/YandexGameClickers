@@ -209,7 +209,7 @@ public class GameController : MonoBehaviour
     {
         try
         {
-            YandexGame.NewLeaderboardScores("BestScorePlayerPusheenCatch", num);
+            YandexGame.NewLeaderboardScores("PickGirlsTopScore", num);
         }
         catch (Exception e)
         {
