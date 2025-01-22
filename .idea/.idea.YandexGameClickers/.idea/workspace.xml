@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="">
+    <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="Completed girls game, with sounds and prices">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Data/ItemsSO.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/1.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/2.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/3.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/4.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/4.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/main.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/main.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/mainm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sounds/mainm.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/image_79-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/image_79-removebg-preview.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetYGData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetYGData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
@@ -38,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="GirlsCatch/GirlsCatchDev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,7 +127,7 @@
       <workItem from="1737379913079" duration="66000" />
       <workItem from="1737471048580" duration="1904000" />
       <workItem from="1737486655039" duration="3255000" />
-      <workItem from="1737530048152" duration="5275000" />
+      <workItem from="1737530048152" duration="6627000" />
     </task>
     <task id="LOCAL-00001" summary="Fix yg version, change compression">
       <option name="closed" value="true" />
@@ -171,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737492318460</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Completed girls game, with sounds and prices">
+      <option name="closed" value="true" />
+      <created>1737539390721</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737539390721</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +186,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="PusheenCatch/PusheenCatchDev" />
+                        <option value="GirlsCatch/GirlsCatchDev" />
                       </list>
                     </value>
                   </entry>
@@ -213,6 +203,7 @@
     <MESSAGE value="Fix yg version, change compression" />
     <MESSAGE value="New UI" />
     <MESSAGE value="added girls img" />
-    <option name="LAST_COMMIT_MESSAGE" value="added girls img" />
+    <MESSAGE value="Completed girls game, with sounds and prices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed girls game, with sounds and prices" />
   </component>
 </project>
