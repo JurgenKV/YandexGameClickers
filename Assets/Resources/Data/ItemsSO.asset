@@ -50,7 +50,7 @@ MonoBehaviour:
     IsActive: 0
     IsSold: 0
   - Index: 6
-    Sprite: {fileID: 1522740858, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
+    Sprite: {fileID: 746119416, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
     Cost: 4000
     IsRewardCost: 0
     IsActive: 0
@@ -122,7 +122,7 @@ MonoBehaviour:
     IsActive: 0
     IsSold: 0
   - Index: 18
-    Sprite: {fileID: -1682823745, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
+    Sprite: {fileID: 921985951, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
     Cost: 0
     IsRewardCost: 1
     IsActive: 0
@@ -147,37 +147,37 @@ MonoBehaviour:
     IsSold: 0
   - Index: 22
     Sprite: {fileID: 1435790668, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 15000
+    Cost: 5000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 23
     Sprite: {fileID: 902141605, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 10000
+    Cost: 5000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 24
     Sprite: {fileID: -1772842868, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 15000
+    Cost: 5000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 25
     Sprite: {fileID: 1833843082, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 25000
+    Cost: 10000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 26
     Sprite: {fileID: -1789663391, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 10000
+    Cost: 5000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0
   - Index: 27
     Sprite: {fileID: 449346163, guid: e43d73c1fe486134d8d829c0e77481c3, type: 3}
-    Cost: 10000
+    Cost: 5000
     IsRewardCost: 0
     IsActive: 0
     IsSold: 0

@@ -55,8 +55,12 @@ public class GetYGData : MonoBehaviour
         
         if (YandexGame.savesData.SoldItems.Count == 0 && YandexGame.savesData.ActiveItems.Count == 0)
         {
-            YandexGame.savesData.SoldItems.Add(16);
-            YandexGame.savesData.ActiveItems.Add(16);
+            YandexGame.savesData.SoldItems.Add(0);
+            YandexGame.savesData.ActiveItems.Add(0);
+            YandexGame.savesData.SoldItems.Add(1);
+            YandexGame.savesData.ActiveItems.Add(1);
+            YandexGame.savesData.SoldItems.Add(2);
+            YandexGame.savesData.ActiveItems.Add(2);
             YandexGame.SaveProgress();
         }
         

@@ -19,7 +19,8 @@ public class BoxController : MonoBehaviour
     [SerializeField] private Animator _boxAnimator;
     [SerializeField] private Image _image;
     [SerializeField] private GameObject _spawnParticlesPosition;
-
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private List<AudioClip> _boxSound;
     private BoxType _boxType;
     private bool _isInteractable = false;
     private static readonly int SpeedMultiplayer = Animator.StringToHash("SpeedMultiplayer");
@@ -56,6 +57,12 @@ public class BoxController : MonoBehaviour
         switch (_boxType)
         {
             case BoxType.Default:
+
+                if (YandexGame.savesData.IsSoundEnabled)
+                {
+                    _audioSource.clip= _boxSound[Random.Range(0, _boxSound.Count)];
+                    _audioSource.Play();
+                }
                 
                 if(!_gameController.MoneyBuster)
                     _gameController.MoneyAmount += 1 + (int)(1 * _gameController.SpeedMultiplayer);

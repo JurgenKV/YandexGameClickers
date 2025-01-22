@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TMP_Text _money;
     [SerializeField] private GameObject _gameOverUI;
     [SerializeField] private Button _slowButton;
-    
+    [SerializeField] private TMP_Text _helptext;
     
     [SerializeField] public List<GameObject> wellClickParticles;
     [SerializeField] public List<GameObject> healthParticles;
@@ -95,6 +95,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DecreaseAlphaHelpTxt());
         FillSpriteList();
         IsGameStarted = true;
         InvokeRepeating(nameof(IncreaseSpeedMultiplayer), 1,9);
@@ -122,6 +123,19 @@ public class GameController : MonoBehaviour
             YandexGame.savesData.scoreBuster -= 1;
             YandexGame.SaveProgress();
         }
+    }
+
+    private IEnumerator DecreaseAlphaHelpTxt()
+    {
+        yield return new WaitForSeconds(5);
+        while (_helptext.alpha <= 0.1f)
+        {
+            _helptext.alpha -= 0.05f;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        _helptext.alpha = 0;
+        yield break;
     }
 
     private void Update()
@@ -168,6 +182,25 @@ public class GameController : MonoBehaviour
     {
         YGRewardedVideoManager.OpenRewardAd(3);
         IsOnRewardPause = true;
+    }
+    
+    public void StartRewardGetMoney()
+    {
+        YGRewardedVideoManager.OpenRewardAd(4);
+    }
+
+    public void EndRewardGetMoney()
+    {
+        try
+        {
+            YandexGame.savesData.MoneyAmount += 1000;
+            YandexGame.SaveProgress();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
     public void EndRewardSlowTime()

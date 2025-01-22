@@ -4033,7 +4033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3b7b56f0531aa754b8c2d49f8f20a894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b49b47c312737d41a3f69e789ce47f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4377,7 +4377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3b7b56f0531aa754b8c2d49f8f20a894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b49b47c312737d41a3f69e789ce47f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5017,7 +5017,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0e9e3166afa4db64f8c5aaed8c06e964, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6eacb0b70ff312741843ba542f261c9e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 55b39a02454e9d94c878f1b35b539871, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -5647,18 +5647,6 @@ PrefabInstance:
     - target: {fileID: 189557051668859529, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.8705883
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.9058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012148630535479672, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.9568628
       objectReference: {fileID: 0}
     - target: {fileID: 6899419851133702099, guid: 816926cc7bd696d46b4914ab81144fca, type: 3}
       propertyPath: m_LocalPosition.x

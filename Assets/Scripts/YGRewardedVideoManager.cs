@@ -78,6 +78,10 @@
                     _gameController.EndRewardHealth();
                     Debug.Log("EndReward");
                     break;
+                case 4:
+                    _gameController.EndRewardGetMoney();
+                    Debug.Log("EndRewardGetMoney");
+                    break;
             }
         }
 
