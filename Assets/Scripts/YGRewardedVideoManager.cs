@@ -60,6 +60,10 @@
                     _busterMenu.ADSButtonBuyScoreEND();
                     Debug.Log("EndReward");
                     break;
+                case 7:
+                    _gameController.EndRewardGetMoney();
+                    Debug.Log("EndRewardGetMoney");
+                    break;
             }
         }
         

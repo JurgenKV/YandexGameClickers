@@ -50,13 +50,14 @@ public class ShopItem : MonoBehaviour
                 RewardImagePrice.gameObject.SetActive(true);
                 Price.gameObject.SetActive(false);
             }
-
+            Image.color = new Color(0.17f, 0.17f, 0.17f, 1);
             ActivityImage.enabled = false;
         }
         else
         {
             ButtonShop.gameObject.SetActive(false);
             ActivityImage.enabled = ItemData.IsActive;
+            Image.color = new Color(1,1,1,1);
         }
     }
 
@@ -80,6 +81,7 @@ public class ShopItem : MonoBehaviour
                 ItemData.IsActive = true;
                 ActivityImage.enabled = true;
                 _shopManager.SaveChanges(ItemData);
+                Image.color = new Color(1,1,1,1);
             }
         }
     }
@@ -90,6 +92,7 @@ public class ShopItem : MonoBehaviour
         ItemData.IsSold = true;
         ItemData.IsActive = true;
         ActivityImage.enabled = true;
+        Image.color = new Color(1,1,1,1);
         _shopManager.SaveChanges(ItemData);
     }
 

@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="Completed girls game, with sounds and prices">
+    <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/image_79-removebg-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Clicker/image_79-removebg-preview.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/InfoYG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/InfoYG.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +53,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/Assets/Fonts/NoirPro-Light.ttf.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/Assets/Resources/Prefabs/Button buster.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/yurak/RiderProjects/YandexGameClickers/UserSettings/EditorUserSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -58,7 +72,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PusheenCatch/PusheenCatchDev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GirlsCatch/GirlsCatchDev&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -128,6 +142,7 @@
       <workItem from="1737471048580" duration="1904000" />
       <workItem from="1737486655039" duration="3255000" />
       <workItem from="1737530048152" duration="6627000" />
+      <workItem from="1737798649471" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="Fix yg version, change compression">
       <option name="closed" value="true" />

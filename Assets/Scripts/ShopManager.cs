@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -12,7 +13,7 @@ public class ShopManager : MonoBehaviour
 {
     [SerializeField] private ItemsSO _itemsTemplate;
     [SerializeField] private GameObject itemPrefab;
-
+    [SerializeField] private TMP_Text _helptext;
     [SerializeField] private TMP_Text _pageText;
     [SerializeField] private GameObject _nextPageButton;
     [SerializeField] private GameObject _prevPageButton;
@@ -31,10 +32,24 @@ public class ShopManager : MonoBehaviour
         _items.AddRange(_itemsTemplate.Items);
         CheckSoldItemsYG();
         CheckActiveItemsYG();
+        StartCoroutine(DecreaseAlphaHelpTxt());
         //FindObjectOfType<ProgressUI>().Money = 10000;
         _prevPageButton.SetActive(false);
         CreateGrid(0, 4);
         _pageText.text = (maxPg / 4).ToString() + "/" + _maxUIPage.ToString();
+    }
+    
+    private IEnumerator DecreaseAlphaHelpTxt()
+    {
+        yield return new WaitForSeconds(10);
+        while (_helptext.alpha >= 0.1f)
+        {
+            _helptext.alpha -= 0.05f;
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        _helptext.alpha = 0;
+        yield break;
     }
 
     public void NextPage()

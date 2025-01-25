@@ -65,9 +65,9 @@ public class BoxController : MonoBehaviour
                 }
                 
                 if(!_gameController.MoneyBuster)
-                    _gameController.MoneyAmount += 1 + (int)(1 * _gameController.SpeedMultiplayer);
+                    _gameController.MoneyAmount += 5 + (int)(2 * _gameController.SpeedMultiplayer);
                 else
-                    _gameController.MoneyAmount += ((1 + (int)(1 * _gameController.SpeedMultiplayer))*3);
+                    _gameController.MoneyAmount += ((3 + (int)(3 * _gameController.SpeedMultiplayer))*3);
 
                 if (!_gameController.ScoreBuster)
                     _gameController.ScoreAmount++;
@@ -79,6 +79,17 @@ public class BoxController : MonoBehaviour
             
             case BoxType.Health:
                 _gameController.HealthBar.Regenerate();
+                
+                if(!_gameController.MoneyBuster)
+                    _gameController.MoneyAmount += 3 + (int)(2 * _gameController.SpeedMultiplayer);
+                else
+                    _gameController.MoneyAmount += ((3 + (int)(2 * _gameController.SpeedMultiplayer))*3);
+
+                if (!_gameController.ScoreBuster)
+                    _gameController.ScoreAmount++;
+                else
+                    _gameController.ScoreAmount += 3;
+                
                 Instantiate(_gameController.healthParticles[Random.Range(0, _gameController.healthParticles.Count)], _spawnParticlesPosition.transform.position, Quaternion.identity);
                 break;
             

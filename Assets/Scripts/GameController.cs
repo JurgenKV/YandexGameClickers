@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour
     private IEnumerator DecreaseAlphaHelpTxt()
     {
         yield return new WaitForSeconds(5);
-        while (_helptext.alpha <= 0.1f)
+        while (_helptext.alpha >= 0.1f)
         {
             _helptext.alpha -= 0.05f;
             yield return new WaitForSeconds(0.1f);
@@ -149,8 +149,10 @@ public class GameController : MonoBehaviour
     {
         if (!IsGameStarted || IsGameOver || IsOnPause || IsOnRewardPause || _slowCounterCoroutineActive)
             return;
+        if(SpeedMultiplayer >= 2.5f)
+            return;
         
-        SpeedMultiplayer += 0.1f;
+        SpeedMultiplayer += 0.05f;
     }
 
     private void GameOver()
@@ -186,7 +188,7 @@ public class GameController : MonoBehaviour
     
     public void StartRewardGetMoney()
     {
-        YGRewardedVideoManager.OpenRewardAd(4);
+        YGRewardedVideoManager.OpenRewardAd(7);
     }
 
     public void EndRewardGetMoney()
