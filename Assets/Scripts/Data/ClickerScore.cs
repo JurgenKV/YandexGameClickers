@@ -76,7 +76,7 @@ public class ClickerScore : MonoBehaviour
     {
         _coroutineX2CLicks = true;
         _buttonX2.interactable = false;
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
         _buttonX2.interactable = true;
         _coroutineX2CLicks = false;
     }
@@ -130,7 +130,7 @@ public class ClickerScore : MonoBehaviour
     IEnumerator TimerUpdateCoroutine()
     {
         _buttonUpdate.interactable = false;
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
         _buttonUpdate.interactable = true;
     }
 

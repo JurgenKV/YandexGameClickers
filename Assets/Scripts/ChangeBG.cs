@@ -115,7 +115,7 @@ public class ChangeBG : MonoBehaviour
     IEnumerator TimerBgCoroutine()
     {
         _button.interactable = false;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(5);
         _button.interactable = true;
     }
 

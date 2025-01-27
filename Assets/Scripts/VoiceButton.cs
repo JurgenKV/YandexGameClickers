@@ -35,12 +35,16 @@ public class VoiceButton : MonoBehaviour
         }
     }
     
-    public void OnFreeVoice()
+    public void OnPayVoice(int cost)
     {
+        if (_clickerScore.ClicksCount < cost)
+            return;
+        _clickerScore.ClicksCount -= cost;
+        
         if (_sources.All(i => !i.isPlaying))
         {
             _sources3.Play();
-            Invoke(nameof(GirlVoice), 1f);
+            Invoke(nameof(GirlVoice), 0.5f);
         }
     }
     
