@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YG;
 using Random = UnityEngine.Random;
@@ -116,5 +117,18 @@ public class ChangeBG : MonoBehaviour
         _button.interactable = false;
         yield return new WaitForSeconds(60);
         _button.interactable = true;
+    }
+
+    public void ChangeGirl(int cost)
+    {
+        if (_clickerScore.ClicksCount < cost)
+            return;
+        _clickerScore.ClicksCount -= cost;
+
+        YandexGame.savesData.IsGirlUndressed = false;
+        YandexGame.savesData.GirlNumber = UnityEngine.Random.Range(0, 5);
+        YandexGame.SaveProgress();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 }

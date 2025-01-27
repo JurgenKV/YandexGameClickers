@@ -27,6 +27,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button _firstButton;
     [SerializeField] private Button _secoundButton;
     private bool _isGameOver = false;
+    
+    private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
+    
     private void Start()
     {
         if (!YandexGame.savesData.IsTestCompleted)
@@ -81,10 +85,30 @@ public class GameController : MonoBehaviour
             ShowFullAds();
             return;
         }
+    }
+    
+    public void SkipTestAdVideo()
+    {
+        try
+        {
+            YandexGame.RewVideoShow(10);
+        }
+        catch (Exception e)
+        {
+
+        }
         
-        
-        
-        
+    }
+    
+    void Rewarded(int id)
+    {
+        if (id == 10)
+        {
+            YandexGame.savesData.GirlNumber = UnityEngine.Random.Range(0,5);
+            YandexGame.savesData.IsTestCompleted = true;
+            YandexGame.SaveProgress();
+            SceneManager.LoadScene("AnimeSceneClicker");
+        }
     }
 
     private void ShowFullAds()

@@ -14,7 +14,7 @@ public class VoiceButton : MonoBehaviour
 
     [SerializeField] private List<AudioSource> _sources2 = new List<AudioSource>();
     [SerializeField] private GameObject parenSource2 = null;
-
+    [SerializeField] private AudioSource _sources3 = new AudioSource();
     private bool isMusicOver = true;
     private void Start()
     {
@@ -33,6 +33,20 @@ public class VoiceButton : MonoBehaviour
             _clickerScore.ClicksCount -= _cost;
             _sources[Random.Range(0, _sources.Count)].Play();
         }
+    }
+    
+    public void OnFreeVoice()
+    {
+        if (_sources.All(i => !i.isPlaying))
+        {
+            _sources3.Play();
+            Invoke(nameof(GirlVoice), 1f);
+        }
+    }
+    
+    private void GirlVoice()
+    {
+        _sources[Random.Range(0, _sources.Count)].Play();
     }
     
     public void OnSlap()

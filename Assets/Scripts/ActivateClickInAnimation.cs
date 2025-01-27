@@ -19,11 +19,11 @@ public class ActivateClickInAnimation : MonoBehaviour
 
     public void ClickEvent()
     {
-        if (_clickerScore == null)
-            return;
-
-        if (gameObject.activeSelf)
-            _clickerScore.Click();
+        // if (_clickerScore == null)
+        //     return;
+        //
+        // if (gameObject.activeSelf)
+        //     _clickerScore.Click();
     }
 
     public void PlayAnim()
@@ -36,6 +36,13 @@ public class ActivateClickInAnimation : MonoBehaviour
 
         if (!_clickerScore.gameObject.activeSelf)
             return;
+        
+        if (_clickerScore == null)
+            return;
+
+        if (gameObject.activeSelf)
+            _clickerScore.Click();
+        
         Instantiate(_clickerScore.ParticleSystems[Random.Range(0, _clickerScore.ParticleSystems.Count)],
             _currentPosition, Quaternion.identity);
         //tempObj.AddComponent<ParticleTimer>();

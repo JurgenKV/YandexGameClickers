@@ -28,6 +28,8 @@ public class ClickerScore : MonoBehaviour
     public int ClickMultiplayer = 1;
 
     [SerializeField] public List<GameObject> ParticleSystems;
+    
+    
     //[SerializeField] private List<Animator> _animators;
     private void Start()
     {
@@ -74,7 +76,7 @@ public class ClickerScore : MonoBehaviour
     {
         _coroutineX2CLicks = true;
         _buttonX2.interactable = false;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(30);
         _buttonX2.interactable = true;
         _coroutineX2CLicks = false;
     }
@@ -128,7 +130,7 @@ public class ClickerScore : MonoBehaviour
     IEnumerator TimerUpdateCoroutine()
     {
         _buttonUpdate.interactable = false;
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(30);
         _buttonUpdate.interactable = true;
     }
 
