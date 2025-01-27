@@ -6,26 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3f8314a-90fe-4ea5-b46d-df9432636fe5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.YandexGameClickers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Caveat-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Shop.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoxController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShopManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/YGRewardedVideoManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/TemplateData/favicon.ico.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/background.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/logo.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WebGLTemplates/PluginYG/thumbnail.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/InfoYG.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/InfoYG.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YandexGame/WorkingData/saveyg.yg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +122,7 @@
       <workItem from="1737471048580" duration="1904000" />
       <workItem from="1737486655039" duration="3255000" />
       <workItem from="1737530048152" duration="6627000" />
-      <workItem from="1737798649471" duration="2491000" />
+      <workItem from="1737798649471" duration="3306000" />
     </task>
     <task id="LOCAL-00001" summary="Fix yg version, change compression">
       <option name="closed" value="true" />
@@ -176,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737539390721</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Completed">
+      <option name="closed" value="true" />
+      <created>1737812934899</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737812934899</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +207,7 @@
     <MESSAGE value="New UI" />
     <MESSAGE value="added girls img" />
     <MESSAGE value="Completed girls game, with sounds and prices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed girls game, with sounds and prices" />
+    <MESSAGE value="Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed" />
   </component>
 </project>
