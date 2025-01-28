@@ -50,12 +50,12 @@ public class GameController : MonoBehaviour
             ShowFullAds();
             return;
         }
-
-        if (!SceneManager.GetActiveScene().name.Equals("AnimeSceneClicker"))
-        {
-            SceneManager.LoadScene("AnimeSceneClicker");
-            return;
-        }
+        //
+        // if (!SceneManager.GetActiveScene().name.Equals("AnimeSceneClicker"))
+        // {
+        //     SceneManager.LoadScene("AnimeSceneClicker");
+        //     return;
+        // }
 
         if (YandexGame.savesData.IsTestCompleted & !YandexGame.savesData.IsDateStarted)
         {
@@ -106,6 +106,8 @@ public class GameController : MonoBehaviour
         {
             YandexGame.savesData.GirlNumber = UnityEngine.Random.Range(0,5);
             YandexGame.savesData.IsTestCompleted = true;
+            YandexGame.savesData.IsDateStarted = false;
+            YandexGame.savesData.IsGirlUndressed = false;
             YandexGame.SaveProgress();
             SceneManager.LoadScene("AnimeSceneClicker");
         }

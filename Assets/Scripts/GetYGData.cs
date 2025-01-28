@@ -11,7 +11,18 @@
 
         private void GetData()
         {
-            SceneManager.LoadScene(_sceneName);
+            if (YandexGame.savesData.IsTestCompleted)
+            {
+
+                SceneManager.LoadScene("AnimeSceneClicker");
+
+            }
+            else
+            {
+ 
+                SceneManager.LoadScene("AnimeScene");
+
+            }
         }
         
     }

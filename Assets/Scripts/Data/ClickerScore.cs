@@ -29,6 +29,8 @@ public class ClickerScore : MonoBehaviour
 
     [SerializeField] public List<GameObject> ParticleSystems;
     
+    private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
     
     //[SerializeField] private List<Animator> _animators;
     private void Start()
@@ -65,18 +67,31 @@ public class ClickerScore : MonoBehaviour
     {
         if (!_coroutineX2CLicks)
         {
-            StartCoroutine(TimerX2Coroutine());
+            
             YandexGame.RewVideoShow(1);
             
         }
-           
+    }
+
+    private void Rewarded(int id)
+    {
+        switch (id)
+        {
+            case 2:
+                ADSUpdateClickEndReward();
+                break;
+            
+            case 1:
+                StartCoroutine(TimerX2Coroutine());
+                break;
+        }
     }
 
     IEnumerator TimerX2Coroutine()
     {
         _coroutineX2CLicks = true;
         _buttonX2.interactable = false;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(30);
         _buttonX2.interactable = true;
         _coroutineX2CLicks = false;
     }
@@ -112,9 +127,6 @@ public class ClickerScore : MonoBehaviour
     
     public void ADSUpgradeClick()
     {
-        ClickMultiplayer++;
-        UpdateUpgradeClickUI();
-        StartCoroutine(TimerUpdateCoroutine());
         try
         {
             YandexGame.RewVideoShow(2);
@@ -123,6 +135,14 @@ public class ClickerScore : MonoBehaviour
         {
             Console.WriteLine(e);
         }
+    }
+
+    private void ADSUpdateClickEndReward()
+    {
+        ClickMultiplayer++;
+        UpdateUpgradeClickUI();
+        StartCoroutine(TimerUpdateCoroutine());
+        
         YandexGame.savesData.ScoreMultiplayer = ClickMultiplayer;
         UpdateLeaderboard();
         YandexGame.SaveProgress();

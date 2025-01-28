@@ -18,7 +18,8 @@ public class ChangeBG : MonoBehaviour
 
     [SerializeField] private List<Image> _images = new List<Image>();
     [SerializeField] private Image _defaultImage;
-
+    private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
     private int _currentBgIndex = 0;
     private void Start()
     {
@@ -83,25 +84,6 @@ public class ChangeBG : MonoBehaviour
     
     public void ADSBgClick()
     {
-        foreach (Image image in _images)
-        {
-            image.enabled = false;
-            image.gameObject.SetActive(false);
-        }
-        _defaultImage.enabled = false;
-        int index;
-        do
-        { 
-            index = Random.Range(0, _images.Count);
-        } while (_currentBgIndex == index);
-
-        _currentBgIndex = index;
-        _images[_currentBgIndex].enabled = true;
-        _images[_currentBgIndex].gameObject.SetActive(true);
-        StartCoroutine(TimerBgCoroutine());
-        YandexGame.savesData.BgNum = _currentBgIndex;
-        YandexGame.SaveProgress();
-        
         try
         {
             YandexGame.RewVideoShow(3);
@@ -110,7 +92,31 @@ public class ChangeBG : MonoBehaviour
         {
             Console.WriteLine(e);
         }
+    }
 
+    private void Rewarded(int id)
+    {
+        if (id == 3)
+        {
+            foreach (Image image in _images)
+            {
+                image.enabled = false;
+                image.gameObject.SetActive(false);
+            }
+            _defaultImage.enabled = false;
+            int index;
+            do
+            { 
+                index = Random.Range(0, _images.Count);
+            } while (_currentBgIndex == index);
+
+            _currentBgIndex = index;
+            _images[_currentBgIndex].enabled = true;
+            _images[_currentBgIndex].gameObject.SetActive(true);
+            StartCoroutine(TimerBgCoroutine());
+            YandexGame.savesData.BgNum = _currentBgIndex;
+            YandexGame.SaveProgress();
+        }
     }
     IEnumerator TimerBgCoroutine()
     {

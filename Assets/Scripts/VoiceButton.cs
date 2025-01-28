@@ -37,12 +37,12 @@ public class VoiceButton : MonoBehaviour
     
     public void OnPayVoice(int cost)
     {
-        if (_clickerScore.ClicksCount < cost)
-            return;
-        _clickerScore.ClicksCount -= cost;
-        
-        if (_sources.All(i => !i.isPlaying))
+
+        if (_sources.All(i => !i.isPlaying) & !_sources3.isPlaying)
         {
+            if (_clickerScore.ClicksCount < cost)
+                return;
+            _clickerScore.ClicksCount -= cost;
             _sources3.Play();
             Invoke(nameof(GirlVoice), 0.5f);
         }

@@ -15,7 +15,8 @@ public class ShowWinner : MonoBehaviour
     [SerializeField] private List<GameObject> _objectsToOff;
     [SerializeField] private List<GameObject> _clicerObjectsToOn;
     private int _indexOfGirl;
-    
+    private void OnEnable() => YandexGame.RewardVideoEvent += Rewarded;
+    private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
     public void SetWinner(int girlNum = -1)
     {
         Debug.Log(YandexGame.savesData.GirlNumber);
@@ -74,8 +75,6 @@ public class ShowWinner : MonoBehaviour
         Debug.Log("_indexOfGirl" + _indexOfGirl);
         try
         {
-            dressImages[_indexOfGirl].enabled = false;
-            ADSButton.SetActive(false);
             YandexGame.RewVideoShow(0);
         }
         catch (Exception e)
@@ -87,6 +86,17 @@ public class ShowWinner : MonoBehaviour
 
         YandexGame.savesData.IsGirlUndressed = true;
         YandexGame.SaveProgress();
+    }
+
+    private void Rewarded(int id)
+    {
+        if (id == 0)
+        {
+            dressImages[_indexOfGirl].enabled = false;
+            ADSButton.SetActive(false);
+            YandexGame.savesData.IsGirlUndressed = true;
+            YandexGame.SaveProgress();
+        }
     }
 
     public void UndressGirlIfSave(int girlNum = -1)
